@@ -8,7 +8,7 @@
         <li><a href="/" aria-label="Product pricing" title="Product pricing" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Pricing</a></li>
       </ul>
       <a href="/" aria-label="Company" title="Company" class="inline-flex items-center lg:mx-auto">
-        <span class="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">Company Logo</span>
+        <span class="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">Marketing App</span>
       </a>
 
       @if (Route::has('login'))

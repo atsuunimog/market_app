@@ -22,14 +22,17 @@
         </style>
     </head>
     <body class="antialiased">
+
+ @include('default_layout.header')
+
 <!--titlebar-->
-<div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+<div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 py-10">
   <div class="max-w-2xl mx-auto sm:max-w-xl md:max-w-2xl">
     <div class="text-center">
       <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
         <div>
           <p class="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
-            Data Driven Development
+            Data Driven Application
           </p>
         </div>
         <h2 class="max-w-lg font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
@@ -74,7 +77,7 @@
         </button>
       </form>
 
-      <p class="max-w-md mx-auto mb-10 text-xs text-gray-600 sm:text-sm md:mb-16">
+      <p class="max-w-md mx-auto mb-10 text-xs text-gray-600 sm:text-sm md:mb-3">
         Use our advanced search filters to find schools based on area, town, population, school name and scholarship offer
       </p>
     </div>
@@ -94,7 +97,7 @@
   </div>
 <!--School Image Tiles-->
 
-@include('.alt_layouts.footer.blade.php');
+@include('default_layout.footer')
 
 </body>
 </html>
