@@ -63,7 +63,6 @@
           class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-indigo-500 focus:shadow-outline focus:outline-none"
         >
           Search
-          <!-- <i class="icon ion-android-search"></i> -->
         </button>
       </form>
 
@@ -93,8 +92,8 @@
 
 <!--School Image Tiles-->
 <div class="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-        <p>School Image Tiles</p>
-  </div>
+    <p>School Image Tiles</p>
+</div>
 <!--School Image Tiles-->
 
 @include('default_layout.footer')
