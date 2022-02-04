@@ -57,5 +57,4 @@
         <p>School Image Tiles</p>
   </div>
 <!--School Image Tiles-->
-
 </x-guest-layout>
