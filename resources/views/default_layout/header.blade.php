@@ -3,18 +3,27 @@
   <div class="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
     <div class="relative flex grid items-center grid-cols-2 lg:grid-cols-3">
       <ul class="flex items-center hidden space-x-8 lg:flex">
-        <li><a href="/" aria-label="Our product" title="Our product" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">About</a></li>
+        <li><a href="/" aria-label="Our product" title="Our product" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Home</a></li>
         <li><a href="/" aria-label="Our product" title="Our product" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Contact</a></li>
         <li><a href="/" aria-label="Product pricing" title="Product pricing" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Help</a></li>
-        <li><a href="/" aria-label="Product pricing" title="Product pricing" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Blog</a></li>
+        <li><a href="{{ url('blog') }}" aria-label="Blog" title="Blog" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Blog</a></li>
         <li>
-          <a href="/" aria-label="Product pricing" title="Product pricing" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">More
-          <i class="icon ion-chevron-down text-sm"></i>
+          <a onclick="toggle_mobile_sub_nav(this); return false;"  aria-label="Product pricing" title="Product pricing" class="cursor-pointer relative font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">More
+              <i class="icon ion-chevron-down text-sm" ></i>
+              <div id="dropdown-toggle" class="absolute top-8 text-black bg-white w-60 z-10 border px-3 py-3 rounded shadow-gray-900 hidden">
+                  <ul>
+                      <li><a href="" class='mb-3 block'>Report  <i class='icon ion-android-arrow-forward float-right'></i></a></li>
+                      <li><a href="" class='mb-3 block'>Help    <i class='icon ion-android-arrow-forward float-right'></i></a></li>
+                      <li><a href="" class='mb-3 block'>FAQ     <i class='icon ion-android-arrow-forward float-right'></i></a></li>
+                      <li><a href="" class='mb-3 block'>About Us<i class='icon ion-android-arrow-forward float-right'></i></a></li>
+                      <li><a href="{{ url('school-front') }}" class='mb-3 block'>School Landing Page<i class='icon ion-android-arrow-forward float-right'></i></a></li>
+                  </ul>
+              </div>
           </a>
         </li>
       </ul>
       <a href="/" aria-label="Company" title="Company" class="inline-flex items-center lg:mx-auto">
-        <span class="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">SMP App</span>
+        <span class="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">SMP APP</span>
       </a>
 
       @if (Route::has('login'))
@@ -24,11 +33,15 @@
             @else
                 <li><a href="{{ route('login') }}"    class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Log in</a></li>
                 @if (Route::has('register'))
-                <li><a href="{{ route('register') }}" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Register</a></li>
+                  <li>
+                    <a href="{{ route('register') }}" 
+                    class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Register
+                    </a>
+                  </li>
                 @endif
             @endauth
           </ul>
-    @endif
+      @endif
 
       <!-- Mobile menu -->
       <div class="ml-auto lg:hidden">
@@ -84,19 +97,13 @@
                             @endif
                         @endauth
                   @endif
-
               </ul>
             </nav>
           </div>
         </div>
        <!--mobile -->
-
       </div>
     </div>
   </div>
 </div>
 <!--navbar-->
-
-<script>
-
-</script>

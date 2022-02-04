@@ -24,13 +24,10 @@
           SMP
         </h2>
       </div>
+
       <form class="flex flex-col items-center w-full mt-6 md:mt-0 md:flex-row md:px-16">
-        <input
-          placeholder="Search School Name"
-          required=""
-          type="text"
-          class="flex-grow w-full h-12 px-4 mb-3 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none md:mr-2 md:mb-0 focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
-        />
+        <x-input id="email" class="block  w-full" type="email" name="email" :value="old('email')" required autofocus />
+
         <button
           type="submit"
           class="animate__animated animate__rubberBand inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-indigo-500 focus:shadow-outline focus:outline-none"
@@ -60,4 +57,5 @@
         <p>School Image Tiles</p>
   </div>
 <!--School Image Tiles-->
+
 </x-guest-layout>

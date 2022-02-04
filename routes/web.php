@@ -16,6 +16,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('blog', function () {
+    return view('blog');
+});
+
+Route::get('blog-content', function () {
+    return view('blog-content');
+});
+
+Route::get('school-front', function () {
+    return view('school-front');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
