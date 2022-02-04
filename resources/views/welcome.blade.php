@@ -50,7 +50,6 @@
           SMP
         </h2>
       </div>
-
       <form class="flex flex-col items-center w-full mt-6 md:mt-0 md:flex-row md:px-16">
         <input
           placeholder="Search School Name"
