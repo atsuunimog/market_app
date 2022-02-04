@@ -1,0 +1,2 @@
+function show_mobile_menu(obj_toggle){document.getElementById("mobile-menu-panel").classList.remove("hidden");}
+function hide_mobile_menu(obj_toggle){document.getElementById("mobile-menu-panel").classList.add("hidden")}
