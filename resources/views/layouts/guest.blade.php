@@ -13,12 +13,22 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
+        <!--font icons-->
+        <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
+
+    @include('default_layout.header')
+
     <body>
         <div class="font-sans text-gray-900 antialiased">
             {{ $slot }}
         </div>
     </body>
+
+    @include('default_layout.footer')
+
+    <script src="{{ asset('js/cxt-index.js') }}" defer></script>
 </html>

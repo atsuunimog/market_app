@@ -1,33 +1,4 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Market App</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
-        <!--animate css-->
-        <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-
-        <!--icons-->
-        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
-
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
-    </head>
-    <body class="antialiased">
-
- @include('default_layout.header')
-
+<x-guest-layout>
 <!--titlebar-->
 <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 py-10">
   <div class="mx-auto sm:max-w-2xl">
@@ -89,9 +60,4 @@
         <p>School Image Tiles</p>
   </div>
 <!--School Image Tiles-->
-
-@include('default_layout.footer')
-
-<script src="{{ asset('js/cxt-index.js') }}" defer></script>
-</body>
-</html>
+</x-guest-layout>
