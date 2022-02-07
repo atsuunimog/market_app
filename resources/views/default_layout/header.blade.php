@@ -4,8 +4,8 @@
     <div class="relative flex grid items-center grid-cols-2 lg:grid-cols-3">
       <ul class="flex items-center hidden space-x-8 lg:flex">
         <li><a href="/" aria-label="Our product" title="Our product" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Home</a></li>
-        <li><a href="/" aria-label="Our product" title="Our product" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Contact</a></li>
-        <li><a href="/" aria-label="Product pricing" title="Product pricing" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Help</a></li>
+        <li><a href="{{ url('contact') }}" aria-label="Our product" title="Our product" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Contact</a></li>
+        <li><a href="{{ url('help') }}" aria-label="Product pricing" title="Product pricing" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Help</a></li>
         <li><a href="{{ url('blog') }}" aria-label="Blog" title="Blog" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Blog</a></li>
         <li>
           <a onclick="toggle_mobile_sub_nav(this); return false;"  aria-label="Product pricing" title="Product pricing" class="cursor-pointer relative font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">More
@@ -13,9 +13,9 @@
               <div id="dropdown-toggle" class="absolute top-8 text-black bg-white w-60 z-10 border px-3 py-3 rounded shadow-gray-900 hidden">
                   <ul>
                       <li><a href="" class='mb-3 block'>Report  <i class='icon ion-android-arrow-forward float-right'></i></a></li>
-                      <li><a href="" class='mb-3 block'>Help    <i class='icon ion-android-arrow-forward float-right'></i></a></li>
-                      <li><a href="" class='mb-3 block'>FAQ     <i class='icon ion-android-arrow-forward float-right'></i></a></li>
-                      <li><a href="" class='mb-3 block'>About Us<i class='icon ion-android-arrow-forward float-right'></i></a></li>
+                      <li><a href="{{ url('help') }}" class='mb-3 block'>Help    <i class='icon ion-android-arrow-forward float-right'></i></a></li>
+                      <li><a href="{{ url('about') }}" class='mb-3 block'>About Us<i class='icon ion-android-arrow-forward float-right'></i></a></li>
+                      <li><a href="{{ url('scholarship') }}" class='mb-3 block'>Scholarship<i class='icon ion-android-arrow-forward float-right'></i></a></li>
                       <li><a href="{{ url('school-front') }}" class='mb-3 block'>School Landing Page<i class='icon ion-android-arrow-forward float-right'></i></a></li>
                   </ul>
               </div>

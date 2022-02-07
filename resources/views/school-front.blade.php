@@ -224,6 +224,5 @@
   </div>
 </div>
 <!--SECTION -->
-
 </x-guest-layout>
 

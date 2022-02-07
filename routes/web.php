@@ -20,6 +20,26 @@ Route::get('blog', function () {
     return view('blog');
 });
 
+Route::get('about', function () {
+    return view('about');
+});
+
+
+Route::get('contact', function () {
+    return view('contact');
+});
+
+
+Route::get('scholarship', function () {
+    return view('scholarship');
+});
+
+
+Route::get('help', function () {
+    return view('help');
+});
+
+
 Route::get('blog-content', function () {
     return view('blog-content');
 });
