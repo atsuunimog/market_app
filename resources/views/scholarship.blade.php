@@ -26,23 +26,43 @@
         </div>
 
         <!--page list-->
-        <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 gap-2 border">
+        <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-2 px-3 py-3 mb-3">
+          <!--page list-->
             <div class="...">
                 <!--school logo-->
-                <div class="flex">
-                  <img class="object-cover w-20 h-20 mr-4 rounded-full shadow" src="https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="Person" />
-                  <div class="flex flex-col justify-center">
-                    <p class="text-lg font-bold">XYZ Academy Secondary School</p>
-                    <p class="text-sm text-gray-800"><i class="icon ion-location"></i> &nbsp; Ikeja, Lagos State</p>
-                  </div>
+                <div class="flex text-center">
+                  <img class="object-cover d-block mx-auto w-20 h-20 rounded-full shadow" src="https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="Person" />
                 </div>
                 <!--school logo-->
             </div>
-            <div class="col-span-2 sm:col-span-2 md:col-span-2 border">
-                content
+            <div class="col-span-2 sm:col-span-2 md:col-span-3 lg:col-span-2 ">
+              <p class="text-lg font-bold">XYZ Academy Secondary School</p>
+              <p class="text-sm text-gray-800"><i class="icon ion-location"></i> &nbsp; Ikeja, Lagos State</p>
+              <p class=''>As part of their commitment to international development cooperation and to promote internationalization of their education systems, governments of developed countries such as USA, UK, Australia, Japan, and many countries in Europe award government-funded scholarships to outstanding international students from around the world.</p>
             </div>
         </div>
         <!--page list-->
+
+
+        <!--page list-->
+        <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-2 px-3 py-3 mb-3">
+          <!--page list-->
+            <div class="...">
+                <!--school logo-->
+                <div class="flex text-center">
+                  <img class="object-cover d-block mx-auto w-20 h-20 rounded-full shadow" src="https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="Person" />
+                </div>
+                <!--school logo-->
+            </div>
+            <div class="col-span-2 sm:col-span-2 md:col-span-3 lg:col-span-2 ">
+              <p class="text-lg font-bold">XYZ Academy Secondary School</p>
+              <p class="text-sm text-gray-800"><i class="icon ion-location"></i> &nbsp; Ikeja, Lagos State</p>
+              <p class=''>As part of their commitment to international development cooperation and to promote internationalization of their education systems, governments of developed countries such as USA, UK, Australia, Japan, and many countries in Europe award government-funded scholarships to outstanding international students from around the world.</p>
+            </div>
+        </div>
+        <!--page list-->
+
+        
 </x-guest-layout>
     
     
