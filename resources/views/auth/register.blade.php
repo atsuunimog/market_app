@@ -29,7 +29,7 @@
             <div class="mt-4">
                 <x-label for="account-type" :value="__('Select Account Type')" class="mb-1"/>
                 <select name='account_type' id="account-type" class="block flex-grow w-full h-12 px-4 mb-3 transition duration-200 bg-white border border-gray-300 rounded shadow-sm">
-                    <option>Select account type</option>
+                    <option disabled selected>Select account type</option>
                     <option value="sch_acct">Register as School</option>
                     <option value="aff_acct">Register as Affiliate</option>
                 </select>
