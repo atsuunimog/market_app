@@ -24,21 +24,17 @@ Route::get('about', function () {
     return view('about');
 });
 
-
 Route::get('contact', function () {
     return view('contact');
 });
-
 
 Route::get('scholarship', function () {
     return view('scholarship');
 });
 
-
 Route::get('help', function () {
     return view('help');
 });
-
 
 Route::get('blog-content', function () {
     return view('blog-content');
@@ -48,8 +44,12 @@ Route::get('school-front', function () {
     return view('school-front');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('school/dashboard', function () {
+    return view('school/dashboard');
+})->middleware(['auth'])->name('school/dashboard');
+
+Route::get('affiliate/dashboard', function () {
+    return view('affiliate/dashboard');
+})->middleware(['auth'])->name('affiliate/dashboard');
 
 require __DIR__.'/auth.php';

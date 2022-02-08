@@ -25,20 +25,6 @@
         </h2>
       </div>
 
-      <form class="flex flex-col items-center w-full mt-6 md:mt-0 md:flex-row md:px-16">
-        <input
-          placeholder="Search School Name"
-          required=""
-          type="text"
-          class="flex-grow w-full h-12 px-4 mb-3 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none md:mr-2 md:mb-0 focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
-        />
-        <button
-          type="submit"
-          class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-indigo-500 focus:shadow-outline focus:outline-none"
-        >
-          Search
-        </button>
-      </form>
     </div>
   </div>
 </div>
@@ -174,6 +160,20 @@
 <!--end of Image Carousel-->
 
 
+<form class="flex flex-col items-center w-full mt-6 md:mt-0 md:flex-row md:px-16">
+  <input
+    placeholder="Search School Name"
+    required=""
+    id="myInput" onkeyup="myFunction()" placeholder="Search for names.."
+    class="flex-grow w-full h-12 px-4 mb-3 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none md:mr-2 md:mb-0 focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline m-2"
+  />
+  {{-- <button
+    type="submit"
+    class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-indigo-500 focus:shadow-outline focus:outline-none"
+  >
+    Search
+  </button> --}}
+</form>
 
   <!-- beginning of filter bar -->
 		<!-- Navbar goes here -->
@@ -182,21 +182,22 @@
 				<div class="flex justify-between">
 					<div class="flex space-x-7">
 						<div>
-							<!-- Website Logo -->
-							<a href="" class="flex items-center py-4 px-2">
-								<img src="data:image/png;base64,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" alt="list" class="h-8 w-8 mr-2">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAaVBMVEX///9RUVFHR0dERETg4OBBQUFMTEz5+flaWlqurq6Hh4e7u7t9fX20tLRJSUlOTk5gYGDo6OjCwsLx8fGjo6P09PSRkZHr6+udnZ3b29vPz89WVlZ3d3epqak9PT3T09NmZmZubm57e3vnA7WqAAAEK0lEQVR4nO2dyXbqMBBEseSJIR4YwxjI/3/kI29ntxx1QUhsue6ePn1Ra2FRMpMJIYQQQgghhBBCCCHktWSrWEW96SpQKwtknS3snmzhW79zlSgpTgdHgXobaQtE29rVwmadq1tYfKCCu6stIy1p8i4KHNJCX6AwS8dXVBmkhTMmmB1TdfEvknWrwP6i7+5OmYgxWEVgC1PIcFtA1aPIxs0CFSR4V6zam3EBt+Ac9Q5WYH/3Ods2ChwsWsC25nQHVyjkVunmAy5f5o0C7+gCtL+iyRJvoQIM5wYtH9lGgRm2h+6ki2YLU7yF4rWGyd8bmoEZwnM+OMPw15CGkqEZch9KaNg3Q06phIZ9M+SUSmjYN0NOqYSGNPTAfehjhGsYviGnVELDvhlySiU0pKEH7kMfI1zD8A05pRIa0tAD96GP/q/hwLIYeOBnaHma8DNRz+farr+fazNIru0nsolYe65sIvYlgdnEyQ4Jd5aufKnR50vLInHkS+Mcype2v2Mv2bkqrI7ImRHebY9G93lznDkHLFvn+hb2qOBEH9OOdx0FNsrPx6uXtUAIIYQQMgYyFa8s8AMVutnPqlzH7ey8/rf8VBaoTnN3Cx/6Fqa45eySllqMfLqb7K6JvoDNHQ8X2QyoYCx6AfETO0QQz3ebEnqELkv5dHCDzqJK63qE6+YtgQTvj+OtJyD0DCI9tVtYgwc15RG5Kpsd0aMo03zE3sPnSElryjL4tM4ixxgP3M67NhcAP01sHYQ8cKB5Awzxw8rWgfMDJ8KzZgtv+IlwChjyVN8BDX3wtycFNOybIadUQsO+GXJKJTSkoQfuQx8jXMPwDTmlEhrS0AP3oY8RrmH4hpxSCQ1p6IH70McI1zB8Q06phIZ9M+SUSmjYN0NOqSR8w9fezouiRgH4ZliUtm7nzZ+9IPg9Nd5gcwnw/sxbs4UYrtBO5HzPDZ2yVnRvA148u/fXju6h9/uiC5ROrBOsftHaRZM5GP2Td+v2YAUDLeF9JxbIKtqbyAW+I99RmWxlC0sDtXBCM7Tx58UaHbZw3f1bVony8ybJnSHh/emirpCCf2/xn3r+puPQEezcKwvMO+8OxuoWHox6E0IIIYQQ8veE/l6Mob3bBP//w9DfTxP+O4aCf09U+O/6Cv99beG/c2+Yv1sM7ZcZ/romoWHfDDmlEhrS0AP3oY8RrmH4hpxSCQ37ZsgpldCwb4acUgkNaeiB+9DHCNcwfENOqYSGfTPklEpoSEMP3Ic+RriG4RtySiU0fNJwYFmM8PM04Weins+1Vb+fa7O//f+HkGLpyCaWL/7/w6tFwp2OfGmqz5dGhXHkS2sk4ppa/P8Pp1WixHRkhKOLskDkzghvzrm2hWIBZ4S/HHfKkHXXP2doU9p15/VIbQs18ucdhBBCCCGEEEIIIYSQx/gHFSy3rZN/diYAAAAASUVORK5CYII=" alt="grid" class="h-8 w-8 mr-2">
+						<!-- Website Logo -->
+							<div class="flex items-center py-4 px-2"> 
+								<img onclick="listView()" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAb1BMVEX///8AAACTk5Ph4eF9fX3ExMQHBwfHx8c0NDTZ2dnW1taPj4+JiYmcnJxVVVXT09NxcXHt7e1gYGC5ublpaWkXFxeCgoIbGxv29vbp6ek8PDy3t7cuLi5PT0+rq6ukpKRISEgpKSlBQUEQEBBaWlqPlbrcAAAFVElEQVR4nO2dbXPiOgxGoYS0kJaXQligwML2/v/feEt3O0SyXMCxKz8ZnW9NPIzOpEnsWJZ7PYnNolpu67KPQllvl9ViI7oIjFa1dsSB1KvxDX6LnXacrdi9XfEb/tIOsTX18Bu/+UQ7vChM5t5/UO3QorGQBZ+144rIsyS41I4qKktX8FU7psi8csGZdkTRmVHBF+14EvDSFJxqR5OEacNQO5ZEXAQL7VASUXwJDsTTx6J6QKEqjqLD4J/h3j01+a5zlydDocs5+Xtq5JzY3TIIyY+xOywafZ5wOjMr5UjDWXGVz67Nmh99ufY7GeO819cfBw/sWKUdZSsqZnP4OMZu0L12jC1hj83zs4ZJe0ePIMyZz8cDiB4QB1ZQsGHumN+G6JfQuYgH9oBFvwvP0DtxxUa+v7XDi8BvYvTaeyJ/T6//QPbQoeBT771jtyG/EesenZzQji4GtJNWstehdnRRYEpmCIgZ4mOG+JghPmaIjxniY4b4mCE+ZoiPGeJzv+GAsG6e2gyU+C4f+H5DmnN6mQFfq+b6Fd5vu7TdLYb0s/jo6zCbtfp5fNkUtFW4oZyj8qN45iBoo3BDelSF96SGWaTCybnAtE2wYRYZxTMxXtom2DCLjNs/nTfcpjR00o80SPpfOkwc/E3IC2Rom/C3RQ6ra8Rwoxlm8LrwdGpooxa9NvUlNgdZMGLPe6P6PN0PxGCDDB+HTZqjp/V0qMR0LYYaaIiGGeJjhviYIT5miI8Z4mOG+JghPmaIjxniY4b43G+47ZcXLt9Le73pbFfq0D/N/BUD7jf0fBHmK4h/mj++VAXarIXhKWn8t+D5ZkobhRtmULPHs+KVNgo23CSO/ibkZAzaJtgwi6pE8spz2ibYMIvSYMeUht2fx8/gQdPv/5fSkBcMUUEuw0LbBBs6RV80kN/5tE34+5Au7FfBU2iGNmrRp1G/E53CgcGGJ9Lk0i9VvoreWki02S2Gz0WDWTP/eFEVSjy/+Sfy7zdEwwzxMUN8zBAfM8THDPExQ3zMEB8zxMcM8TFDfO437P63thNpks330od4hrl+85Znnjo1b+EpPk4b2dyT17D784fqd+GZpHPA3Z/H734uRvfzabLIiZJ3/KFtoPPaJmK4HcpNLBPnJqrnlx59fW/arF2OcKGYI/zo8bPxYRcwQ3zMEB8zxMcM8TFDfMwQHzPExwzxMUN8zNDlsQmrffmoRNzal776pQPV+afjSAw2yDDXGrS+zYtpq3DDDOoIy0XnoxnWicO/haSGWdTzlmsl0zbBhlnUZF+mNOz+PH4Whkn3Ruj+/hYZvCwS71GSwz4ztRhuNMMM9gqSUzHi9drU93vyzXPTVm163t3Zs4vueEaGLXOdXddi77uGhhniY4b4mCE+ZoiPGeJjhviYIT5miI8Z4mOG+DClsnOGdA122Xsnf3u/QQIxJ0Y1+6Atl3HHgs4ZPbF5QF96AxK0FMIrm6327DYAxZ4YrXjlAPwbkd6G/QOfQfKUmgCCTReN+dsD/iKyS3h+/7HVvOh3Ir0LP5d78xIenlLuIFTM5pxT5JRh8dY6B8ApmvM52+lUuCi04wzGSdT6mzQ14of7J08KQOaMd47Jv6SDvXOiP/HviJUrQ6EAwldZCTlv5FhUDyhUxVF0GHzpF+JpfBoPFO1QEtH4H84iSS06ZCiYRcWgyLD3egb1dCLjZGZmkREbEWGbnSyKd0VDzADPIus3Ep5hrvoimGh4lpp8jB6VKz9FYvLdKH746/oPZE59rUu9yCB/uwVPb1f8zoxWqBeyXnlX7HE2i2q5rcvrv5kJZb1dVgs5b/h/6+N/pVxal5sAAAAASUVORK5CYII=" alt="list" class="h-8 w-8 mr-2">
+                <img onclick="gridView()" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAaVBMVEX///9RUVFHR0dERETg4OBBQUFMTEz5+flaWlqurq6Hh4e7u7t9fX20tLRJSUlOTk5gYGDo6OjCwsLx8fGjo6P09PSRkZHr6+udnZ3b29vPz89WVlZ3d3epqak9PT3T09NmZmZubm57e3vnA7WqAAAEK0lEQVR4nO2dyXbqMBBEseSJIR4YwxjI/3/kI29ntxx1QUhsue6ePn1Ra2FRMpMJIYQQQgghhBBCCCHktWSrWEW96SpQKwtknS3snmzhW79zlSgpTgdHgXobaQtE29rVwmadq1tYfKCCu6stIy1p8i4KHNJCX6AwS8dXVBmkhTMmmB1TdfEvknWrwP6i7+5OmYgxWEVgC1PIcFtA1aPIxs0CFSR4V6zam3EBt+Ac9Q5WYH/3Ods2ChwsWsC25nQHVyjkVunmAy5f5o0C7+gCtL+iyRJvoQIM5wYtH9lGgRm2h+6ki2YLU7yF4rWGyd8bmoEZwnM+OMPw15CGkqEZch9KaNg3Q06phIZ9M+SUSmjYN0NOqYSGNPTAfehjhGsYviGnVELDvhlySiU0pKEH7kMfI1zD8A05pRIa0tAD96GP/q/hwLIYeOBnaHma8DNRz+farr+fazNIru0nsolYe65sIvYlgdnEyQ4Jd5aufKnR50vLInHkS+Mcype2v2Mv2bkqrI7ImRHebY9G93lznDkHLFvn+hb2qOBEH9OOdx0FNsrPx6uXtUAIIYQQMgYyFa8s8AMVutnPqlzH7ey8/rf8VBaoTnN3Cx/6Fqa45eySllqMfLqb7K6JvoDNHQ8X2QyoYCx6AfETO0QQz3ebEnqELkv5dHCDzqJK63qE6+YtgQTvj+OtJyD0DCI9tVtYgwc15RG5Kpsd0aMo03zE3sPnSElryjL4tM4ixxgP3M67NhcAP01sHYQ8cKB5Awzxw8rWgfMDJ8KzZgtv+IlwChjyVN8BDX3wtycFNOybIadUQsO+GXJKJTSkoQfuQx8jXMPwDTmlEhrS0AP3oY8RrmH4hpxSCQ1p6IH70McI1zB8Q06phIZ9M+SUSmjYN0NOqSR8w9fezouiRgH4ZliUtm7nzZ+9IPg9Nd5gcwnw/sxbs4UYrtBO5HzPDZ2yVnRvA148u/fXju6h9/uiC5ROrBOsftHaRZM5GP2Td+v2YAUDLeF9JxbIKtqbyAW+I99RmWxlC0sDtXBCM7Tx58UaHbZw3f1bVony8ybJnSHh/emirpCCf2/xn3r+puPQEezcKwvMO+8OxuoWHox6E0IIIYQQ8veE/l6Mob3bBP//w9DfTxP+O4aCf09U+O/6Cv99beG/c2+Yv1sM7ZcZ/romoWHfDDmlEhrS0AP3oY8RrmH4hpxSCQ37ZsgpldCwb4acUgkNaeiB+9DHCNcwfENOqYSGfTPklEpoSEMP3Ic+RriG4RtySiU0fNJwYFmM8PM04Weins+1Vb+fa7O//f+HkGLpyCaWL/7/w6tFwp2OfGmqz5dGhXHkS2sk4ppa/P8Pp1WixHRkhKOLskDkzghvzrm2hWIBZ4S/HHfKkHXXP2doU9p15/VIbQs18ucdhBBCCCGEEEIIIYSQx/gHFSy3rZN/diYAAAAASUVORK5CYII=" alt="grid" class="h-8 w-8 mr-2">
 								<span class="font-semibold text-gray-100 text-lg">Filter School</span>
-							</a>
+              </div>
 						</div>
 						<!-- Primary Navbar items -->
-						<div class="hidden md:flex items-center space-x-1">
-							<a href="" class="py-4 px-2 text-white-200 border-b-4 border-gray-100 font-semibold "><small>Area, Town or Local Government</small></a>
-							<a href="" class="py-4 px-2 text-white-500 font-semibold hover:text-white transition duration-300"><small>Fee Range</small></a>
-							<a href="" class="py-4 px-2 text-white-500 font-semibold hover:text-white transition duration-300"><small>Population (Patronage size)</small></a>
-							<a href="" class="py-4 px-2 text-white-500 font-semibold hover:text-white transition duration-300"><small>School Range</small></a>
-              <a href="" class="py-4 px-2 text-white-500 font-semibold hover:text-white transition duration-300"><small>Academic Competence</small></a>
-              <a href="" class="py-4 px-2 text-white-500 font-semibold hover:text-white transition duration-300"><small>Scholarship Offer</small></a>
+						<div class="hidden md:flex items-center space-x-1" id="myBtnContainer">
+              <li class="btn active block text-sm px-2 py-4 text-blue bg-gray-100 font-semibold"  onclick="filterSelection('all')"><small>All </small></li>
+							<a class="btn py-4 px-2 text-white-500 font-semibold hover:text-white transition duration-300"   onclick="filterSelection('area')"><small>Area, Town or Local Government</small></a>
+							<a class="btn py-4 px-2 text-white-500 font-semibold hover:text-white transition duration-300" onclick="filterSelection('fee-range')"><small>Fee Range</small></a>
+							<a class="btn py-4 px-2 text-white-500 font-semibold hover:text-white transition duration-300" onclick="filterSelection('Population')"><small>Population (Patronage size)</small></a>
+							<a class="btn py-4 px-2 text-white-500 font-semibold hover:text-white transition duration-300" onclick="filterSelection('school-range')"><small>School Range</small></a>
+              <a class="btn py-4 px-2 text-white-500 font-semibold hover:text-white transition duration-300" onclick="filterSelection('academic-competence')"><small>Academic Competence</small></a>
+              <a class="btn py-4 px-2 text-white-500 font-semibold hover:text-white transition duration-300" onclick="filterSelection('scholarship-offer')"><small>Scholarship Offer</small></a>
 						</div>
 					</div>
 					<!-- Secondary Navbar items -->
@@ -223,16 +224,19 @@
 				</div>
 			</div>
 			<!-- mobile menu -->
-			<div class="hidden mobile-menu">
+			<div class="hidden mobile-menu" id="myBtnContainer">
 				<ul class="">
-					<li class="active"><a href="index.html" class="block text-sm px-2 py-4 text-blue bg-gray-100 font-semibold"><small>Area, Town or Local Government</small></a></li>
-					<li><a href="#services" class="block text-sm px-2 py-4 hover:bg-gray-100 transition duration-300"><small>Fee Range</small></a></li>
-					<li><a href="#about" class="block text-sm px-2 py-4 hover:bg-gray-100 transition duration-300"><small>Population (Size of Patronage)</small></a></li>
-					<li><a href="#contact" class="block text-sm px-2 py-4 hover:bg-gray-100 transition duration-300"><small>School Range</small></a></li>
-					<li><a href="#about" class="block text-sm px-2 py-4 hover:bg-gray-100 transition duration-300"><small>Academic Competence</small></a></li>
-					<li><a href="#contact" class="block text-sm px-2 py-4 hover:bg-gray-100 transition duration-300"><small>Scholarship Offer</small></a></li>
+          <li class="btn active block text-sm px-2 py-4 text-blue bg-gray-100 font-semibold"  onclick="filterSelection('all')"><small>All schools</small></li>
+					<li class="btn block text-sm px-2 py-4 hover:bg-gray-100 transition duration-300"  onclick="filterSelection('area')"><small>Area, Town or Local Government</small></li>
+					<li class="btn block text-sm px-2 py-4 hover:bg-gray-100 transition duration-300" onclick="filterSelection('fee-range')"><small>Fee Range</small></li>
+					<li class="btn block text-sm px-2 py-4 hover:bg-gray-100 transition duration-300" onclick="filterSelection('population')"><small>Population (Size of Patronage)</small></li>
+					<li class="btn block text-sm px-2 py-4 hover:bg-gray-100 transition duration-300" onclick="filterSelection('school-range')"><small>School Range</small></li>
+					<li class="btn block text-sm px-2 py-4 hover:bg-gray-100 transition duration-300" onclick="filterSelection('academic-competence')"><small>Academic Competence</small></li>
+					<li class="btn block text-sm px-2 py-4 hover:bg-gray-100 transition duration-300" onclick="filterSelection('scholarship-offer')"><small>Scholarship Offer</small></li>
         </ul>
 			</div>
+
+      {{-- grid/list filter tggle menu bar --}}
 			<script>
 				const btn = document.querySelector("button.mobile-menu-button");
 				const menu = document.querySelector(".mobile-menu");
@@ -247,11 +251,110 @@
 
 <!--Image Carousel-->
 
+
+  <script>
+    function myFunction() {
+      // Declare variables
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById('myInput');
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("myUL");
+      li = ul.getElementsByTagName('li');
+    
+      // Loop through all list items, and hide those who don't match the search query
+      for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+        } else {
+          li[i].style.display = "none";
+        }
+      }
+    }
+    </script>
+
+{{-- grid/list filter --}}
+    <script>
+    // Get the elements with class="column"
+var elements = document.getElementsByClassName("myUL");
+
+// Declare a loop variable
+var i;
+
+// List View
+function listView() {
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.width = "100%";
+  }
+}
+
+// Grid View
+function gridView() {
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.width = "50%";
+    elements[i].style.margin = "auto";
+  }
+}
+    </script>
+
+    {{-- filter with buttons --}}
+<script>
+    filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("myUL");
+  if (c == "all") c = "";
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+// Show filtered elements
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+// Hide elements that are not selected
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current control button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
 <!--School Image Tiles-->
 <!-- <div class="border px-4 mt-3 mb-5 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8"> -->
       
-                  
+                
           <div class="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+            <ul id="myUL">
+
   <div class="absolute inset-x-0 top-0 items-center justify-center hidden overflow-hidden md:flex md:inset-y-0">
     <svg viewBox="0 0 88 88" class="w-full max-w-screen-xl text-indigo-100">
       <circle fill="currentColor" cx="44" cy="44" r="15.5"></circle>
@@ -262,6 +365,9 @@
     </svg>
   </div>
   <div class="relative grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+    
+    <li class="myUL area">
+    <a href="#">Adele
     <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
       <div class="p-5">
         <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
@@ -269,6 +375,8 @@
             <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
           </svg>
         </div>
+        <img src="https://i.pinimg.com/736x/8e/f8/55/8ef855f46702650f9c4f529d537d7d97.jpg" alt="" width="210" height="210"/>
+     
         <p class="mb-2 font-bold">Football Sports</p>
         <p class="text-sm leading-5 text-gray-900">
           Sed ut perspiciatis unde omnis iste. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -276,6 +384,11 @@
       </div>
       <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
     </div>
+  </a>
+</li>
+
+<li class="myUL fee-range">
+  <a href="#">Adele
     <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
       <div class="p-5">
         <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
@@ -290,6 +403,11 @@
       </div>
       <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
     </div>
+  </a>
+</li>
+
+<li class="myUL population">
+  <a href="#">Adele
     <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
       <div class="p-5">
         <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
@@ -304,6 +422,11 @@
       </div>
       <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
     </div>
+  </a>
+</li>
+
+<li class="myUL fee-range">
+  <a href="#">Adele
     <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
       <div class="p-5">
         <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
@@ -318,6 +441,11 @@
       </div>
       <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
     </div>
+  </a>
+</li>
+
+<li class="myUL fee-range">
+  <a href="#">Adele
     <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
       <div class="p-5">
         <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
@@ -332,6 +460,11 @@
       </div>
       <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
     </div>
+  </a>
+</li>
+
+<li class="myUL">
+  <a href="#">Adele
     <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
       <div class="p-5">
         <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
@@ -346,6 +479,11 @@
       </div>
       <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
     </div>
+  </a>
+</li>
+
+<li class="myUL"> 
+<a href="#">Adele
     <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
       <div class="p-5">
         <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
@@ -360,6 +498,11 @@
       </div>
       <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
     </div>
+  </a>
+</li>
+
+<li class="myUL">
+  <a href="#">Adele
     <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
       <div class="p-5">
         <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
@@ -374,6 +517,306 @@
       </div>
       <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
     </div>
+  </a>
+</li>
+
+
+<li class="myUL">
+  <a href="#">Adele
+    <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
+      <div class="p-5">
+        <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
+          <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
+            <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+          </svg>
+        </div>
+        <img src="https://i.pinimg.com/736x/8e/f8/55/8ef855f46702650f9c4f529d537d7d97.jpg" alt="" width="210" height="210"/>
+     
+        <p class="mb-2 font-bold">Bowling Sports</p>
+        <p class="text-sm leading-5 text-gray-900">
+          Disrupt inspire and think tank, social entrepreneur but preliminary thinking think tank compelling.
+        </p>
+      </div>
+      <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
+    </div>
+  </a>
+</li>
+
+<li class="myUL">
+  <a href="#">Adele
+    <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
+      <div class="p-5">
+        <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
+          <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
+            <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+          </svg>
+        </div>
+        <img src="https://i.pinimg.com/736x/8e/f8/55/8ef855f46702650f9c4f529d537d7d97.jpg" alt="" width="210" height="210"/>
+     
+        <p class="mb-2 font-bold">Cycling Sports</p>
+        <p class="text-sm leading-5 text-gray-900">
+          A slice of heaven. O for awesome, this chocka full cuzzie is as rip-off as a cracker.
+        </p>
+      </div>
+      <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
+    </div>
+  </a>
+</li>
+
+<li class="myUL">
+  <a href="#">Adele
+    <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
+      <div class="p-5">
+        <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
+          {{-- <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
+            <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+          </svg> --}}
+          
+        </div>
+        <img src="https://i.pinimg.com/736x/8e/f8/55/8ef855f46702650f9c4f529d537d7d97.jpg" alt="" width="210" height="210"/>
+     
+        <p class="mb-2 font-bold">Weight Lifting Sports</p>
+        <p class="text-sm leading-5 text-gray-900">
+          Meanwhile, in behind the bicycle shed, Hercules Morse, as big as a horse.
+        </p>
+      </div>
+      <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
+    </div>
+  </a>
+</li>
+
+<li class="myUL">
+  <a href="#">Adele
+    <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
+      <div class="p-5">
+        <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
+          <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
+            <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+          </svg>
+        </div>
+        <img src="https://i.pinimg.com/736x/8e/f8/55/8ef855f46702650f9c4f529d537d7d97.jpg" alt="" width="210" height="210"/>
+    
+        <p class="mb-2 font-bold">Golf Sports</p>
+        <p class="text-sm leading-5 text-gray-900">
+          Disrupt inspire and think tank, social entrepreneur but preliminary thinking think tank compelling.
+        </p>
+      </div>
+      <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
+    </div>
+  </a>
+</li>
+
+<li class="myUL">
+  <a href="#">Adele
+    <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
+      <div class="p-5">
+        <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
+          <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
+            <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+          </svg>
+        </div>
+        <img src="https://i.pinimg.com/736x/8e/f8/55/8ef855f46702650f9c4f529d537d7d97.jpg" alt="" width="210" height="210"/>
+    
+        <p class="mb-2 font-bold">Hockey Sports</p>
+        <p class="text-sm leading-5 text-gray-900">
+          A business big enough that it could be listed on the NASDAQ goes belly up.
+        </p>
+      </div>
+      <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
+    </div>
+  </a>
+</li>
+
+<li class="myUL"> 
+<a href="#">Adele
+    <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
+      <div class="p-5">
+        <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
+          <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
+            <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+          </svg>
+        </div>
+        <img src="https://i.pinimg.com/736x/8e/f8/55/8ef855f46702650f9c4f529d537d7d97.jpg" alt="" width="210" height="210"/>
+    
+        <p class="mb-2 font-bold">Shooting Sports</p>
+        <p class="text-sm leading-5 text-gray-900">
+          Lookout flogging bilge rat main sheet bilge water nipper fluke to go on account heave down clap of thunder.
+        </p>
+      </div>
+      <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
+    </div>
+  </a>
+</li>
+
+<li class="myUL">
+  <a href="#">Adele
+    <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
+      <div class="p-5">
+        <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
+          <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
+            <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+          </svg>
+        </div>
+        <img src="https://i.pinimg.com/736x/8e/f8/55/8ef855f46702650f9c4f529d537d7d97.jpg" alt="" width="210" height="210"/>
+    
+        <p class="mb-2 font-bold">Martial Arts</p>
+        <p class="text-sm leading-5 text-gray-900">
+          Webtwo ipsum orkut reddit meebo skype vimeo jajah spock empressr zimbra, mobly napster.
+        </p>
+      </div>
+      <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
+    </div>
+  </a>
+</li>
+
+
+<li class="myUL">
+  <a href="#">Adele
+    <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
+      <div class="p-5">
+        <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
+          <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
+            <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+          </svg>
+        </div>
+        <img src="https://i.pinimg.com/736x/8e/f8/55/8ef855f46702650f9c4f529d537d7d97.jpg" alt="" width="210" height="210"/>
+     
+        <p class="mb-2 font-bold">Bowling Sports</p>
+        <p class="text-sm leading-5 text-gray-900">
+          Disrupt inspire and think tank, social entrepreneur but preliminary thinking think tank compelling.
+        </p>
+      </div>
+      <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
+    </div>
+  </a>
+</li>
+
+<li class="myUL">
+  <a href="#">Adele
+    <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
+      <div class="p-5">
+        <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
+          <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
+            <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+          </svg>
+        </div>
+        <img src="https://i.pinimg.com/736x/8e/f8/55/8ef855f46702650f9c4f529d537d7d97.jpg" alt="" width="210" height="210"/>
+    
+        <p class="mb-2 font-bold">Cycling Sports</p>
+        <p class="text-sm leading-5 text-gray-900">
+          A slice of heaven. O for awesome, this chocka full cuzzie is as rip-off as a cracker.
+        </p>
+      </div>
+      <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
+    </div>
+  </a>
+</li>
+
+<li class="myUL">
+  <a href="#">Adele
+    <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
+      <div class="p-5">
+        <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
+          <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
+            <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+          </svg>
+        </div>
+        <img src="https://i.pinimg.com/736x/8e/f8/55/8ef855f46702650f9c4f529d537d7d97.jpg" alt="" width="210" height="210"/>
+     
+        <p class="mb-2 font-bold">Weight Lifting Sports</p>
+        <p class="text-sm leading-5 text-gray-900">
+          Meanwhile, in behind the bicycle shed, Hercules Morse, as big as a horse.
+        </p>
+      </div>
+      <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
+    </div>
+  </a>
+</li>
+
+<li class="myUL">
+  <a href="#">Adele
+    <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
+      <div class="p-5">
+        <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
+          <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
+            <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+          </svg>
+        </div>
+        <img src="https://i.pinimg.com/736x/8e/f8/55/8ef855f46702650f9c4f529d537d7d97.jpg" alt="" width="210" height="210"/>
+    
+        <p class="mb-2 font-bold">Golf Sports</p>
+        <p class="text-sm leading-5 text-gray-900">
+          Disrupt inspire and think tank, social entrepreneur but preliminary thinking think tank compelling.
+        </p>
+      </div>
+      <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
+    </div>
+  </a>
+</li>
+
+<li class="myUL">
+  <a href="#">Adele
+    <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
+      <div class="p-5">
+        <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
+          <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
+            <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+          </svg>
+        </div>
+        <img src="https://i.pinimg.com/736x/8e/f8/55/8ef855f46702650f9c4f529d537d7d97.jpg" alt="" width="210" height="210"/>
+     
+        <p class="mb-2 font-bold">Hockey Sports</p>
+        <p class="text-sm leading-5 text-gray-900">
+          A business big enough that it could be listed on the NASDAQ goes belly up.
+        </p>
+      </div>
+      <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
+    </div>
+  </a>
+</li>
+
+<li class="myUL"> 
+<a href="#">Adele
+    <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
+      <div class="p-5">
+        <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
+          <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
+            <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+          </svg>
+        </div>
+        <img src="https://i.pinimg.com/736x/8e/f8/55/8ef855f46702650f9c4f529d537d7d97.jpg" alt="" width="210" height="210"/>
+     
+        <p class="mb-2 font-bold">Shooting Sports</p>
+        <p class="text-sm leading-5 text-gray-900">
+          Lookout flogging bilge rat main sheet bilge water nipper fluke to go on account heave down clap of thunder.
+        </p>
+      </div>
+      <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
+    </div>
+  </a>
+</li>
+
+<li class="myUL">
+  <a href="#">Adele
+    <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
+      <div class="p-5">
+        <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
+          <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
+            <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+          </svg>
+        </div>
+        <img src="https://i.pinimg.com/736x/8e/f8/55/8ef855f46702650f9c4f529d537d7d97.jpg" alt="" width="210" height="210"/>
+     
+        <p class="mb-2 font-bold">Martial Arts</p>
+        <p class="text-sm leading-5 text-gray-900">
+          Webtwo ipsum orkut reddit meebo skype vimeo jajah spock empressr zimbra, mobly napster.
+        </p>
+      </div>
+      <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
+    </div>
+  </a>
+</li>
+</ul>
   </div>
 </div>
 </x-guest-layout>
