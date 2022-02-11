@@ -9,15 +9,14 @@
         <li><a href="{{ url('blog') }}" aria-label="Blog" title="Blog" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Blog</a></li>
         <li>
           <a onclick="toggle_mobile_sub_nav(this); return false;"  aria-label="Product pricing" title="Product pricing" class="cursor-pointer relative font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">More
-              <i class="icon ion-chevron-down text-sm" ></i>
+              <i class="icon ion-chevron-down text-xs" ></i>
               <div id="dropdown-toggle" class="absolute top-8 text-black bg-white w-60 z-10 border px-3 py-3 rounded shadow-gray-900 hidden">
-                  <ul>
-                      <li><a href="" class='mb-3 block'>Report  <i class='icon ion-android-arrow-forward float-right'></i></a></li>
-                      <li><a href="{{ url('help') }}" class='mb-3 block'>Help    <i class='icon ion-android-arrow-forward float-right'></i></a></li>
+                    <ul>
                       <li><a href="{{ url('about') }}" class='mb-3 block'>About Us<i class='icon ion-android-arrow-forward float-right'></i></a></li>
                       <li><a href="{{ url('scholarship') }}" class='mb-3 block'>Scholarship<i class='icon ion-android-arrow-forward float-right'></i></a></li>
                       <li><a href="{{ url('school-front') }}" class='mb-3 block'>School Landing Page<i class='icon ion-android-arrow-forward float-right'></i></a></li>
-                  </ul>
+                      <li><a href="{{ url('faq') }}" class='mb-3 block'>FAQ<i class='icon ion-android-arrow-forward float-right'></i></a></li>
+                    </ul>
               </div>
           </a>
         </li>
@@ -29,7 +28,39 @@
       @if (Route::has('login'))
           <ul class="flex items-center hidden ml-auto space-x-8 lg:flex">
             @auth
-                <li><a href="{{ url('/dashboard') }}" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Dashboard</a></li>
+              <!-- Settings Dropdown -->
+            <div class="hidden sm:flex sm:items-center sm:ml-6">
+              <x-dropdown align="right" width="48">
+                  <x-slot name="trigger">
+                      <button class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                          <div class='text-white text-base'>{{ Auth::user()->username }}</div>
+
+                          <div class="ml-1">
+                              <svg class="fill-current h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                              </svg>
+                          </div>
+                      </button>
+                  </x-slot>
+
+                  <x-slot name="content">
+                      <!-- Authentication -->
+                      <x-dropdown-link href="{{ route('dashboard') }}">
+                      Dashboard
+                      </x-dropdown-link>
+                      
+                      <form method="POST" action="{{ route('logout') }}">
+                          @csrf
+                          <x-dropdown-link :href="route('logout')"
+                                  onclick="event.preventDefault();
+                                              this.closest('form').submit();">
+                              {{ __('Log Out') }}
+                          </x-dropdown-link>
+                      </form>
+                  </x-slot>
+              </x-dropdown>
+          </div>
+
             @else
                 <li><a href="{{ route('login') }}"    class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Log in</a></li>
                 @if (Route::has('register'))

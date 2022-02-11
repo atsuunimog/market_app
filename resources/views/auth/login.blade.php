@@ -14,7 +14,6 @@
 
         <form method="POST" action="{{ route('login') }}">
             @csrf
-
             <!-- Email Address -->
             <div>
                 <x-label for="email" :value="__('Email')" />
@@ -55,5 +54,12 @@
                 </div>
             </div>
         </form>
+        <div class="block items-center mb-3 w-full text-center my-5">
+            @if (Route::has('password.request'))
+                <a class="text-sm text-blue-600 font-semibold hover:text-gray-900" href="{{ route('register') }}">
+                    {{ __('New to SMP? Click to Sign Up') }}
+                </a>
+            @endif
+        </div>
     </x-auth-card>
 </x-guest-layout>

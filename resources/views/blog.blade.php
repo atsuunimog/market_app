@@ -16,67 +16,254 @@
                 </defs>
                 <rect fill="url(#7b568941-9ed0-4f49-85a0-5e21ca6c7ad6)" width="52" height="24"></rect>
               </svg>
-              <span class="relative">The</span>
+              <span class="relative"></span>
             </span>
-           School Blogger
+           School Blog
           </h2>
           <p class="text-base text-gray-700 md:text-lg">
-              Read and learn from amazing blog contents posted by schools
+              Read blogs from over 1000+ schools
           </p>
         </div>
+
+
         <div class="grid gap-5 row-gap-5 mb-8 lg:grid-cols-4 sm:grid-cols-2">
+
           <a href="blog-content" aria-label="View Item" class="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2">
             <div class="flex flex-col h-full">
               <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" class="object-cover w-full h-48" alt="" />
               <div class="flex-grow border border-t-0 rounded-b">
                 <div class="p-5">
-                  <h6 class="mb-2 font-semibold leading-5">The doctor said</h6>
-                  <p class="text-sm text-gray-900">
-                    Sportacus andrew weatherall goose Refined gentlemen super mario
+                  <p class="mb-2 text-xs font-semibold text-gray-600 uppercase">
+                    28 Dec 2020
                   </p>
+                  <h6 class="mb-2 leading-5 text-black font-bold">The doctor said</h6>
+                  <p class="text-sm text-gray-900">
+                    Bro ipsum dolor sit amet gaper backside single track, manny Bike epic clipless. Schraeder drop gondy.
+                  </p>
+                  <!--like and comment-->
+                  <div class="flex">
+                      <div class="w-full py-3">
+                        <!--like icon-->
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          class="w-5 h-5 inline-block  mr-3 text-gray-600 transition-colors duration-200 group-hover:text-deep-purple-accent-700"
+                        >
+                          <polyline points="6 23 1 23 1 12 6 12" fill="none" stroke-miterlimit="10"></polyline>
+                          <path d="M6,12,9,1H9a3,3,0,0,1,3,3v6h7.5a3,3,0,0,1,2.965,3.456l-1.077,7A3,3,0,0,1,18.426,23H6Z" fill="none" stroke="currentColor" stroke-miterlimit="10"></path>
+                        </svg>
+                         <!--like icon-->
+                         7k
+                      </div>
+                      <div class="w-full py-3">
+                         <!--like icon-->
+                         <svg
+                         xmlns="http://www.w3.org/2000/svg"
+                         width="24"
+                         height="24"
+                         viewBox="0 0 24 24"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         stroke-width="2"
+                         stroke="currentColor"
+                         class="w-5 h-5 inline-block  mr-3 text-gray-600 transition-colors duration-200 group-hover:text-deep-purple-accent-700"
+                       >
+                         <polyline points="23 5 23 18 19 18 19 22 13 18 12 18" fill="none" stroke-miterlimit="10"></polyline>
+                         <polygon points="19 2 1 2 1 14 5 14 5 19 12 14 19 14 19 2" fill="none" stroke="currentColor" stroke-miterlimit="10"></polygon>
+                       </svg>
+                         <!--like icon-->
+                         88
+                      </div>
+                  </div>
+                  <!--like and comment-->
                 </div>
               </div>
             </div>
           </a>
+
           <a href="/" aria-label="View Item" class="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2">
             <div class="flex flex-col h-full">
               <img src="https://images.pexels.com/photos/3182750/pexels-photo-3182750.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" class="object-cover w-full h-48" alt="" />
               <div class="flex-grow border border-t-0 rounded-b">
                 <div class="p-5">
-                  <h6 class="mb-2 font-semibold leading-5">Skate ipsum dolor</h6>
-                  <p class="text-sm text-gray-900">
-                    Bulbasaur Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  <p class="mb-2 text-xs font-semibold text-gray-600 uppercase">
+                    28 Dec 2020
                   </p>
+                  <h6 class="mb-2 leading-5 text-black font-bold">Skate ipsum dolor</h6>
+                  <p class="text-sm text-gray-900">
+                    Bro ipsum dolor sit amet gaper backside single track, manny Bike epic clipless. Schraeder drop gondy.
+                  </p>
+                   <!--like and comment-->
+                   <div class="flex">
+                    <div class="w-full py-3">
+                      <!--like icon-->
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        class="w-5 h-5 inline-block  mr-3 text-gray-600 transition-colors duration-200 group-hover:text-deep-purple-accent-700"
+                      >
+                        <polyline points="6 23 1 23 1 12 6 12" fill="none" stroke-miterlimit="10"></polyline>
+                        <path d="M6,12,9,1H9a3,3,0,0,1,3,3v6h7.5a3,3,0,0,1,2.965,3.456l-1.077,7A3,3,0,0,1,18.426,23H6Z" fill="none" stroke="currentColor" stroke-miterlimit="10"></path>
+                      </svg>
+                       <!--like icon-->
+                       7k
+                    </div>
+                    <div class="w-full py-3">
+                       <!--like icon-->
+                       <svg
+                       xmlns="http://www.w3.org/2000/svg"
+                       width="24"
+                       height="24"
+                       viewBox="0 0 24 24"
+                       stroke-linecap="round"
+                       stroke-linejoin="round"
+                       stroke-width="2"
+                       stroke="currentColor"
+                       class="w-5 h-5 inline-block  mr-3 text-gray-600 transition-colors duration-200 group-hover:text-deep-purple-accent-700"
+                     >
+                       <polyline points="23 5 23 18 19 18 19 22 13 18 12 18" fill="none" stroke-miterlimit="10"></polyline>
+                       <polygon points="19 2 1 2 1 14 5 14 5 19 12 14 19 14 19 2" fill="none" stroke="currentColor" stroke-miterlimit="10"></polygon>
+                     </svg>
+                       <!--like icon-->
+                       88
+                    </div>
+                </div>
+                <!--like and comment-->
                 </div>
               </div>
             </div>
           </a>
+
           <a href="/" aria-label="View Item" class="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2">
             <div class="flex flex-col h-full">
               <img src="https://images.pexels.com/photos/3182746/pexels-photo-3182746.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" class="object-cover w-full h-48" alt="" />
               <div class="flex-grow border border-t-0 rounded-b">
                 <div class="p-5">
-                  <h6 class="mb-2 font-semibold leading-5">They urge you</h6>
-                  <p class="text-sm text-gray-900">
-                    A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear.
+                  <p class="mb-2 text-xs font-semibold text-gray-600 uppercase">
+                    28 Dec 2020
                   </p>
+                  <h6 class="mb-2 leading-5 text-black font-bold">They urge you</h6>
+                  <p class="text-sm text-gray-900">
+                    Bro ipsum dolor sit amet gaper backside single track, manny Bike epic clipless. Schraeder drop gondy.
+                  </p>
+                   <!--like and comment-->
+                   <div class="flex">
+                    <div class="w-full py-3">
+                      <!--like icon-->
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        class="w-5 h-5 inline-block  mr-3 text-gray-600 transition-colors duration-200 group-hover:text-deep-purple-accent-700"
+                      >
+                        <polyline points="6 23 1 23 1 12 6 12" fill="none" stroke-miterlimit="10"></polyline>
+                        <path d="M6,12,9,1H9a3,3,0,0,1,3,3v6h7.5a3,3,0,0,1,2.965,3.456l-1.077,7A3,3,0,0,1,18.426,23H6Z" fill="none" stroke="currentColor" stroke-miterlimit="10"></path>
+                      </svg>
+                       <!--like icon-->
+                       7k
+                    </div>
+                    <div class="w-full py-3">
+                       <!--like icon-->
+                       <svg
+                       xmlns="http://www.w3.org/2000/svg"
+                       width="24"
+                       height="24"
+                       viewBox="0 0 24 24"
+                       stroke-linecap="round"
+                       stroke-linejoin="round"
+                       stroke-width="2"
+                       stroke="currentColor"
+                       class="w-5 h-5 inline-block  mr-3 text-gray-600 transition-colors duration-200 group-hover:text-deep-purple-accent-700"
+                     >
+                       <polyline points="23 5 23 18 19 18 19 22 13 18 12 18" fill="none" stroke-miterlimit="10"></polyline>
+                       <polygon points="19 2 1 2 1 14 5 14 5 19 12 14 19 14 19 2" fill="none" stroke="currentColor" stroke-miterlimit="10"></polygon>
+                     </svg>
+                       <!--like icon-->
+                       88
+                    </div>
+                </div>
+                <!--like and comment-->
                 </div>
               </div>
             </div>
           </a>
+
           <a href="/" aria-label="View Item" class="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2">
             <div class="flex flex-col h-full">
               <img src="https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" class="object-cover w-full h-48" alt="" />
               <div class="flex-grow border border-t-0 rounded-b">
                 <div class="p-5">
-                  <h6 class="mb-2 font-semibold leading-5">Baseball ipsum dolor</h6>
+                  <p class="mb-2 text-xs font-semibold text-gray-600 uppercase">
+                    28 Dec 2020
+                  </p>
+                  <h6 class="mb-2 leading-5 text-black font-bold">Baseball ipsum dolor</h6>
                   <p class="text-sm text-gray-900">
                     Bro ipsum dolor sit amet gaper backside single track, manny Bike epic clipless. Schraeder drop gondy.
                   </p>
+                   <!--like and comment-->
+                   <div class="flex">
+                    <div class="w-full py-3">
+                      <!--like icon-->
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        class="w-5 h-5 inline-block  mr-3 text-gray-600 transition-colors duration-200 group-hover:text-deep-purple-accent-700"
+                      >
+                        <polyline points="6 23 1 23 1 12 6 12" fill="none" stroke-miterlimit="10"></polyline>
+                        <path d="M6,12,9,1H9a3,3,0,0,1,3,3v6h7.5a3,3,0,0,1,2.965,3.456l-1.077,7A3,3,0,0,1,18.426,23H6Z" fill="none" stroke="currentColor" stroke-miterlimit="10"></path>
+                      </svg>
+                       <!--like icon-->
+                       7k
+                    </div>
+                    <div class="w-full py-3">
+                       <!--like icon-->
+                       <svg
+                       xmlns="http://www.w3.org/2000/svg"
+                       width="24"
+                       height="24"
+                       viewBox="0 0 24 24"
+                       stroke-linecap="round"
+                       stroke-linejoin="round"
+                       stroke-width="2"
+                       stroke="currentColor"
+                       class="w-5 h-5 inline-block  mr-3 text-gray-600 transition-colors duration-200 group-hover:text-deep-purple-accent-700"
+                     >
+                       <polyline points="23 5 23 18 19 18 19 22 13 18 12 18" fill="none" stroke-miterlimit="10"></polyline>
+                       <polygon points="19 2 1 2 1 14 5 14 5 19 12 14 19 14 19 2" fill="none" stroke="currentColor" stroke-miterlimit="10"></polygon>
+                     </svg>
+                       <!--like icon-->
+                       88
+                    </div>
+                </div>
+                <!--like and comment-->
                 </div>
               </div>
             </div>
           </a>
+
           <a href="/" aria-label="View Item" class="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2">
             <div class="flex flex-col h-full">
               <img src="https://images.pexels.com/photos/3184311/pexels-photo-3184311.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500" class="object-cover w-full h-48" alt="" />
@@ -90,6 +277,7 @@
               </div>
             </div>
           </a>
+
           <a href="/" aria-label="View Item" class="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2">
             <div class="flex flex-col h-full">
               <img src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" class="object-cover w-full h-48" alt="" />

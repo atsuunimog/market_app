@@ -4,12 +4,14 @@
     <div class="grid row-gap-10 mb-8 lg:grid-cols-6">
       <div class="grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4">
         <div>
-          <p class="font-medium tracking-wide text-gray-300">Category</p>
+          <p class="font-medium tracking-wide text-gray-300">Company Name</p>
           <ul class="mt-2 space-y-2">
             <li>
-              <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">News</a>
+              <a href="admin" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">
+                Admin Portal
+              </a>
             </li>
-            <li>
+            {{-- <li>
               <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">World</a>
             </li>
             <li>
@@ -17,7 +19,7 @@
             </li>
             <li>
               <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">References</a>
-            </li>
+            </li> --}}
           </ul>
         </div>
         <div>

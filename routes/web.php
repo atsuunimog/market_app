@@ -44,6 +44,19 @@ Route::get('school-front', function () {
     return view('school-front');
 });
 
+Route::get('faq', function () {
+    return view('faq');
+});
+
+Route::get('dashboard', function () {
+    if(Auth::user()->account_type == "sch_acct"):
+        return view('school/dashboard');
+    else:
+        return view('affiliate/dashboard');
+    endif;
+})->middleware(['auth'])->name('dashboard');
+
+
 Route::get('school/dashboard', function () {
     return view('school/dashboard');
 })->middleware(['auth'])->name('school/dashboard');
