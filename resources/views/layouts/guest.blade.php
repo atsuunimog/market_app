@@ -33,4 +33,5 @@
     @include('default_layout.footer')
 
     <script src="{{ asset('js/cxt-index.js') }}" defer></script>
+    <script src="https://unpkg.com/flowbite@1.3.3/dist/flowbite.js"></script>
 </html>

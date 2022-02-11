@@ -10,12 +10,18 @@
         <li>
           <a onclick="toggle_mobile_sub_nav(this); return false;"  aria-label="Product pricing" title="Product pricing" class="cursor-pointer relative font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">More
               <i class="icon ion-chevron-down text-xs" ></i>
-              <div id="dropdown-toggle" class="absolute top-8 text-black bg-white w-60 z-10 border px-3 py-3 rounded shadow-gray-900 hidden">
+              <div id="dropdown-toggle" class="absolute top-8 text-black bg-white w-60 z-50  border px-3 py-3 rounded shadow-gray-900 hidden">
                     <ul>
+                      <li><a href="{{ url('welcome_x') }}" class='mb-3 block'>Default Home<i class='icon ion-android-arrow-forward float-right'></i></a></li>
                       <li><a href="{{ url('about') }}" class='mb-3 block'>About Us<i class='icon ion-android-arrow-forward float-right'></i></a></li>
                       <li><a href="{{ url('scholarship') }}" class='mb-3 block'>Scholarship<i class='icon ion-android-arrow-forward float-right'></i></a></li>
                       <li><a href="{{ url('school-front') }}" class='mb-3 block'>School Landing Page<i class='icon ion-android-arrow-forward float-right'></i></a></li>
                       <li><a href="{{ url('faq') }}" class='mb-3 block'>FAQ<i class='icon ion-android-arrow-forward float-right'></i></a></li>
+                      <li><a href="{{ url('admin') }}" class='mb-3 block'>Admin Main<i class='icon ion-android-arrow-forward float-right'></i></a></li>
+                      <li><a href="{{ url('admin-school') }}" class='mb-3 block'>Admin School<i class='icon ion-android-arrow-forward float-right'></i></a></li>
+                      <li><a href="{{ url('activation') }}" class='mb-3 block'>Activation<i class='icon ion-android-arrow-forward float-right'></i></a></li>
+                      <li><a href="{{ url('awaiting') }}" class='mb-3 block'>Awaiting<i class='icon ion-android-arrow-forward float-right'></i></a></li>
+
                     </ul>
               </div>
           </a>

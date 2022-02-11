@@ -44,9 +44,46 @@ Route::get('school-front', function () {
     return view('school-front');
 });
 
+Route::get('admin', function () {
+    return view('admin_default/admin-dashboard');
+});
+
+Route::get('admin', function () {
+    return view('admin_default/admin-dashboard');
+});
+
+Route::get('admin-school', function () {
+    return view('admin_default/school-private');
+});
+
+
+Route::get('activation', function () {
+    return view('admin_default/activated-school');
+});
+
+
+Route::get('awaiting', function () {
+    return view('admin_default/awaiting-activation-school');
+});
+
+
 Route::get('faq', function () {
     return view('faq');
 });
+
+Route::get('welcome_x', function () {
+    return view('welcome_x');
+});
+
+Route::get('create-admission', function () {
+    return view('create-admission');
+});
+
+Route::get('school-achievement', function () {
+    return view('school-achievement');
+});
+
+
 
 Route::get('dashboard', function () {
     if(Auth::user()->account_type == "sch_acct"):

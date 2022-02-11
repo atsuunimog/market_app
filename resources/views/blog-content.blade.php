@@ -31,7 +31,7 @@
                   <div class="mb-4 transition-shadow duration-300 hover:shadow-xl lg:mb-6">
                     <img class="object-cover w-full h-56 rounded shadow-lg sm:h-64 md:h-80 lg:h-96" src="https://images.pexels.com/photos/3727459/pexels-photo-3727459.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="" />
                   </div>
-                  <p class="max-w-xl my-4 text-gray-700 sm:mx-auto text-left text-lg">
+                  <p class="max-w-xl my-10 text-gray-700 sm:mx-auto text-left text-lg">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ullamco laboris aliquip ex ea.
                   </p>
 
@@ -50,12 +50,12 @@
                   <div class='inline-block mx-auto mt-5'>
                   <div class="flex">
                     <div class="px-5">
-                        <button class='border rounded-full p-2 shadow'>
+                        <button class='border rounded-full p-2 shadow hover:bg-cyan-200 transition-all'>
                             <img height='40px' width='45px' src="https://img.icons8.com/pastel-glyph/64/000000/thumb-up--v2.png"/>
                         </button>
                     </div>
                     <div class="px-5">
-                      <button class="border rounded-full p-2 shadow">
+                      <button class="border rounded-full p-2 shadow hover:bg-cyan-200 transition-all">
                           <img height='40px' width='45px' src="https://img.icons8.com/pastel-glyph/64/000000/thumbs-down--v2.png"/>
                       </button>
                     </div>
@@ -80,7 +80,7 @@
                   </div>
       
                   <div class='items-center  mt-4'>
-                      <x-button class="w-full">
+                      <x-button class="">
                           {{ __('Comment') }}
                       </x-button>
                   </div>
