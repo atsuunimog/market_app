@@ -33,7 +33,7 @@
 </div>
 
 <!--SECTION-->
-<div class="px-4 pt-16 mb-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pt-20">
+<div class="animate__animated animate__fadeInUp px-4 pt-16 mb-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pt-20">
   <div class="grid gap-8 row-gap-5 lg:grid-cols-3">
 
     <div class="relative p-px overflow-hidden transition duration-300 transform border rounded shadow-sm hover:scale-105 group hover:shadow-xl">
@@ -61,7 +61,7 @@
       </div>
     </div>
     
-    <div class="relative p-px overflow-hidden transition duration-300 transform border rounded shadow-sm hover:scale-105 group hover:shadow-xl">
+    <div class=" relative p-px overflow-hidden transition duration-300 transform border rounded shadow-sm hover:scale-105 group hover:shadow-xl">
       <div class="absolute bottom-0 left-0 w-full h-1 duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
       <div class="absolute bottom-0 left-0 w-1 h-full duration-300 origin-bottom transform scale-y-0 bg-deep-purple-accent-400 group-hover:scale-y-100"></div>
       <div class="absolute top-0 left-0 w-full h-1 duration-300 origin-right transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
@@ -116,7 +116,7 @@
 
 
 <!--SECTION-->
-<div class="px-4 pb-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pb-20">
+<div class="animate__animated animate__fadeInUp px-4 pb-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pb-10">
   <div class="grid gap-8 row-gap-5 lg:grid-cols-3">
 
     <div class="relative p-px overflow-hidden transition duration-300 transform border rounded shadow-sm hover:scale-105 group hover:shadow-xl">
@@ -197,48 +197,7 @@
 
 
 <!--SECTION-->
-<div class="px-4  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-  <div class="mx-auto mb-10 lg:max-w-xl sm:text-center">
-    <p class="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
-     Meet Members Of Staff
-    </p>
-    <p class="text-base text-gray-700 md:text-lg">
-      Members of Staff at XYZ Primary and Senior Secondary School
-    </p>
-  </div>
-  <div class="grid gap-10 mx-auto lg:max-w-screen-lg sm:grid-cols-2 lg:grid-cols-4">
-    <div class="flex flex-col items-center">
-      <img class="object-cover w-20 h-20 mb-2 rounded-full shadow" src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260" alt="Person" />
-      <div class="flex flex-col items-center">
-        <p class="text-lg font-bold">Oliver Aguilerra</p>
-        <p class="text-sm text-gray-800">Product Manager</p>
-      </div>
-    </div>
-    <div class="flex flex-col items-center">
-      <img class="object-cover w-20 h-20 mb-2 rounded-full shadow" src="https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="Person" />
-      <div class="flex flex-col items-center">
-        <p class="text-lg font-bold">Marta Clermont</p>
-        <p class="text-sm text-gray-800">Design Team Lead</p>
-      </div>
-    </div>
-    <div class="flex flex-col items-center">
-      <img class="object-cover w-20 h-20 mb-2 rounded-full shadow" src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="Person" />
-      <div class="flex flex-col items-center">
-        <p class="text-lg font-bold">Anthony Geek</p>
-        <p class="text-sm text-gray-800">CTO, Lorem Inc.</p>
-      </div>
-    </div>
-    <div class="flex flex-col items-center">
-      <img class="object-cover w-20 h-20 mb-2 rounded-full shadow" src="https://images.pexels.com/photos/3747435/pexels-photo-3747435.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="Person" />
-      <div class="flex flex-col items-center">
-        <p class="text-lg font-bold">Alice Melbourne</p>
-        <p class="text-sm text-gray-800">Human Resources</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="text-center my-20">
+<div class="text-center pb-10">
   <a href="/" aria-label="" class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">
     See Gallery
     <svg class="inline-block w-3 ml-2" fill="currentColor" viewBox="0 0 12 12">

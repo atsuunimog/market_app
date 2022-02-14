@@ -1,68 +1,89 @@
 <x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+    <div class="px-4 py-10 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+        <div class="max-w-xl mb-10 md:mx-auto sm:text-center text-center lg:max-w-2xl md:mb-12">
+          <div>
+            <p class="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
+            Sign Up
+            </p>
+          </div>
+          <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
+            <span class="relative inline-block">
+              <svg viewBox="0 0 52 24" fill="currentColor" class="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block">
+                <defs>
+                  <pattern id="f51618fb-0edb-4bcb-b35a-ffc770941286" x="0" y="0" width=".135" height=".30">
+                    <circle cx="1" cy="1" r=".7"></circle>
+                  </pattern>
+                </defs>
+                <rect fill="url(#f51618fb-0edb-4bcb-b35a-ffc770941286)" width="52" height="24"></rect>
+              </svg>
+              <span class="relative">Create an Account</span>
+            </span>
+            {{-- as a School or Affiliate --}}
+          </h2>
+        </div>
+<div class="grid md:grid-cols-2 sm:grid-cols-1 py-5">
+<div class="col-span-1 sm:col-span-1">
+<div class="mb-3">
+<!--add card-->
+<div class="mx-auto relative max-w-sm bg-white rounded-lg border h-80 md:h-80 sm:h-80 border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+    <div  class='d-block shadow w-20 h-20 mx-auto px-3 py-3 mt-5 rounded'>
+        <img src="https://img.icons8.com/external-kosonicon-flat-kosonicon/64/000000/external-stationary-back-to-school-kosonicon-flat-kosonicon.png"/>
+    </div>
+    <div class="p-5">
+    <a href="#">
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+        Create a School Account
+    </h5>
+    </a>
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+       Make your business public and accessible. Let the world find your institution easily
+    </p>
+    <div class="absolute bottom-5 py-3">
+    <a href="{{ route('school-register') }}"
+        type="submit"
+        class=" inline-flex mx-auto  mt-3 items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-indigo-500 focus:shadow-outline focus:outline-none"
+        >
+        Create School Account
+        <i class='icon ion-android-arrow-forward ml-3'></i>
+    </a>
+    </div>
+    </div>
+    </div>
+<!--//add card-->
+</div>
+</div>
+<div class="col-span-1 sm:col-span-1">
+<div class="mb-3">
+<!--add card-->
+<div class="mx-auto relative max-w-sm bg-white rounded-lg h-80 md:h-80 sm:h-80  border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+    <div  class='d-block shadow w-20 h-20 mx-auto px-3 py-3 mt-5 rounded'>
+        <img class="mx-auto mb-3" height="64px" width="64px" 
+        src="https://img.icons8.com/external-kmg-design-flat-kmg-design/64/000000/external-user-back-to-school-kmg-design-flat-kmg-design.png"/>
+        
+    </div>
+    <div class="p-5">
+    <a href="#">
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+        Create an Affiliate Account
+    </h5>
+    </a>
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+     Earn passive income by publicly sharing school sholarship opportunites
+    </p>
+    <div class="absolute bottom-5 py-3">
+        <a href="{{ route('affiliate-register') }}"
+            type="submit"
+            class="inline-flex mx-auto mt-3 items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-indigo-500 focus:shadow-outline focus:outline-none"
+            >
+            Create Affiliate Account
+            <i class='icon ion-android-arrow-forward ml-3'></i>
+        </a>
+    </div>
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
-
-            <div class="grid grid-cols-2 gap-2">
-                <!-- Name -->
-                <div>
-                    <x-label for="name" :value="__('Username')" />
-                    <x-input id="name" class="block mt-1 w-full" type="text" name="username" :value="old('username')" required autofocus />
-                </div>
-                <!-- Email Address -->
-                <div>
-                    <x-label for="email" :value="__('Email')" />
-                    <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-                </div>
-            </div>
-
-            <!-- Role -->
-            <div class="mt-4">
-                <x-label for="account-type" :value="__('Select Account Type')" class="mb-1"/>
-                <select name='account_type' id="account-type" class="block flex-grow w-full h-12 px-4 mb-3 transition duration-200 bg-white border border-gray-300 rounded shadow-sm">
-                    <option disabled selected>Select account type</option>
-                    <option value="sch_acct">Register as School</option>
-                    <option value="aff_acct">Register as Affiliate</option>
-                </select>
-            </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-                <x-input id="password" class="block mt-1 w-full"
-                    type="password"
-                    name="password"
-                    required autocomplete="new-password" />
-            </div>
-
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                    type="password"
-                    name="password_confirmation" required />
-            </div>
-
-            <div class='items-center  mt-4'>
-                <x-button class="w-full">
-                    {{ __('Register') }}
-                </x-button>
-            </div>
-
-            <div class="block mt-4">
-                <a class="text-sm text-blue-600 hover:text-gray-900 font-semibold " href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-            </div>
-        </form>
-    </x-auth-card>
+    </div>
+    </div>
+        <!--//add card-->
+    </div>
+</div>
+</div>
 </x-guest-layout>

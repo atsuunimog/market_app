@@ -1,12 +1,40 @@
 <x-guest-layout>
+
+<style>
+
+.slick-prev{
+  font-family:initial !important;
+  color:#333; 
+  background-color:red !important;
+  z-index: 999;
+  position: absolute;
+  top:40%;
+  left:0px;
+}
+
+.slick-next{
+  font-family:initial !important;
+  color:#333; 
+  background-color:red !important;
+  z-index: 999;
+  position: absolute;
+  top:40%;
+  right:0px;
+}
+
+.slick-next:after{
+  content:"";
+}
+</style>
+
     <!--titlebar-->
-    <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 py-10">
+    <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 pt-10">
       <div class="mx-auto sm:max-w-2xl">
         <div class="text-center">
           <div class="mb-12  max-w-xl md:mx-auto sm:text-center lg:max-w-2xl md:mb-6">
             <div>
               <p class="inline-block px-3 py-px mb-3 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
-                Data Driven Software
+               School Marketing Platform
               </p>
             </div>
             <h2 class="max-w-lg font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
@@ -26,7 +54,7 @@
           </div>
     
           <form class="flex flex-col items-center w-full mt-6 md:mt-0 md:flex-row md:px-16">
-            <x-input id="email" class="block  w-full" type="email" name="email" :value="old('email')" required autofocus />
+            <x-input id="email" placeholder='Enter School Name' class="block  w-full" type="email" name="email" :value="old('email')" required autofocus />
     
             <button
               type="submit"
@@ -41,18 +69,88 @@
     <!--title-->
     
     <!--Image Carousel-->
-    <div class="relative px-4 border py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-      <p>Scholarship Carousel</p>
+    <div class="relative px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl pt-10">
+      <div class="slick-slider">
+        <div class="px-3 w-full">
+          <!--slick content-->
+            <div class="border rounded shadow text-center px-3 py-5">
+              <img class="object-cover d-block mx-auto w-20 h-20 rounded-full shadow" 
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrzTtyzDJJxUkJeZMzhSmk0twx8K2xODwYpA&usqp=CAU" alt="Person" />
+              <p class=" font-bold py-3">1 XYZ Primary and Secondary School Scholarship</p>
+            </div>
+          <!--slick content-->
+        </div>
+
+        <div class="px-3 w-full">
+          <!--slick content-->
+          <div class="border rounded shadow text-center px-3 py-5">
+            <img class="object-cover d-block mx-auto w-20 h-20 rounded-full shadow" 
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrzTtyzDJJxUkJeZMzhSmk0twx8K2xODwYpA&usqp=CAU" alt="Person" />
+            <p class=" font-bold py-3">2 XYZ Primary and Secondary School Scholarship</p>
+          </div>
+        <!--slick content-->
+        </div>
+
+        <div class="px-3 w-full">
+           <!--slick content-->
+           <div class="border rounded shadow text-center px-3 py-5">
+            <img class="object-cover d-block mx-auto w-20 h-20 rounded-full shadow" 
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrzTtyzDJJxUkJeZMzhSmk0twx8K2xODwYpA&usqp=CAU" alt="Person" />
+            <p class=" font-bold py-3">3 XYZ Primary and Secondary School Scholarship</p>
+          </div>
+        <!--slick content-->
+        </div>
+
+        <div class="px-3 w-full">
+           <!--slick content-->
+           <div class="border rounded shadow text-center px-3 py-5">
+            <img class="object-cover d-block mx-auto w-20 h-20 rounded-full shadow" 
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrzTtyzDJJxUkJeZMzhSmk0twx8K2xODwYpA&usqp=CAU" alt="Person" />
+            <p class=" font-bold py-3">4 XYZ Primary and Secondary School Scholarship</p>
+          </div>
+        <!--slick content-->
+        </div>
+
+        <div class="px-3 w-full">
+           <!--slick content-->
+           <div class="border rounded shadow text-center px-3 py-5">
+            <img class="object-cover d-block mx-auto w-20 h-20 rounded-full shadow" 
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrzTtyzDJJxUkJeZMzhSmk0twx8K2xODwYpA&usqp=CAU" alt="Person" />
+            <p class=" font-bold py-3">5 XYZ Primary and Secondary School Scholarship</p>
+          </div>
+        <!--slick content-->
+        </div>
+
+        <div class="px-3 w-full">
+           <!--slick content-->
+           <div class="border rounded shadow text-center px-3 py-5">
+            <img class="object-cover d-block mx-auto w-20 h-20 rounded-full shadow" 
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrzTtyzDJJxUkJeZMzhSmk0twx8K2xODwYpA&usqp=CAU" alt="Person" />
+            <p class=" font-bold py-3">6 XYZ Primary and Secondary School Scholarship</p>
+          </div>
+        <!--slick content-->
+        </div>
+
+      </div>
     </div>
     <!--Image Carousel-->
     
     <!--Image Carousel-->
      <!--filters-->
-     <div class="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+     <div class="relative px-4 py-10 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
      <div class="grid md:grid-cols-4 gap-3 sm:grid-cols-1">
       <div class="md:col-span-1 border sm:col-span-1 rounded">
-          <div class=" px-3 py-3 text-center">
-              Toggle Menu
+          <div class="flex px-3 py-3 text-center">
+               <div class='w-full'>
+                  <button>
+                    <i class="ion-navicon-round text-2xl"></i>
+                  </button>
+               </div>
+               <div class='w-full'>
+                 <button>
+                    <i class="icon ion-grid text-2xl"></i>
+                 </button>
+               </div>
           </div>
       </div>
       <div class="md:col-span-3 border sm:col-span-1 rounded">
@@ -68,6 +166,7 @@
     
       <!--page tiles-->
       <div class="relative px-4 pb-16 pt-10 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pb-20">
+        
         <div class="absolute inset-x-0 top-0 items-center justify-center hidden overflow-hidden md:flex md:inset-y-0">
           <svg viewBox="0 0 88 88" class="w-full max-w-screen-xl text-indigo-100">
             <circle fill="currentColor" cx="44" cy="44" r="15.5"></circle>
@@ -77,120 +176,135 @@
             <circle fill-opacity="0.3" fill="currentColor" cx="44" cy="44" r="22.5"></circle>
           </svg>
         </div>
+
         <div class="relative grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
-            <div class="p-5">
-              <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
-                <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
-                  <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-                </svg>
-              </div>
-              <p class="mb-2 font-bold">Football Sports</p>
-              <p class="text-sm leading-5 text-gray-900">
-                Sed ut perspiciatis unde omnis iste. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
-            </div>
-            <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
-          </div>
-          <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
-            <div class="p-5">
-              <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
-                <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
-                  <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-                </svg>
-              </div>
-              <p class="mb-2 font-bold">Bowling Sports</p>
-              <p class="text-sm leading-5 text-gray-900">
-                Disrupt inspire and think tank, social entrepreneur but preliminary thinking think tank compelling.
-              </p>
-            </div>
-            <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
-          </div>
-          <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
-            <div class="p-5">
-              <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
-                <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
-                  <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-                </svg>
-              </div>
-              <p class="mb-2 font-bold">Cycling Sports</p>
-              <p class="text-sm leading-5 text-gray-900">
-                A slice of heaven. O for awesome, this chocka full cuzzie is as rip-off as a cracker.
-              </p>
-            </div>
-            <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
-          </div>
-          <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
-            <div class="p-5">
-              <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
-                <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
-                  <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-                </svg>
-              </div>
-              <p class="mb-2 font-bold">Weight Lifting Sports</p>
-              <p class="text-sm leading-5 text-gray-900">
-                Meanwhile, in behind the bicycle shed, Hercules Morse, as big as a horse.
-              </p>
-            </div>
-            <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
-          </div>
-          <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
-            <div class="p-5">
-              <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
-                <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
-                  <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-                </svg>
-              </div>
-              <p class="mb-2 font-bold">Golf Sports</p>
-              <p class="text-sm leading-5 text-gray-900">
-                Disrupt inspire and think tank, social entrepreneur but preliminary thinking think tank compelling.
-              </p>
-            </div>
-            <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
-          </div>
-          <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
-            <div class="p-5">
-              <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
-                <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
-                  <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-                </svg>
-              </div>
-              <p class="mb-2 font-bold">Hockey Sports</p>
-              <p class="text-sm leading-5 text-gray-900">
-                A business big enough that it could be listed on the NASDAQ goes belly up.
-              </p>
-            </div>
-            <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
-          </div>
-          <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
-            <div class="p-5">
-              <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
-                <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
-                  <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-                </svg>
-              </div>
-              <p class="mb-2 font-bold">Shooting Sports</p>
-              <p class="text-sm leading-5 text-gray-900">
-                Lookout flogging bilge rat main sheet bilge water nipper fluke to go on account heave down clap of thunder.
-              </p>
-            </div>
-            <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
-          </div>
-          <div class="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
-            <div class="p-5">
-              <div class="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
-                <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
-                  <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-                </svg>
-              </div>
-              <p class="mb-2 font-bold">Martial Arts</p>
-              <p class="text-sm leading-5 text-gray-900">
-                Webtwo ipsum orkut reddit meebo skype vimeo jajah spock empressr zimbra, mobly napster.
-              </p>
-            </div>
-            <div class="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
-          </div>
-        </div>
+
+
+
+  <div class="max-w-sm bg-white rounded-lg position-relative border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+  <div class="flex flex-col items-center pb-10 px-3 text-center">
+  <img class="mt-5 w-20 h-20 rounded-full shadow-lg" 
+    src="https://cdn.logojoy.com/wp-content/uploads/2018/05/30154810/13_big2-768x591.png"
+   alt="Bonnie image">
+  <h3 class="mb-1 text-xl mt-3 font-bold text-gray-900 dark:text-white">Dowen College</h3>
+  <span class="text-sm  text-gray-500 dark:text-gray-400">
+    Ikeja, Lagos State
+  </span>
+  <div class="mt-4 space-x-3 lg:mt-6 absolute bottom-0 pb-5">
+      <a href="{{ url('school-front') }}"
+      type="submit"
+      class="inline-flex mx-auto  mt-3 items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-indigo-500 focus:shadow-outline focus:outline-none"
+    >
+      Learn more
+    </a>
+  </div>
+  </div>
+  </div>
+  
+
+  <div class="max-w-sm relative bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+    <div class="flex flex-col items-center pb-10 px-3 text-center">
+    <img class="mt-5 w-20 h-20 rounded-full shadow-lg" 
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrzTtyzDJJxUkJeZMzhSmk0twx8K2xODwYpA&usqp=CAU"
+     alt="Bonnie image">
+    <h3 class="mb-1 text-xl mt-3 font-bold text-gray-900 dark:text-white">Indian Institute of Technology</h3>
+    <span class="text-sm  text-gray-500 dark:text-gray-400">
+      Ikeja, Lagos State
+    </span>
+    <div class="mt-4 space-x-3 lg:mt-6 absolute bottom-0 pb-5">
+        <a href="{{ url('school-front') }}"
+        type="submit"
+        class="inline-flex mx-auto  mt-3 items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-indigo-500 focus:shadow-outline focus:outline-none"
+      >
+        Learn more
+      </a>
+    </div>
+    </div>
+    </div>
+
+    <div class="max-w-sm relative bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+      <div class="flex flex-col items-center pb-10 px-3 text-center">
+      <img class="mt-5 w-20 h-20 rounded-full shadow-lg" 
+        src="https://www.nigerianlawschool.edu.ng/images/logo-170x172.png"
+       alt="Bonnie image">
+      <h3 class="mb-1 text-xl mt-3 font-bold text-gray-900 dark:text-white">Nigerian Counsel of Legal Education</h3>
+      <span class="text-sm  text-gray-500 dark:text-gray-400">
+        Ikeja, Lagos State
+      </span>
+      <div class="mt-4 space-x-3 lg:mt-6 absolute bottom-0 pb-5">
+          <a href="{{ url('school-front') }}"
+          type="submit"
+          class="inline-flex mx-auto  mt-3 items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-indigo-500 focus:shadow-outline focus:outline-none"
+        >
+          Learn more
+        </a>
       </div>
-      <!--page tiles-->
-    </x-guest-layout>
+      </div>
+      </div>
+
+
+      <div class="max-w-sm relative bg-white rounded-lg border  border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+        <div class="flex flex-col items-center pb-10 px-3 text-center">
+        <img class="mt-5 w-20 h-20 rounded-full shadow-lg" 
+          src="https://upload.wikimedia.org/wikipedia/en/d/d2/UniLagos.jpg"
+         alt="Bonnie image">
+        <h3 class="mb-1 text-xl mt-3 font-bold text-gray-900 dark:text-white">Call to Glory Primary and Secondary School</h3>
+        <span class="text-sm  text-gray-500 dark:text-gray-400">
+          Ikeja, Lagos State
+        </span>
+        <div class="mt-4 space-x-3 lg:mt-6 pb-5">
+            <a href="{{ url('school-front') }}"
+            type="submit"
+            class="inline-flex mx-auto  mt-3 items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-indigo-500 focus:shadow-outline focus:outline-none"
+          >
+            Learn more
+          </a>
+        </div>
+        </div>
+        </div>    
+    </div>
+  </div>
+  <!--page tiles-->
+</x-guest-layout>
+
+    <script type="text/javascript">
+   $('.slick-slider').slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      arrows: false,
+      mobileFirst: true, 
+      adaptiveHeight: true,
+      responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 4,
+                slidesToScroll: 4,
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+            }
+        },
+        {
+          breakpoint: 300,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+    });
+    </script>

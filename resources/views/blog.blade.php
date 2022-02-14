@@ -18,7 +18,7 @@
               </svg>
               <span class="relative"></span>
             </span>
-           School Blog
+           Blog
           </h2>
           <p class="text-base text-gray-700 md:text-lg">
               Read blogs from over 1000+ schools

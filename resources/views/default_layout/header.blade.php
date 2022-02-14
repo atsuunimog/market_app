@@ -4,7 +4,7 @@
     <div class="relative flex grid items-center grid-cols-2 lg:grid-cols-3">
       <ul class="flex items-center hidden space-x-8 lg:flex">
         <li><a href="/" aria-label="Our product" title="Our product" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Home</a></li>
-        <li><a href="{{ url('contact') }}" aria-label="Our product" title="Our product" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Contact</a></li>
+        <li><a href="{{ url('pricing') }}" aria-label="Our product" title="Our product" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Pricing</a></li>
         <li><a href="{{ url('help') }}" aria-label="Product pricing" title="Product pricing" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Help</a></li>
         <li><a href="{{ url('blog') }}" aria-label="Blog" title="Blog" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Blog</a></li>
         <li>
@@ -12,16 +12,11 @@
               <i class="icon ion-chevron-down text-xs" ></i>
               <div id="dropdown-toggle" class="absolute top-8 text-black bg-white w-60 z-50  border px-3 py-3 rounded shadow-gray-900 hidden">
                     <ul>
-                      <li><a href="{{ url('welcome_x') }}" class='mb-3 block'>Default Home<i class='icon ion-android-arrow-forward float-right'></i></a></li>
+                      <li><a href="{{ url('contact') }}" class='mb-3 block'>Contact<i class='icon ion-android-arrow-forward float-right'></i></a></li>
                       <li><a href="{{ url('about') }}" class='mb-3 block'>About Us<i class='icon ion-android-arrow-forward float-right'></i></a></li>
                       <li><a href="{{ url('scholarship') }}" class='mb-3 block'>Scholarship<i class='icon ion-android-arrow-forward float-right'></i></a></li>
                       <li><a href="{{ url('school-front') }}" class='mb-3 block'>School Landing Page<i class='icon ion-android-arrow-forward float-right'></i></a></li>
                       <li><a href="{{ url('faq') }}" class='mb-3 block'>FAQ<i class='icon ion-android-arrow-forward float-right'></i></a></li>
-                      <li><a href="{{ url('admin') }}" class='mb-3 block'>Admin Main<i class='icon ion-android-arrow-forward float-right'></i></a></li>
-                      <li><a href="{{ url('admin-school') }}" class='mb-3 block'>Admin School<i class='icon ion-android-arrow-forward float-right'></i></a></li>
-                      <li><a href="{{ url('activation') }}" class='mb-3 block'>Activation<i class='icon ion-android-arrow-forward float-right'></i></a></li>
-                      <li><a href="{{ url('awaiting') }}" class='mb-3 block'>Awaiting<i class='icon ion-android-arrow-forward float-right'></i></a></li>
-
                     </ul>
               </div>
           </a>
@@ -31,7 +26,8 @@
         <span class="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">SMP APP</span>
       </a>
 
-      @if (Route::has('login'))
+    
+      @if (Route::has('user-login'))
           <ul class="flex items-center hidden ml-auto space-x-8 lg:flex">
             @auth
               <!-- Settings Dropdown -->
@@ -68,10 +64,10 @@
           </div>
 
             @else
-                <li><a href="{{ route('login') }}"    class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Log in</a></li>
+                <li><a href="{{ route('user-login') }}"    class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Log in</a></li>
                 @if (Route::has('register'))
                   <li>
-                    <a href="{{ route('register') }}" 
+                    <a href="{{ url('register') }}" 
                     class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Register
                     </a>
                   </li>
@@ -111,9 +107,11 @@
             </div>
             <nav>
               <ul class="space-y-4">
-                <li><a href="/" aria-label="Our product" title="Our product" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">Contact Us</a></li>
-                <li><a href="/" aria-label="Our product" title="Our product" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">About Us</a></li>
-                <li><a href="/" aria-label="Product pricing" title="Product pricing" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">Help</a></li>
+                <li><a href="pricing" aria-label="Our product" title="Our product" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">Pricing</a></li>
+                <li><a href="blog" aria-label="Our product" title="Our product" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">Blog</a></li>
+                <li><a href="contact" aria-label="Our product" title="Our product" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">Contact Us</a></li>
+                <li><a href="about" aria-label="Our product" title="Our product" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">About Us</a></li>
+                <li><a href="help" aria-label="Product pricing" title="Product pricing" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">Help</a></li>
 
                 @if (Route::has('login'))
                         @auth

@@ -14,14 +14,45 @@ Route::get('/register', [RegisteredUserController::class, 'create'])
                 ->middleware('guest')
                 ->name('register');
 
-Route::post('/register', [RegisteredUserController::class, 'store'])
+//School registeration 
+Route::get('/school-register', [RegisteredUserController::class, 'createSchool'])
+                ->middleware('guest')
+                ->name('school-register');                  
+
+Route::post('/school-register', [RegisteredUserController::class, 'storeSchool'])
                 ->middleware('guest');
 
-Route::get('/login', [AuthenticatedSessionController::class, 'create'])
+//Affiliate registeration 
+Route::get('/affiliate-register', [RegisteredUserController::class, 'createAffiliate'])
                 ->middleware('guest')
-                ->name('login');
+                ->name('affiliate-register');
 
-Route::post('/login', [AuthenticatedSessionController::class, 'store'])
+Route::post('/affiliate-register', [RegisteredUserController::class, 'storeAffiliate'])
+                ->middleware('guest');
+
+//Admin registeration
+Route::get('/admin-register', [RegisteredUserController::class, 'createAdmin'])
+                ->middleware('guest')
+                ->name('admin-register');
+
+Route::post('/admin-register', [RegisteredUserController::class, 'storeAdmin'])
+                ->middleware('guest');
+
+
+//School and Affiliate Login
+Route::get('/user-login', [AuthenticatedSessionController::class, 'createUser'])
+                ->middleware('guest')
+                ->name('user-login');
+
+Route::post('/user-login', [AuthenticatedSessionController::class, 'storeUser'])
+                ->middleware('guest');
+
+//admin login
+Route::get('/admin-login', [AuthenticatedSessionController::class, 'create_user_admin'])
+                ->middleware('guest')
+                ->name('admin-login');
+
+Route::post('/admin-login', [AuthenticatedSessionController::class, 'store_user_admin'])
                 ->middleware('guest');
 
 Route::get('/forgot-password', [PasswordResetLinkController::class, 'create'])
