@@ -18,6 +18,7 @@ return [
         'passwords' => 'users',
     ],
 
+
     /*
     |--------------------------------------------------------------------------
     | Authentication Guards
@@ -40,6 +41,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'affiliate' => [
+            'driver' => 'session',
+            'provider' => 'affiliate_users',
+        ]
     ],
 
     /*
@@ -64,7 +69,11 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
-
+        'affiliate_users' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\AffiliateUser::class,
+        ]
+        
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',

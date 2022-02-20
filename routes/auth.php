@@ -39,13 +39,21 @@ Route::post('/admin-register', [RegisteredUserController::class, 'storeAdmin'])
                 ->middleware('guest');
 
 
-//School and Affiliate Login
-Route::get('/user-login', [AuthenticatedSessionController::class, 'createUser'])
+//School Login
+Route::get('/school-login', [AuthenticatedSessionController::class, 'createSchoolUser'])
                 ->middleware('guest')
-                ->name('user-login');
+                ->name('school-login');
 
-Route::post('/user-login', [AuthenticatedSessionController::class, 'storeUser'])
+Route::post('/school-login', [AuthenticatedSessionController::class, 'storeSchoolUser'])
                 ->middleware('guest');
+
+// Affiliate Login
+Route::get('/affiliate-login', [AuthenticatedSessionController::class, 'createAffiliateUser'])
+->middleware('guest')
+->name('affiliate-login');
+
+Route::post('/affiliate-login', [AuthenticatedSessionController::class, 'storeAffiliateUser'])
+->middleware('guest');
 
 //admin login
 Route::get('/admin-login', [AuthenticatedSessionController::class, 'create_user_admin'])

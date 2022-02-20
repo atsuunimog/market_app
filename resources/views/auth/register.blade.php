@@ -3,7 +3,7 @@
         <div class="max-w-xl mb-10 md:mx-auto sm:text-center text-center lg:max-w-2xl md:mb-12">
           <div>
             <p class="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
-            Sign Up
+           Login or SignUp
             </p>
           </div>
           <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
@@ -16,7 +16,7 @@
                 </defs>
                 <rect fill="url(#f51618fb-0edb-4bcb-b35a-ffc770941286)" width="52" height="24"></rect>
               </svg>
-              <span class="relative">Create an Account</span>
+              <span class="relative">Sign In</span>
             </span>
             {{-- as a School or Affiliate --}}
           </h2>
@@ -25,28 +25,38 @@
 <div class="col-span-1 sm:col-span-1">
 <div class="mb-3">
 <!--add card-->
-<div class="mx-auto relative max-w-sm bg-white rounded-lg border h-80 md:h-80 sm:h-80 border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+<div class="mx-auto text-center relative max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
     <div  class='d-block shadow w-20 h-20 mx-auto px-3 py-3 mt-5 rounded'>
         <img src="https://img.icons8.com/external-kosonicon-flat-kosonicon/64/000000/external-stationary-back-to-school-kosonicon-flat-kosonicon.png"/>
     </div>
     <div class="p-5">
     <a href="#">
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-        Create a School Account
+     School Account
     </h5>
     </a>
     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-       Make your business public and accessible. Let the world find your institution easily
+       Make your school public and accessible. Let people find your school easily
     </p>
-    <div class="absolute bottom-5 py-3">
-    <a href="{{ route('school-register') }}"
+    <div class="">
+    <a href="{{ route('school-login') }}"
         type="submit"
-        class=" inline-flex mx-auto  mt-3 items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-indigo-500 focus:shadow-outline focus:outline-none"
+        class=" inline-flex mx-auto  mt-3 items-center justify-center min-w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-indigo-500 focus:shadow-outline focus:outline-none"
         >
-        Create School Account
-        <i class='icon ion-android-arrow-forward ml-3'></i>
+        Login
     </a>
     </div>
+    <div class="flex items-center w-full my-5">
+      <hr class="flex-1 border-gray-300" />
+      <div class="px-3 text-xs text-gray-500 sm:text-sm">or</div>
+      <hr class="flex-1 border-gray-300" />
+    </div>
+    <a href="{{ route('school-register') }}"
+      type="submit"
+      class=" inline-flex mx-auto min-w-full items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-indigo-500 focus:shadow-outline focus:outline-none"
+      >
+      Create School Account
+    </a>
     </div>
     </div>
 <!--//add card-->
@@ -55,7 +65,7 @@
 <div class="col-span-1 sm:col-span-1">
 <div class="mb-3">
 <!--add card-->
-<div class="mx-auto relative max-w-sm bg-white rounded-lg h-80 md:h-80 sm:h-80  border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+<div class="mx-auto text-center relative max-w-sm bg-white rounded-lg   border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
     <div  class='d-block shadow w-20 h-20 mx-auto px-3 py-3 mt-5 rounded'>
         <img class="mx-auto mb-3" height="64px" width="64px" 
         src="https://img.icons8.com/external-kmg-design-flat-kmg-design/64/000000/external-user-back-to-school-kmg-design-flat-kmg-design.png"/>
@@ -63,23 +73,33 @@
     </div>
     <div class="p-5">
     <a href="#">
-    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-        Create an Affiliate Account
-    </h5>
+    <p class="mb-2 font-bold  text-2xl tracking-tight text-gray-900 dark:text-white">
+      Affiliate Account
+    </p>
     </a>
     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
      Earn passive income by publicly sharing school sholarship opportunites
     </p>
-    <div class="absolute bottom-5 py-3">
-        <a href="{{ route('affiliate-register') }}"
+    <div class="">
+        <a href="{{ route('affiliate-login') }}"
             type="submit"
-            class="inline-flex mx-auto mt-3 items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-indigo-500 focus:shadow-outline focus:outline-none"
+            class="inline-flex w-auto mt-3 min-w-full items-center justify-center  h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-indigo-500 focus:shadow-outline focus:outline-none"
             >
-            Create Affiliate Account
-            <i class='icon ion-android-arrow-forward ml-3'></i>
+            Login
         </a>
     </div>
 
+    <div class="flex items-center w-full my-5">
+      <hr class="flex-1 border-gray-300" />
+      <div class="px-3 text-xs text-gray-500 sm:text-sm">or</div>
+      <hr class="flex-1 border-gray-300" />
+    </div>
+      <a href="{{ route('affiliate-register') }}"
+          type="submit"
+          class="inline-flex mx-auto min-w-full  items-center justify-center  h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-indigo-500 focus:shadow-outline focus:outline-none"
+          >
+          Create Affiliate Account
+      </a>
     </div>
     </div>
         <!--//add card-->

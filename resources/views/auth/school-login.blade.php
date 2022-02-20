@@ -1,14 +1,17 @@
 <x-guest-layout>
+        <div class="my-20 px-3">
+        <div class="mx-auto px-10 py-5 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
+           
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
 
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-        <div class="my-20 px-3">
-        <div class="mx-auto px-10 py-5 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
-            <form class="space-y-6" action="{{ route('user-login') }}">
-            <h3 class="text-xl font-medium text-gray-900 dark:text-white text-center">Login</h3>
+            <form class="space-y-6" method="post" action="{{ route('school-login') }}">
+                <h5 class="mb-3 text-2xl text-center font-bold tracking-tight text-gray-900 dark:text-white">
+                School Login
+                </h5>
             <div>
             @csrf
             <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your email</label>
@@ -21,7 +24,7 @@
             <div class="flex items-start">
             <div class="flex items-start">
             <div class="flex items-center h-5">
-            <input id="remember" aria-describedby="remember" name="remember" type="checkbox" class="w-4 h-4 bg-gray-50 rounded border border-gray-300 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800" required="">
+            <input id="remember" aria-describedby="remember" name="remember" type="checkbox" class="w-4 h-4 bg-gray-50 rounded border border-gray-300 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800">
             </div>
             <div class="ml-3 text-sm">
             <label for="remember" class="font-medium text-gray-900 dark:text-gray-300">Remember me</label>
@@ -29,7 +32,7 @@
             </div>
             @if (Route::has('password.request'))
             <a href="{{ route('password.request') }}" class="ml-auto text-sm text-blue-700 hover:underline dark:text-blue-500">Lost Password?</a>
-            @endif;
+            @endif
             </div>
 
             <div class='items-center  mt-4'>

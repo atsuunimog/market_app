@@ -27,10 +27,11 @@
       </a>
 
     
-      @if (Route::has('user-login'))
+      @if (Route::has('school-login') || Route::has('affiliate-login'))
+      
           <ul class="flex items-center hidden ml-auto space-x-8 lg:flex">
             @auth
-              <!-- Settings Dropdown -->
+            <!-- school account login menu-->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
               <x-dropdown align="right" width="48">
                   <x-slot name="trigger">
@@ -64,11 +65,11 @@
           </div>
 
             @else
-                <li><a href="{{ route('user-login') }}"    class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Log in</a></li>
+                {{-- <li><a href="{{ route('user-login') }}"    class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Log in</a></li> --}}
                 @if (Route::has('register'))
                   <li>
                     <a href="{{ url('register') }}" 
-                    class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Register
+                    class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Sign In
                     </a>
                   </li>
                 @endif
@@ -113,21 +114,21 @@
                 <li><a href="about" aria-label="Our product" title="Our product" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">About Us</a></li>
                 <li><a href="help" aria-label="Product pricing" title="Product pricing" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">Help</a></li>
 
-                @if (Route::has('login'))
+                @if (Route::has('school-login') || Route::has('affiliate-login'))
                         @auth
                             <li><a href="{{ url('/dashboard') }}" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Dashboard</a></li>
                         @else
-                            <li>
+                            {{-- <li>
                               <a href="{{ route('login') }}"    
                                 aria-label="Sign in" title="Sign in" 
                                 class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-dark transition duration-200 rounded shadow-md white border hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none">
                                 Log in
                               </a>
-                            </li>
+                            </li> --}}
                             @if (Route::has('register'))
                               <li><a href="{{ route('register') }}" 
                                 class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-indigo-500 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"           
-                                >Sign Up</a>
+                                >Sign In</a>
                               </li>
                             @endif
                         @endauth

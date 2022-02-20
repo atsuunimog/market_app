@@ -4,35 +4,26 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-Schema::table('posts', function (Blueprint $table) {
-    $table->unsignedBigInteger('user_id');
- 
-    $table->foreign('user_id')->references('id')->on('users');
-});
-
-class CreateUsersTable extends Migration
+class CreateAffiliateUsersTable extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
-
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('affiliate_users', function (Blueprint $table) {
             $table->id();
             $table->string('username');
             $table->string('email')->unique();
-            $table->string('school_name');
+            $table->string('referral_code')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
         });
     }
-
-    
 
     /**
      * Reverse the migrations.
@@ -41,6 +32,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('affiliate_users');
     }
 }

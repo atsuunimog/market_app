@@ -16,9 +16,14 @@ class AuthenticatedSessionController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function createUser()
+    public function createSchoolUser()
     {
-        return view('auth.user-login');
+        return view('auth.school-login');
+    }
+
+    public function createAffiliateUser()
+    {
+        return view('auth.affiliate-login');
     }
 
     public function create_user_admin()
@@ -32,27 +37,24 @@ class AuthenticatedSessionController extends Controller
      * @param  \App\Http\Requests\Auth\LoginRequest  $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(LoginRequest $request)
+    public function storeSchoolUser(LoginRequest $request)
     {
         $request->authenticate();
 
         $request->session()->regenerate();
 
-        $db_email = $request->all("email")["email"];
+       return redirect()->intended(RouteServiceProvider::HOME);
+    }
 
-        // $acct_type = DB::table('users')
-        //     ->select('account_type')
-        //     ->where('email', '=', $db_email)
-        //     ->get()[0]->account_type;
 
-        // if($acct_type == "sch_acct"):
-        //     return redirect()->intended(RouteServiceProvider::SCHOOL_HOME);
-        // else:
-        //     return redirect()->intended(RouteServiceProvider::AFFILIATE_HOME);
-        // endif;
+    public function storeAffiliateUser(LoginRequest $request)
+    {
+
+        $request->authenticate();
+
+        $request->session()->regenerate();
 
        return redirect()->intended(RouteServiceProvider::HOME);
-
     }
 
     /**
@@ -64,6 +66,8 @@ class AuthenticatedSessionController extends Controller
     public function destroy(Request $request)
     {
         Auth::guard('web')->logout();
+
+        Auth::guard('affiliate')->logout();
 
         $request->session()->invalidate();
 
