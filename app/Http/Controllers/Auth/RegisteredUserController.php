@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use App\Models\AffiliateUser;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
@@ -50,11 +49,14 @@ class RegisteredUserController extends Controller
             'school_name' => ['required', 'string', 'max:255'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
+
+        $role = "school";
         
         // dd($request);
         $user = User::create([
             'username' => $request->username,
             'email' => $request->email,
+            'role' => $role,
             'school_name' => $request->school_name,
             'password' => Hash::make($request->password),
         ]);
@@ -76,24 +78,27 @@ class RegisteredUserController extends Controller
         
         $request->validate([
             'username' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:affiliate_users'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
+
+        //set role to affiliate
+        $role = "affiliate";
 
         // generate referral code
         $referral_code = $this->referral_code(10, $request->email);
 
-        $affiliate = AffiliateUser::create([
+        $user = User::create([
             'username' => $request->username,
             'email' => $request->email,
+            'role' => $role,
             'referral_code' => $referral_code,
             'password' => Hash::make($request->password),
         ]);
 
-  
-        event(new Registered($affiliate));
+        event(new Registered($user));
 
-        Auth::login($affiliate);
+        Auth::login($user);
 
         return redirect(RouteServiceProvider::HOME);
     }

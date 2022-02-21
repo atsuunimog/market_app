@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Scholarship;
 use App\Http\Controllers\HandleScholarship;
+use App\Http\Controllers\HandleSchoolProfile;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,9 +80,10 @@ Route::get('school-help', function () {
     return view('school/school-help');
 })->middleware(["auth"]);
 
-Route::get('school-profile', function () {
-    return view('school/school-profile');
-})->middleware(["auth"]);
+Route::get('school-profile', [HandleSchoolProfile::class, "createProfile"])->middleware(["auth"]);
+
+Route::post('school-profile', [HandleSchoolProfile::class, "updateProfile"])
+->middleware(["auth"]);
 
 Route::get('school-events', function () {
     return view('school/school-events');

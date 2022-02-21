@@ -22,13 +22,8 @@ class RedirectIfAuthenticated
         $guards = empty($guards) ? [null] : $guards;
 
         foreach ($guards as $guard) {
-
-            if($guard == "affiliate" && Auth::guard($guard)->check()){
-                return redirect(RouteServiceProvider::AFFILIATE);
-            }
-
             if (Auth::guard($guard)->check()) {
-                return redirect(RouteServiceProvider::SCHOOL);
+                return redirect(RouteServiceProvider::HOME);
             }
         }
 

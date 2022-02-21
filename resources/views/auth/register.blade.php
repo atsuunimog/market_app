@@ -38,17 +38,9 @@
     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
        Make your school public and accessible. Let people find your school easily
     </p>
-    <div class="">
-    <a href="{{ route('school-login') }}"
-        type="submit"
-        class=" inline-flex mx-auto  mt-3 items-center justify-center min-w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-indigo-500 focus:shadow-outline focus:outline-none"
-        >
-        Login
-    </a>
-    </div>
     <div class="flex items-center w-full my-5">
       <hr class="flex-1 border-gray-300" />
-      <div class="px-3 text-xs text-gray-500 sm:text-sm">or</div>
+      <div class="px-3 text-xs text-gray-500 sm:text-sm">*</div>
       <hr class="flex-1 border-gray-300" />
     </div>
     <a href="{{ route('school-register') }}"
@@ -80,18 +72,10 @@
     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
      Earn passive income by publicly sharing school sholarship opportunites
     </p>
-    <div class="">
-        <a href="{{ route('affiliate-login') }}"
-            type="submit"
-            class="inline-flex w-auto mt-3 min-w-full items-center justify-center  h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-indigo-500 focus:shadow-outline focus:outline-none"
-            >
-            Login
-        </a>
-    </div>
 
     <div class="flex items-center w-full my-5">
       <hr class="flex-1 border-gray-300" />
-      <div class="px-3 text-xs text-gray-500 sm:text-sm">or</div>
+      <div class="px-3 text-xs text-gray-500 sm:text-sm">*</div>
       <hr class="flex-1 border-gray-300" />
     </div>
       <a href="{{ route('affiliate-register') }}"

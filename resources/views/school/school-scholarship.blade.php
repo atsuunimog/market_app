@@ -21,9 +21,9 @@
 <nav class="flex bg-white mb-3 py-3 mt-3 px-3 rounded shadow" aria-label="Breadcrumb">
     <ol class="inline-flex items-center space-x-1 md:space-x-3">
     <li class="inline-flex items-center">
-    <a href="#" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+    <a href="{{ url('dashboard') }}" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
     <svg class="mr-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
-    Scholarship
+    Dashboard
     </a>
     </li>
 
@@ -94,7 +94,7 @@
                                         </div>
 
                                         <div class="mt-4">
-                                            <label for="credit-amount" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Comission Fee %</label>
+                                            <label for="credit-amount" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Cash Reward</label>
                                             <input type="number" value="{{$editable_data[0]->commission ?? ''}}"  autocomplete="new-password" name="commission" id="password" placeholder="E.g. 5000" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
                                             <div class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="user_avatar_help">
                                                Top up your account wallet to enable cash rewards for affiliates participants. 

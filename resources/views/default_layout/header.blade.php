@@ -14,8 +14,8 @@
                     <ul>
                       <li><a href="{{ url('contact') }}" class='mb-3 block'>Contact<i class='icon ion-android-arrow-forward float-right'></i></a></li>
                       <li><a href="{{ url('about') }}" class='mb-3 block'>About Us<i class='icon ion-android-arrow-forward float-right'></i></a></li>
-                      <li><a href="{{ url('scholarship') }}" class='mb-3 block'>Scholarship<i class='icon ion-android-arrow-forward float-right'></i></a></li>
-                      <li><a href="{{ url('school-front') }}" class='mb-3 block'>School Landing Page<i class='icon ion-android-arrow-forward float-right'></i></a></li>
+                      {{-- <li><a href="{{ url('scholarship') }}" class='mb-3 block'>Scholarship<i class='icon ion-android-arrow-forward float-right'></i></a></li> --}}
+                      {{-- <li><a href="{{ url('school-front') }}" class='mb-3 block'>School Landing Page<i class='icon ion-android-arrow-forward float-right'></i></a></li> --}}
                       <li><a href="{{ url('faq') }}" class='mb-3 block'>FAQ<i class='icon ion-android-arrow-forward float-right'></i></a></li>
                     </ul>
               </div>
@@ -27,7 +27,7 @@
       </a>
 
     
-      @if (Route::has('school-login') || Route::has('affiliate-login'))
+      @if (Route::has('login'))
       
           <ul class="flex items-center hidden ml-auto space-x-8 lg:flex">
             @auth
@@ -65,7 +65,7 @@
           </div>
 
             @else
-                {{-- <li><a href="{{ route('user-login') }}"    class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Log in</a></li> --}}
+                <li><a href="{{ route('login') }}"    class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Log in</a></li>
                 @if (Route::has('register'))
                   <li>
                     <a href="{{ url('register') }}" 
@@ -114,17 +114,17 @@
                 <li><a href="about" aria-label="Our product" title="Our product" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">About Us</a></li>
                 <li><a href="help" aria-label="Product pricing" title="Product pricing" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">Help</a></li>
 
-                @if (Route::has('school-login') || Route::has('affiliate-login'))
+                @if (Route::has('login'))
                         @auth
                             <li><a href="{{ url('/dashboard') }}" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Dashboard</a></li>
                         @else
-                            {{-- <li>
+                            <li>
                               <a href="{{ route('login') }}"    
                                 aria-label="Sign in" title="Sign in" 
                                 class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-dark transition duration-200 rounded shadow-md white border hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none">
                                 Log in
                               </a>
-                            </li> --}}
+                            </li>
                             @if (Route::has('register'))
                               <li><a href="{{ route('register') }}" 
                                 class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-indigo-500 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"           

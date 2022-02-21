@@ -30,7 +30,6 @@ Route::get('/affiliate-register', [RegisteredUserController::class, 'createAffil
 Route::post('/affiliate-register', [RegisteredUserController::class, 'storeAffiliate'])
                 ->middleware('guest');
 
-//Admin registeration
 Route::get('/admin-register', [RegisteredUserController::class, 'createAdmin'])
                 ->middleware('guest')
                 ->name('admin-register');
@@ -38,30 +37,13 @@ Route::get('/admin-register', [RegisteredUserController::class, 'createAdmin'])
 Route::post('/admin-register', [RegisteredUserController::class, 'storeAdmin'])
                 ->middleware('guest');
 
-
-//School Login
-Route::get('/school-login', [AuthenticatedSessionController::class, 'createSchoolUser'])
+Route::get('/login', [AuthenticatedSessionController::class, 'createUser'])
                 ->middleware('guest')
-                ->name('school-login');
+                ->name('login');
 
-Route::post('/school-login', [AuthenticatedSessionController::class, 'storeSchoolUser'])
+Route::post('/login', [AuthenticatedSessionController::class, 'storeUser'])
                 ->middleware('guest');
 
-// Affiliate Login
-Route::get('/affiliate-login', [AuthenticatedSessionController::class, 'createAffiliateUser'])
-->middleware('guest')
-->name('affiliate-login');
-
-Route::post('/affiliate-login', [AuthenticatedSessionController::class, 'storeAffiliateUser'])
-->middleware('guest');
-
-//admin login
-Route::get('/admin-login', [AuthenticatedSessionController::class, 'create_user_admin'])
-                ->middleware('guest')
-                ->name('admin-login');
-
-Route::post('/admin-login', [AuthenticatedSessionController::class, 'store_user_admin'])
-                ->middleware('guest');
 
 Route::get('/forgot-password', [PasswordResetLinkController::class, 'create'])
                 ->middleware('guest')
