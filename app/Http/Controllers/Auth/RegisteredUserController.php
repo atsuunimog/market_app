@@ -67,10 +67,10 @@ class RegisteredUserController extends Controller
     }
 
     //generate referral code
-   public function referral_code($length_of_string, $email) { 
-        $str_result = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890abcdefghijklmnopqrstuvwxyz'.$email; 
-        return substr(str_shuffle($str_result), 0, $length_of_string); 
-    } 
+    //    public function referral_code($length_of_string, $email) { 
+    //         $str_result = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890abcdefghijklmnopqrstuvwxyz'.$email; 
+    //         return substr(str_shuffle($str_result), 0, $length_of_string); 
+    //     } 
 
     //store affiliate users into database
     public function storeAffiliate(Request $request)
@@ -86,13 +86,12 @@ class RegisteredUserController extends Controller
         $role = "affiliate";
 
         // generate referral code
-        $referral_code = $this->referral_code(10, $request->email);
+        // $referral_code = $this->referral_code(10, $request->email);
 
         $user = User::create([
             'username' => $request->username,
             'email' => $request->email,
             'role' => $role,
-            'referral_code' => $referral_code,
             'password' => Hash::make($request->password),
         ]);
 

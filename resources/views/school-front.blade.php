@@ -4,31 +4,31 @@
     <div class="flex flex-col lg:flex-row">
     <div class="mb-6 lg:mb-0 lg:w-1/2 lg:pr-5">
         <h2 class="font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-        XYZ Secondary and Primary School
+        {{  isset($profile_data[0]->school_name)? $profile_data[0]->school_name : '...' }}
         </h2>
     </div>
     <div class="lg:w-1/2">
         <p class="mb-4 text-base text-gray-700">
-        <span class='font-bold text-black'>XYZ School: </span>is a prestigious institution unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae. Sed ut perspiciatis unde omnis iste. Sed ut perspiciatis unde omnis iste error sit voluptatem accusantium
-        doloremque rem aperiam.
+        <span class='font-bold text-black'>About Us: </span>
+       {{ isset($profile_data[0]->about_school)? $profile_data[0]->about_school : '...' }}
         </p>
-        <a href="/" aria-label="" 
+        {{-- <a href="/" aria-label="" 
           class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">
           Learn more 
           &nbsp;
           <i class="icon ion-android-arrow-forward"></i>
-        </a>
+        </a> --}}
     </div>
     </div>
 </div>
 
 <div class="relative bg-red-600">
-    <img class="object-cover w-full h-56 sm:h-96" src="https://images.pexels.com/photos/3184419/pexels-photo-3184419.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="" />
+    <img class="object-cover w-full h-56 sm:h-96" src="{{ isset($profile_data[0]->banner_img)? asset('storage/'.$profile_data[0]->banner_img) : asset('storage/banner.png')  }} " alt="school-banner" />
     <div class="absolute inset-0 bg-gray-900 bg-opacity-50"></div>
       {{-- content --}}
       <img class="object-cover w-full  shadow absolute overflow-hidden left-24 z-50 -bottom-24 rounded-full w-52 h-52" 
-      src="https://cdn.logojoy.com/wp-content/uploads/2018/05/30154810/13_big2-768x591.png" 
-      alt="" />
+      src="{{ isset($profile_data[0]->logo_img)? asset('storage/'.$profile_data[0]->logo_img) : asset('storage/school_logo.png')  }}" 
+      alt="school-logo" />
 </div>
 </div>
 
@@ -134,7 +134,7 @@
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam.
         </p>
         <div class='text-center'>
-          <a href=""
+          <a href="{{ url('upcoming-events') }}"
             type="submit"
             class="inline-flex mx-auto  mt-3 items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-indigo-500 focus:shadow-outline focus:outline-none"
           >
@@ -182,7 +182,7 @@
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam.
         </p>
         <div class='text-center'>
-          <a href="{{ url('scholarship') }}"
+          <a href="{{ url('private-scholarship', ['username' => $username]) }}"
             type="submit"
             class="inline-flex mx-auto  mt-3 items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-indigo-500 focus:shadow-outline focus:outline-none"
           >

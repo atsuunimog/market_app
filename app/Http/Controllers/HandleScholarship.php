@@ -11,6 +11,23 @@ use Illuminate\Support\Facades\DB;
 
 class HandleScholarship extends Controller
 {
+    //display all scholarships from a single school
+    public function displaySchoolPrivateScholarship(Request $request, $username){
+        //get user id 
+        // $user_data  = DB::table("users")->where("username", "=", $username)->get();
+        $user_id  = DB::table("users")->where("username", "=", $username)->get('id')[0]->id;
+        $multi_query = DB::table("users")
+            ->join('school_profile', 'users.id', '=', 'school_profile.user_id')
+            ->where('users.id', '=', $user_id)
+            ->limit(1)
+            ->get();
+
+        //pull all data from school scholarship
+        $scholarship_data = DB::table('scholarships')->where("user_id", "=", $user_id)->paginate(5);
+        //display all scholarships with current username
+        return view("scholarship", ["scholarship_data" => $scholarship_data, "user_data" => $multi_query]);
+    }
+
 
     //REUSABLES
     public function countUserScholarships(){

@@ -1,9 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\Scholarship;
+// use App\Models\Scholarship;
+// use App\Models\User;
+// use App\Models\SchoolProfile;
 use App\Http\Controllers\HandleScholarship;
+use App\Http\Controllers\HandleDashboard;
 use App\Http\Controllers\HandleSchoolProfile;
+use App\Http\Controllers\HandleHomepage;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +19,7 @@ use App\Http\Controllers\HandleSchoolProfile;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HandleHomepage::class, "displayHomePage"]);
 
 Route::get('blog', function () {
     return view('blog');
@@ -43,9 +45,9 @@ Route::get('blog-content', function () {
     return view('blog-content');
 });
 
-Route::get('school-front', function () {
-    return view('school-front');
-});
+// Route::get('school-front', function () {
+//     return view('school-front');
+// });
 
 Route::get('faq', function () {
     return view('faq');
@@ -67,6 +69,8 @@ Route::get('create-admission', function () {
 Route::get('school-admission', function () {
     return view('school/school-admission');
 })->middleware(["auth"]);
+
+Route::get('private-scholarship/{username}',[HandleScholarship::class, "displaySchoolPrivateScholarship"])->middleware(["auth"]);
 
 Route::get('school-achievements', function () {
     return view('school/school-achievements');
@@ -92,6 +96,8 @@ Route::get('school-events', function () {
 Route::get('school-wallet', function () {
     return view('school/school-wallet');
 })->middleware(["auth"]);
+
+Route::get('school-front/{username}', [HandleSchoolProfile::class, "displaySchoolLandingPage"]);
 
 Route::get('edit-school-scholarship/{id}', [HandleScholarship::class, "editScholarship"])
 ->middleware(["auth"])->name('edit-school-scholarship');
@@ -134,20 +140,14 @@ Route::get('school-achievement', function () {
 //     return view('affiliate/dashboard');
 // })->middleware(['auth:affiliate'])->name('affiliate-dashboard');
 
-Route::get('dashboard', function () {
-    if(Auth::user()->school_name !== null):
-        return view('school/dashboard');
-    else:
-        return view('affiliate/dashboard');
-    endif;
-})->middleware(['auth'])->name('dashboard');
+Route::get('dashboard', [HandleDashboard::class, "displayDashboard"])->middleware(['auth'])->name('dashboard');
 
-Route::get('school/dashboard', function () {
-    return view('school/dashboard');
-})->middleware(['auth'])->name('school/dashboard');
+// Route::get('school/dashboard', function () {
+//     return view('school/dashboard');
+// })->middleware(['auth'])->name('school/dashboard');
 
-Route::get('affiliate/dashboard', function () {
-    return view('affiliate/dashboard');
-})->middleware(['auth'])->name('affiliate/dashboard');
+// Route::get('affiliate/dashboard', function () {
+//     return view('affiliate/dashboard');
+// })->middleware(['auth'])->name('affiliate/dashboard');
 
 require __DIR__.'/auth.php';

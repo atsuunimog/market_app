@@ -71,12 +71,12 @@
 
                                     <div class="my-6">
                                         <label for="school_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">School Name</label>
-                                        <input type="text" value="{{ Auth::user()->school_name }}" placeholder="Enter school name!" name="school_name" id="school_name" class="text-color:blu bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                        <input type="text" value="{{ isset($school_data[0]->school_name)? $school_data[0]->school_name : Auth::user()->school_name  }}" placeholder="Enter school name!" name="school_name" id="school_name" class="text-color:blu bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                     </div>
 
                                     <div class="my-6">
                                         <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email</label>
-                                        <input type="email" value="{{ Auth::user()->email }}" placeholder="Enter school Address" name="school_email" id="school_address" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                        <input type="email" value="{{ isset($school_data[0]->school_email)? $school_data[0]->school_email : Auth::user()->email }}" placeholder="Enter school Address" name="school_email" id="school_address" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                         <div class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="user_avatar_help">Your school email will be made public</div>
                                     </div>                              
 
@@ -96,6 +96,10 @@
                                     focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
                                     placeholder="About the school...">{{ isset($school_data[0]->about_school) ? $school_data[0]->about_school : old('about_school')  }}</textarea>
                                     
+                                    <div class="">
+                                        <input name='edit_img_logo' type="hidden" value="{{ isset($school_data[0]->logo_img) ? $school_data[0]->logo_img : ''  }}" placeholder="080 XXX XXX" name="phone_no" id="phone_no" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                        <input name='edit_img_banner' type="hidden" value="{{ isset($school_data[0]->banner_img) ? $school_data[0]->banner_img : ''  }}" placeholder="080 XXX XXX" name="phone_no" id="phone_no" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                    </div>
 
                                     <button
                                     type="submit"
@@ -114,12 +118,13 @@
                                 <!--bio data-->
                                 <div class="px-3">
                                     <h3 class="max-w-lg mb-3 pt-3 font-sans text-2xl font-bold leading-none tracking-tight text-gray-900 sm:text-2xl md:mx-auto">
-                                        {{ Auth::user()->school_name }}
+                                        {{ isset($school_data[0]->school_name)? $school_data[0]->school_name : Auth::user()->school_name  }}
                                     </h3>
 
+                                    {{ Auth::user()->email }}
                                     <hr class="my-3">
                                     <p class='font-bold mt-3'>Email</p>
-                                    <p class='text-gray-500'>  {{ Auth::user()->email }}</p>
+                                    <p class='text-gray-500'>  {{ isset($school_data[0]->school_email)? $school_data[0]->school_email : Auth::user()->email }}</p>
 
                                     <p class='font-bold mt-3'>Address</p>
                                     <p class='text-gray-500'>{{$school_data[0]->school_address ?? '' }}</p>
