@@ -65,8 +65,6 @@ class HandleSchoolProfile extends Controller
         $username = Auth::user()->username;
 
         $request->validate([
-            'logo_img' => ['image', 'max:2000', 'mimes:jpg,bmp,png, jpeg'],
-            'banner_img' => ['image', 'max:2000', 'mimes:jpg,bmp,png, jpeg'],
             'school_name' => ['required', 'string', 'max:255'],
             'school_email' => ['required', 'string', 'email', 'max:255'],
             'school_address' => ['required', 'string', 'max:255'],
@@ -74,7 +72,7 @@ class HandleSchoolProfile extends Controller
             'about_school' => ['required', 'string']
         ]);
 
-        if($request->logo_img !== null && $request->banner_img !== null){
+        if($request->file('logo_img') !== null && $request->file('banner_img') !== null){
             $logo_hash_name = $request->file('logo_img')->hashName();
             $banner_hash_name = $request->file('banner_img')->hashName();
 

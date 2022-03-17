@@ -6,24 +6,26 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 
-class Scholarship extends Model
+class Blog extends Model
 {
-    public $table = "scholarships";
+    public $table = "blogs";
 
     use HasFactory;
       /**
      * The attributes that are mass assignable.
+     *
      * @var array<int, string>
      */
-
     protected $fillable = [
         'user_id',
-        'title',
-        'location',
-        'grade',
+        'blog_image',
+        'blog_title',
+        'blog_content',
+        'comment',
         'school_name',
-        'scholarship_details', 
-        'commission'
+        'upvote',
+        'downvote',
+        'views'
     ];
 
     /**

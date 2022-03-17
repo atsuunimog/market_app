@@ -4,61 +4,37 @@
     <div class="grid row-gap-10 mb-8 lg:grid-cols-6">
       <div class="grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4">
         <div>
-          <p class="font-medium tracking-wide text-gray-300">Company Name</p>
+          <p class="font-medium tracking-wide text-gray-300">Trenova</p>
           <ul class="mt-2 space-y-2">
             <li>
               <a href="admin" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">
                 Admin Portal
               </a>
             </li>
-            {{-- <li>
-              <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">World</a>
-            </li>
-            <li>
-              <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Games</a>
-            </li>
-            <li>
-              <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">References</a>
-            </li> --}}
           </ul>
         </div>
         <div>
-          <p class="font-medium tracking-wide text-gray-300">Apples</p>
+          <p class="font-medium tracking-wide text-gray-300">Company Info</p>
           <ul class="mt-2 space-y-2">
             <li>
-              <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Web</a>
+              <a href="{{ url('about')}}" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">About Us</a>
             </li>
             <li>
-              <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">eCommerce</a>
+              <a href="{{ url('pricing')}}" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Pricing</a>
             </li>
             <li>
-              <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Business</a>
-            </li>
-            <li>
-              <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Entertainment</a>
-            </li>
-            <li>
-              <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Portfolio</a>
+              <a href="{{ url('contact')}}" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Contact Us</a>
             </li>
           </ul>
         </div>
         <div>
-          <p class="font-medium tracking-wide text-gray-300">Cherry</p>
+          <p class="font-medium tracking-wide text-gray-300">Other links</p>
           <ul class="mt-2 space-y-2">
             <li>
-              <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Media</a>
+              <a href="{{url('help')}}" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Help</a>
             </li>
             <li>
-              <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Brochure</a>
-            </li>
-            <li>
-              <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Nonprofit</a>
-            </li>
-            <li>
-              <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Educational</a>
-            </li>
-            <li>
-              <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Projects</a>
+              <a href="{{ url('faq')}}" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">FAQ</a>
             </li>
           </ul>
         </div>
@@ -66,16 +42,10 @@
           <p class="font-medium tracking-wide text-gray-300">Business</p>
           <ul class="mt-2 space-y-2">
             <li>
-              <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Infopreneur</a>
+              <a target="_blank" href="https://www.schoolsupportcentre.com/ambassador" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Reading Ambassador</a>
             </li>
             <li>
-              <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Personal</a>
-            </li>
-            <li>
-              <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Wiki</a>
-            </li>
-            <li>
-              <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Forum</a>
+              <a target="_blanK" href="https://www.schoolsupportcentre.com/pricing" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Membership Package</a>
             </li>
           </ul>
         </div>
@@ -97,13 +67,13 @@
           </button>
         </form>
         <p class="mt-4 text-sm text-gray-500">
-          Bacon ipsum dolor amet short ribs pig sausage prosciuto chicken spare ribs salami.
+          Join high-powered tech, administrators and school proprietors who read our support Information.
         </p>
       </div>
     </div>
     <div class="flex flex-col justify-between pt-5 pb-10 border-t border-gray-800 sm:flex-row">
       <p class="text-sm text-gray-500">
-        © Copyright 2020 Lorem Inc. All rights reserved.
+        © Copyright 2020 Trenova ltd. All rights reserved.
       </p>
       <div class="flex items-center mt-4 space-x-4 sm:mt-0">
         <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-teal-accent-400">

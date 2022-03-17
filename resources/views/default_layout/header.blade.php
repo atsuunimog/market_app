@@ -5,15 +5,16 @@
       <ul class="flex items-center hidden space-x-8 lg:flex">
         <li><a href="/" aria-label="Our product" title="Our product" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Home</a></li>
         <li><a href="{{ url('pricing') }}" aria-label="Our product" title="Our product" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Pricing</a></li>
-        <li><a href="{{ url('help') }}" aria-label="Product pricing" title="Product pricing" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Help</a></li>
+        {{-- <li><a href="{{ url('help') }}" aria-label="Product pricing" title="Product pricing" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Help</a></li> --}}
         <li><a href="{{ url('blog') }}" aria-label="Blog" title="Blog" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Blog</a></li>
         <li>
           <a onclick="toggle_mobile_sub_nav(this); return false;"  aria-label="Product pricing" title="Product pricing" class="cursor-pointer relative font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">More
               <i class="icon ion-chevron-down text-xs" ></i>
               <div id="dropdown-toggle" class="absolute top-8 text-black bg-white w-60 z-50  border px-3 py-3 rounded shadow-gray-900 hidden">
                     <ul>
-                      <li><a href="{{ url('contact') }}" class='mb-3 block'>Contact<i class='icon ion-android-arrow-forward float-right'></i></a></li>
-                      <li><a href="{{ url('about') }}" class='mb-3 block'>About Us<i class='icon ion-android-arrow-forward float-right'></i></a></li>
+                      <li><a href="{{ url('edit-nomination') }}" class='mb-3 block'>Edit Nomination<i class='icon ion-android-arrow-forward float-right'></i></a></li>
+                      <li><a href="{{ url('contact') }}" class='mb-3 block'>Contact Us<i class='icon ion-android-arrow-forward float-right'></i></a></li>
+                      <li><a href="{{ url('about') }}" class='mb-3 block'>About Trenova<i class='icon ion-android-arrow-forward float-right'></i></a></li>
                       {{-- <li><a href="{{ url('scholarship') }}" class='mb-3 block'>Scholarship<i class='icon ion-android-arrow-forward float-right'></i></a></li> --}}
                       {{-- <li><a href="{{ url('school-front') }}" class='mb-3 block'>School Landing Page<i class='icon ion-android-arrow-forward float-right'></i></a></li> --}}
                       <li><a href="{{ url('faq') }}" class='mb-3 block'>FAQ<i class='icon ion-android-arrow-forward float-right'></i></a></li>
@@ -23,7 +24,7 @@
         </li>
       </ul>
       <a href="/" aria-label="Company" title="Company" class="inline-flex items-center lg:mx-auto">
-        <span class="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">SMP APP</span>
+        <span class="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">GMAS APP</span>
       </a>
 
     

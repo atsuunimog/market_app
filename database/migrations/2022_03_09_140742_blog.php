@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Scholarships extends Migration
+class Blog extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,17 @@ class Scholarships extends Migration
      */
     public function up()
     {
-        Schema::create('scholarships', function (Blueprint $table) {
+        Schema::create('blogs', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->string('title');
-            $table->string('location');
-            $table->string('grade');
+            $table->string('blog_image');
+            $table->string('blog_title');
+            $table->text('blog_content');
             $table->string('school_name');
-            $table->text('scholarship_details');
-            $table->integer('commission');
+            $table->text('comment')->nullable();
+            $table->integer('upvote')->default(0);
+            $table->integer('downvote')->default(0);
+            $table->integer('views')->default(0);
             $table->timestamps();
         });
     }
@@ -34,6 +35,6 @@ class Scholarships extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('scholarships');
+        Schema::dropIfExists('blogs');
     }
 }

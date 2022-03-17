@@ -1,7 +1,6 @@
 <x-guest-layout>
 
 <style>
-
 .slick-prev{
   font-family:initial !important;
   color:#333; 
@@ -26,119 +25,61 @@
   content:"";
 }
 </style>
-
     <!--titlebar-->
     <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 pt-10">
       <div class="mx-auto sm:max-w-2xl">
         <div class="text-center">
-          <div class="mb-12  max-w-xl md:mx-auto sm:text-center lg:max-w-2xl md:mb-6">
+          <div class="max-w-xl md:mx-auto sm:text-center lg:max-w-2xl">
             <div>
               <p class="inline-block px-3 py-px mb-3 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
-               School Marketing Platform
+               GET ME A SCHOOL
               </p>
             </div>
-            <h2 class="max-w-lg font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
-              <span class="relative inline-block z-0">
-                <svg viewBox="0 0 52 24" fill="currentColor" class="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block">
-                  <defs>
-                    <pattern id="b039bae0-fdd5-4311-b198-8557b064fce0" x="0" y="0" width=".135" height=".30">
-                      <circle cx="1" cy="1" r=".7"></circle>
-                    </pattern>
-                  </defs>
-                  <rect fill="url(#b039bae0-fdd5-4311-b198-8557b064fce0)" width="52" height="24"></rect>
-                </svg>
-                <span class="relative">Trenova</span>
-              </span>
-              SMP
+            <h2 class="max-w-lg sm:mb-3 md:mb-3 mb-3 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
+              GMAS
             </h2>
           </div>
-    
-          <form class="flex flex-col items-center w-full mt-6 md:mt-0 md:flex-row md:px-16">
-            <x-input id="email" placeholder='Enter School Name' class="block  w-full" type="email" name="email" :value="old('email')" required autofocus />
-    
-            <button
-              type="submit"
-              class="animate__animated animate__rubberBand inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-indigo-500 focus:shadow-outline focus:outline-none"
-            >
-              Search
-            </button>
-          </form>
         </div>
       </div>
     </div>
     <!--title-->
     
     <!--Image Carousel-->
-    <div class="relative px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl pt-10">
+    <div class="relative px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:pt-5">
       <div class="slick-slider">
+        @foreach($all_scholar as $scholar_data)
         <div class="px-3 w-full">
           <!--slick content-->
-            <div class="border rounded shadow text-center px-3 py-5">
-              <img class="object-cover d-block mx-auto w-20 h-20 rounded-full shadow" 
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrzTtyzDJJxUkJeZMzhSmk0twx8K2xODwYpA&usqp=CAU" alt="Person" />
-              <p class=" font-bold py-3">1 XYZ Primary and Secondary School Scholarship</p>
+            <div class="border rounded px-3 py-5 h-60 relative">
+              <p class='font-bold text-red-800 text-sm mb-3'><i class="icon ion-person"></i> &nbsp; SCHOLARSHIP</p>
+              <h3 class="text-xl font-bold pb-1 truncate">{{$scholar_data->title}}</h3>
+              <p class='truncate pb-1  font-normal text-gray-500'>{{$scholar_data->scholarship_details}}</p>
+              <p class='font-bold  uppercase'><strong>Grade:</strong> {{$scholar_data->grade}}</p>
+              <div class='absolute right-5 bottom-7'>
+              <a href='{{ url('single-scholarship', ['id' => $scholar_data->id])}}' type="button"
+               class="mx-auto rounded text-white uppercase bg-gray-800 hover:bg-gray-900 focus:ring-4 focus:ring-gray-300 font-medium  py-3 text-xs px-5 text-center mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-800 dark:border-gray-700">
+              Apply</a>
+              </div>
             </div>
           <!--slick content-->
         </div>
-
-        <div class="px-3 w-full">
-          <!--slick content-->
-          <div class="border rounded shadow text-center px-3 py-5">
-            <img class="object-cover d-block mx-auto w-20 h-20 rounded-full shadow" 
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrzTtyzDJJxUkJeZMzhSmk0twx8K2xODwYpA&usqp=CAU" alt="Person" />
-            <p class=" font-bold py-3">2 XYZ Primary and Secondary School Scholarship</p>
-          </div>
-        <!--slick content-->
-        </div>
-
-        <div class="px-3 w-full">
-           <!--slick content-->
-           <div class="border rounded shadow text-center px-3 py-5">
-            <img class="object-cover d-block mx-auto w-20 h-20 rounded-full shadow" 
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrzTtyzDJJxUkJeZMzhSmk0twx8K2xODwYpA&usqp=CAU" alt="Person" />
-            <p class=" font-bold py-3">3 XYZ Primary and Secondary School Scholarship</p>
-          </div>
-        <!--slick content-->
-        </div>
-
-        <div class="px-3 w-full">
-           <!--slick content-->
-           <div class="border rounded shadow text-center px-3 py-5">
-            <img class="object-cover d-block mx-auto w-20 h-20 rounded-full shadow" 
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrzTtyzDJJxUkJeZMzhSmk0twx8K2xODwYpA&usqp=CAU" alt="Person" />
-            <p class=" font-bold py-3">4 XYZ Primary and Secondary School Scholarship</p>
-          </div>
-        <!--slick content-->
-        </div>
-
-        <div class="px-3 w-full">
-           <!--slick content-->
-           <div class="border rounded shadow text-center px-3 py-5">
-            <img class="object-cover d-block mx-auto w-20 h-20 rounded-full shadow" 
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrzTtyzDJJxUkJeZMzhSmk0twx8K2xODwYpA&usqp=CAU" alt="Person" />
-            <p class=" font-bold py-3">5 XYZ Primary and Secondary School Scholarship</p>
-          </div>
-        <!--slick content-->
-        </div>
-
-        <div class="px-3 w-full">
-           <!--slick content-->
-           <div class="border rounded shadow text-center px-3 py-5">
-            <img class="object-cover d-block mx-auto w-20 h-20 rounded-full shadow" 
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrzTtyzDJJxUkJeZMzhSmk0twx8K2xODwYpA&usqp=CAU" alt="Person" />
-            <p class=" font-bold py-3">6 XYZ Primary and Secondary School Scholarship</p>
-          </div>
-        <!--slick content-->
-        </div>
-
+        @endforeach
       </div>
-    </div>
-    <!--Image Carousel-->
+  </div>
+  <!--Image Carousel-->
+
+<div class='py-10 text-center w-full'>
+    <a href='{{ url('scholarships') }}' type="button"
+      class="font-bold  text-sm uppercase inline-flex mx-auto items-center py-3 justify-center px-6 tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-indigo-500 focus:shadow-outline focus:outline-none">
+      All Scholarships
+      <i class="icons ion-android-arrow-forward ml-3"></i>
+    </a>
+</div>
     
     <!--Image Carousel-->
      <!--filters-->
-     <div class="relative px-4 py-10 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-     <div class="grid md:grid-cols-4 gap-3 sm:grid-cols-1">
+     <div class="relative px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 hidden">
+     <div class="grid md:grid-cols-4 gap-3 sm:grid-cols-1 items-center">
       <div class="md:col-span-1 border sm:col-span-1 rounded">
           <div class="flex px-3 py-3 text-center">
                <div class='w-full'>
@@ -154,15 +95,24 @@
           </div>
       </div>
       <div class="md:col-span-3 border sm:col-span-1 rounded">
-          <div class="px-3 py-3">
-             Filter buttions
+          <div class=" py-3 px-3">
+            <!--search form-->
+            <form class="flex flex-col items-center w-full md:mt-0 md:flex-row">
+              <x-input id="email" placeholder='Enter School Name' class="block  w-full" type="email" name="email" :value="old('email')" required autofocus />
+              <button
+                type="submit"
+                class="animate__animated animate__rubberBand inline-flex  font-bold items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-indigo-500 focus:shadow-outline focus:outline-none"
+              >
+                Search
+              </button>
+            </form>
+            <!--//search form-->
           </div>
       </div>
      <!--filters-->
     </div>
   </div>
     <!--Image Carousel-->
-    
     
       <!--page tiles-->
       <div class="relative px-4 pb-16 pt-10 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pb-20">
@@ -180,90 +130,40 @@
         <div class="relative grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
 
 
+@foreach ($all_school as  $school_data)
 
-  <div class="max-w-sm bg-white rounded-lg position-relative border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+<div class="max-w-sm h-60 bg-white rounded-lg relative border border-gray-200  dark:bg-gray-800 dark:border-gray-700">
   <div class="flex flex-col items-center pb-10 px-3 text-center">
   <img class="mt-5 w-20 h-20 rounded-full shadow-lg" 
-    src="https://cdn.logojoy.com/wp-content/uploads/2018/05/30154810/13_big2-768x591.png"
-   alt="Bonnie image">
-  <h3 class="mb-1 text-xl mt-3 font-bold text-gray-900 dark:text-white">Dowen College</h3>
-  <span class="text-sm  text-gray-500 dark:text-gray-400">
-    Ikeja, Lagos State
-  </span>
-  <div class="mt-4 space-x-3 lg:mt-6 absolute bottom-0 pb-5">
-      <a href="{{ url('school-front') }}"
-      type="submit"
-      class="inline-flex mx-auto  mt-3 items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-indigo-500 focus:shadow-outline focus:outline-none"
-    >
-      Learn more
+    src="{{isset($school_data->logo_img)? asset('storage/'.$school_data->logo_img) : asset('storage/school_logo.png')}}"
+   alt="Profile-Image">
+  <h3 class="mb-1 text-xl mt-3 font-bold text-gray-900 dark:text-white">
+   
+   @if(strlen($school_data->school_name) > 20)
+      <?php  $result = substr($school_data->school_name, 0, 30); ?>
+      {{$result.=" ...";}}
+   @else
+      {{$school_data->school_name}}
+   @endif
+
+  </h3>
+  <div class='absolute left-5 right-5 bottom-7'>
+    <a href='{{ url('school-front/'.$school_data->username)}}' type="button"
+     class="mx-auto rounded text-white bg-gray-800 hover:bg-gray-900 focus:ring-4 uppercase focus:ring-gray-300 font-medium  py-3 text-xs px-5 text-center mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-800 dark:border-gray-700">
+    Learn more
     </a>
   </div>
   </div>
   </div>
-  
-
-  <div class="max-w-sm relative bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-    <div class="flex flex-col items-center pb-10 px-3 text-center">
-    <img class="mt-5 w-20 h-20 rounded-full shadow-lg" 
-      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrzTtyzDJJxUkJeZMzhSmk0twx8K2xODwYpA&usqp=CAU"
-     alt="Bonnie image">
-    <h3 class="mb-1 text-xl mt-3 font-bold text-gray-900 dark:text-white">Indian Institute of Technology</h3>
-    <span class="text-sm  text-gray-500 dark:text-gray-400">
-      Ikeja, Lagos State
-    </span>
-    <div class="mt-4 space-x-3 lg:mt-6 absolute bottom-0 pb-5">
-        <a href="{{ url('school-front') }}"
-        type="submit"
-        class="inline-flex mx-auto  mt-3 items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-indigo-500 focus:shadow-outline focus:outline-none"
-      >
-        Learn more
-      </a>
-    </div>
-    </div>
-    </div>
-
-    <div class="max-w-sm relative bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-      <div class="flex flex-col items-center pb-10 px-3 text-center">
-      <img class="mt-5 w-20 h-20 rounded-full shadow-lg" 
-        src="https://www.nigerianlawschool.edu.ng/images/logo-170x172.png"
-       alt="Bonnie image">
-      <h3 class="mb-1 text-xl mt-3 font-bold text-gray-900 dark:text-white">Nigerian Counsel of Legal Education</h3>
-      <span class="text-sm  text-gray-500 dark:text-gray-400">
-        Ikeja, Lagos State
-      </span>
-      <div class="mt-4 space-x-3 lg:mt-6 absolute bottom-0 pb-5">
-          <a href="{{ url('school-front') }}"
-          type="submit"
-          class="inline-flex mx-auto  mt-3 items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-indigo-500 focus:shadow-outline focus:outline-none"
-        >
-          Learn more
-        </a>
-      </div>
-      </div>
-      </div>
+@endforeach 
+</div>
 
 
-      <div class="max-w-sm relative bg-white rounded-lg border  border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-        <div class="flex flex-col items-center pb-10 px-3 text-center">
-        <img class="mt-5 w-20 h-20 rounded-full shadow-lg" 
-          src="https://upload.wikimedia.org/wikipedia/en/d/d2/UniLagos.jpg"
-         alt="Bonnie image">
-        <h3 class="mb-1 text-xl mt-3 font-bold text-gray-900 dark:text-white">Call to Glory Primary and Secondary School</h3>
-        <span class="text-sm  text-gray-500 dark:text-gray-400">
-          Ikeja, Lagos State
-        </span>
-        <div class="mt-4 space-x-3 lg:mt-6 pb-5">
-            <a href="{{ url('school-front') }}"
-            type="submit"
-            class="inline-flex mx-auto  mt-3 items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-indigo-500 focus:shadow-outline focus:outline-none"
-          >
-            Learn more
-          </a>
-        </div>
-        </div>
-        </div>    
-    </div>
-  </div>
+<div class='container mx-auto md:w-1/4  my-10'>
+  {{$all_school->links()}}
+</div>
+
+</div>
   <!--page tiles-->
 </x-guest-layout>
 

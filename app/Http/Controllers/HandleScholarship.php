@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Scholarship;
+use App\Models\Nomination;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -11,6 +12,121 @@ use Illuminate\Support\Facades\DB;
 
 class HandleScholarship extends Controller
 {
+    //display all affiliate link candidates
+    public function displayAffiliateNominations(){
+        $user_id = Auth::user()->id;
+        $affiliate_code = DB::table('affiliate_profile')->where('user_id', '=', $user_id)->get("affiliate_code")[0]->affiliate_code;
+        $all_aff_nomination = DB::table('nominations')->where('affiliate_code', '=', $affiliate_code)->paginate(5);
+        return view("affiliate.affiliate-nominations", ["affiliate_data" => $all_aff_nomination]);
+    }
+
+    //show all school nominations
+    public function showAllSchoolNominations(){
+        $user_id = Auth::user()->id;
+        $nomination_data = DB::table('nominations')->where('user_id', '=', $user_id)->paginate(5);
+        return view('school.school-all-nominations', ["nominate_data" => $nomination_data] );
+    }
+
+    //generate edit code
+    public function gen_edit_code($length_of_string) { 
+        $randId = uniqid(time());
+        $str_result = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890abcdefghijklmnopqrstuvwxyz'.$randId; 
+        return substr(str_shuffle($str_result), 0, $length_of_string); 
+    } 
+
+    //handle affiliate nomination 
+    public function AffiliateNomination($post_id, $affiliate_id){
+        $single_scholarship_data = DB::table("scholarships")
+        ->where('scholarships.id', '=', $post_id)->get();
+        return view('nominate-candidate', ["single_scholar_data"=> $single_scholarship_data, "post_id" => $post_id, "affiliate_code" => $affiliate_id]);
+    }
+
+    //submit affiliate nomination 
+    public function StoreAffiliateNomination(Request $request, $post_id, $affiliate_id){
+         //validate entries
+         $request->validate([
+            'child_full_name' => ['required', 'string', 'max:255'],
+            'grade' => ['required', 'string', 'max:255'],
+            'parent_name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255'],
+            'address' => ['required', 'string'],
+            'phone_no' => ['required','numeric'],
+            'whatsapp_no' => ['required','numeric'],
+        ]);
+
+        $edit_code = $this->gen_edit_code(15);
+
+        if($request->affiliate_code !== null){
+            $request->validate(['affiliate_code' => ['string', 'max:255']]);
+            $affiliate_code = $request->affiliate_code;
+        }else{
+            return redirect()->back()->with('Oops! try again');
+        }
+
+        //enter values into database
+        $nomination = Nomination::create([
+            'post_id' =>   $request->post_id,
+            'user_id' =>  $request->user_id,
+            'child_full_name' => $request->child_full_name,
+            'class' => $request->grade,
+            'parent_name' => $request->parent_name,
+            'email' => $request->email,
+            'address' => $request->address,
+            'phone_no' => $request->phone_no,
+            'whatsapp_no' => $request->whatsapp_no,
+            'edit_code' => $edit_code,
+            'affiliate_code' => $affiliate_code,
+            'nomination_details' => $request->nomination_details
+        ]);
+
+        $request->session()->flash('message', '1 Nomination Logged');
+
+        $single_scholarship_data = DB::table("scholarships")
+        ->where('scholarships.id', '=', $post_id)->get();
+
+        return view('nominate-candidate', ["single_scholar_data"=> $single_scholarship_data, "post_id" => $post_id, "affiliate_code" => $affiliate_id]);
+    }
+
+    //submit nomination
+    public function submitNomination(Request $request, $id){
+        //validate entries
+         $request->validate([
+            'child_full_name' => ['required', 'string', 'max:255'],
+            'grade' => ['required', 'string', 'max:255'],
+            'parent_name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255'],
+            'address' => ['required', 'string'],
+            'phone_no' => ['required','numeric'],
+            'whatsapp_no' => ['required','numeric'],
+        ]);
+    
+        $edit_code = $this->gen_edit_code(15);
+
+        //enter values into database
+        $nomination = Nomination::create([
+            'post_id' =>   $request->post_id,
+            'user_id' =>  $request->user_id,
+            'child_full_name' => $request->child_full_name,
+            'class' => $request->grade,
+            'parent_name' => $request->parent_name,
+            'email' => $request->email,
+            'address' => $request->address,
+            'phone_no' => $request->phone_no,
+            'whatsapp_no' => $request->whatsapp_no,
+            'edit_code' => $edit_code,
+            'nomination_details' => $request->nomination_details
+        ]);
+
+        $request->session()->flash('message', '1 Nomination Logged');
+
+        $single_scholarship_data = DB::table("scholarships")
+        ->where('scholarships.id', '=', $id)->get();
+
+        return view('single-scholarship', ["single_scholar_data"=> $single_scholarship_data, "post_id" => $id]);
+    }
+
+
+
     //display all scholarships from a single school
     public function displaySchoolPrivateScholarship(Request $request, $username){
         //get user id 
@@ -25,9 +141,22 @@ class HandleScholarship extends Controller
         //pull all data from school scholarship
         $scholarship_data = DB::table('scholarships')->where("user_id", "=", $user_id)->paginate(5);
         //display all scholarships with current username
-        return view("scholarship", ["scholarship_data" => $scholarship_data, "user_data" => $multi_query]);
+        return view("private-scholarship", ["scholarship_data" => $scholarship_data, "user_data" => $multi_query]);
     }
 
+    //display all school scholarship
+    public function displayAllSchoolScholarship(Request $request){
+        $scholarship_data = DB::table("scholarships")
+        ->paginate(10);
+         return view("scholarship", ["scholarship_data" => $scholarship_data]);
+    }
+
+    //display single scholarship
+    public function displaySingleScholarship(Request $request, $id){
+        $single_scholarship_data = DB::table("scholarships")
+        ->where('scholarships.id', '=', $id)->get();
+        return view('single-scholarship', ["single_scholar_data"=> $single_scholarship_data, "post_id" => $id]);
+    }
 
     //REUSABLES
     public function countUserScholarships(){
@@ -92,6 +221,7 @@ class HandleScholarship extends Controller
             'title' => ['required', 'string', 'max:255'],
             'location' => ['required', 'string', 'max:255'],
             'grade' => ['required', 'string', 'max:255'],
+            'school_name' => ['required', 'string', 'max:255'],
             'scholarship_details' => ['required', 'string'],
             'commission' => ['required', 'integer']
         ]);
@@ -108,6 +238,7 @@ class HandleScholarship extends Controller
             'title' =>  $request->title,
             'location' => $request->location,
             'grade' => $request->grade,
+            'school_name' => $request->school_name,
             'scholarship_details' => $request->scholarship_details,
             'commission' => $request->commission
         ]);
@@ -121,6 +252,7 @@ class HandleScholarship extends Controller
             'title' =>  $request->title,
             'location' => $request->location,
             'grade' => $request->grade,
+            'school_name' => $request->school_name,
             'scholarship_details' => $request->scholarship_details,
             'commission' => $request->commission
         ]);

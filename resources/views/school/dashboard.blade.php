@@ -20,7 +20,7 @@
 
         @if(Auth::user()->email_verified_at == null)
         <!--authentication alert-->
-        <div id="alert-border-2" class="flex p-4 mt-3 border-t-4 border-red-500 bg-yellow-100  dark:bg-yellow-200" role="alert">
+        <div id="alert-border-2" class="hidden flex p-4 mt-3 border-t-4 border-red-500 bg-yellow-100  dark:bg-yellow-200" role="alert">
             <svg class="inline-block flex-shrink-0 w-5 h-5 text-red-700" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
             <div class="ml-3 inline-block text-sm font-medium text-red-700">
                 <span class="font-semibold hover:text-red-800">A confirmation mail has been sent to you
@@ -50,34 +50,24 @@
         </nav>
 
       <!--Image banner-->
-      <div class="grid md:grid-cols-4 gap-3 sm:grid-cols-1 ">
+      <div class="grid md:grid-cols-1 sm:grid-cols-1">
         <div class="md:col-span-1 sm:col-span-1 rounded">
-            <div class="py-3 text-center">
-                <div class='bg-blue-500 h-56 sm:h-40 rounded shadow'>
-                <!--banner-image-->
-                <div class="grid text-center bg-white rounded h-56 sm:h-40 shadow content-center">
-                    <img class="object-cover block mx-auto w-20 h-20 border rounded-full shadow" 
-                    src="{{ isset($school_data[0]->logo_img)? asset('storage/'.$school_data[0]->logo_img) : 'storage/school_logo.png'  }}" alt=
-                    'Profile_logo' />
-                </div>
-                <!--image-->
-                </div>
-            </div>
-        </div>
-        <div class="md:col-span-3 sm:col-span-1 rounded">
           <div class="py-3">
-              <div class='bg-blue-500 h-56 sm:h-40 rounded shadow'>
+              <div class='bg-blue-500 h-60 sm:h-60 rounded shadow relative'>
               <!--banner-image-->
-              <img class="object-cover w-full h-56 sm:h-40 rounded" 
-              src="{{ isset($school_data[0]->banner_img)? asset('storage/'.$school_data[0]->banner_img) : 'storage/banner.png'  }}" alt="Profile_banner" />
+              <img class="object-cover w-full h-60 sm:h-60 rounded" 
+              src="{{ isset($school_data[0]->banner_img)? asset('storage/'.$school_data[0]->banner_img) : 'storage/banner.jpg'  }}" alt="Profile_banner" />
               <!--banner-image-->
+              <!--absolute content-->
+              <div class='absolute bottom-1 bg-black text-white  px-5 py-4 opacity-80' style='left:0%'>
+                 <h1 class='m-0 p-0'>{{ Auth::user()->school_name }}</h1>
+              </div>
+              <!--absolute content-->
               </div>
           </div>
         </div>
     </div>
     <!--Image banner-->
-
-
 
         <div class="grid sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-3">
             <div>

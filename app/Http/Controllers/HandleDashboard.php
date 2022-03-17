@@ -11,18 +11,34 @@ class HandleDashboard extends Controller
 {
     //handle display for dashboard
     public function displayDashboard(Request $request){
+        $user_id = Auth::user()->id;
         if(Auth::user()->role == "school"):
-            $user_id = Auth::user()->id;
             $multi_query = DB::table("users")
             ->join('school_profile', 'users.id', '=', 'school_profile.user_id')
             ->where('users.id', '=', $user_id)
             ->limit(1)
-            ->get();
 
+            ->get();
             return view('school/dashboard', ['school_data' => $multi_query]);
+        elseif(Auth::user()->role == "affiliate"):
+            //check if user has updated his profile
+            $user_count = DB::table('affiliate_profile')->where('user_id', '=', $user_id )->count();
+            if($user_count > 0){
+                //get user affiliate code 
+                $code = DB::table('affiliate_profile')->where('user_id', '=', $user_id )->get('affiliate_code')[0];
+                $access = true;
+            }else{
+                $access = false;
+            }
+            $all_scholarship = DB::table('scholarships')->paginate(5);
+            //fetch all scholarships from database
+            return view('affiliate/dashboard',
+             ["all_scholarship" => $all_scholarship, "access" => $access, 'code' => $code->affiliate_code]);
         else:
-            return view('affiliate/dashboard');
+
+
         endif;
     }
 
 }
+

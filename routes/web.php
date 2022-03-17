@@ -4,10 +4,13 @@ use Illuminate\Support\Facades\Route;
 // use App\Models\Scholarship;
 // use App\Models\User;
 // use App\Models\SchoolProfile;
+use App\Http\Controllers\HandleEvents;
 use App\Http\Controllers\HandleScholarship;
 use App\Http\Controllers\HandleDashboard;
 use App\Http\Controllers\HandleSchoolProfile;
+use App\Http\Controllers\HandleAffiliateProfile;
 use App\Http\Controllers\HandleHomepage;
+use App\Http\Controllers\HandleBlog;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +24,7 @@ use App\Http\Controllers\HandleHomepage;
 
 Route::get('/', [HandleHomepage::class, "displayHomePage"]);
 
-Route::get('blog', function () {
-    return view('blog');
-});
+Route::get('blog',[HandleBlog::class, "displayAllSchoolBlogs"]);
 
 Route::get('about', function () {
     return view('about');
@@ -41,13 +42,9 @@ Route::get('help', function () {
     return view('help');
 });
 
-Route::get('blog-content', function () {
-    return view('blog-content');
-});
+Route::get('blog-content/{id}', [HandleBlog::class, "showBlogDetails"]);
 
-// Route::get('school-front', function () {
-//     return view('school-front');
-// });
+Route::post('blog-content/{id}', [HandleBlog::class, "handleBlogComments"]);
 
 Route::get('faq', function () {
     return view('faq');
@@ -61,24 +58,41 @@ Route::get('create-admission', function () {
     return view('create-admission');
 });
 
+Route::get("school-all-nominations", [HandleScholarship::class, "showAllSchoolNominations"]);
 
-//school public url 
+Route::get('nominate-candidate/{post_id}/{affiliate_id}', [HandleScholarship::class, "AffiliateNomination"]);
 
+Route::post('nominate-candidate/{post_id}/{affiliate_id}', [HandleScholarship::class, "StoreAffiliateNomination"]);
+
+Route::get('affiliate-profile', [HandleAffiliateProfile::class, "displayAffiliateProfile"])->middleware(["auth"]);
+
+Route::post('affiliate-profile', [HandleAffiliateProfile::class, "updateProfile"])->middleware(["auth"]);
+
+Route::get('affiliate-nominations', [HandleScholarship::class, "displayAffiliateNominations"] )->middleware(["auth"]);
 
 //school private url 
 Route::get('school-admission', function () {
     return view('school/school-admission');
 })->middleware(["auth"]);
 
-Route::get('private-scholarship/{username}',[HandleScholarship::class, "displaySchoolPrivateScholarship"])->middleware(["auth"]);
+Route::post('submit-blog-post', [HandleBlog::class, 'storeBlog'])
+->middleware(["auth"]);
+
+Route::get('private-scholarships/{username}',[HandleScholarship::class, "displaySchoolPrivateScholarship"])->middleware(["auth"]);
+
+Route::get('single-scholarship/{id}',[HandleScholarship::class, "displaySingleScholarship"]);
+
+Route::post('single-scholarship/{id}',[HandleScholarship::class, "submitNomination"]);
+
+Route::get('scholarships',[HandleScholarship::class, "displayAllSchoolScholarship"]);
+
+Route::get('school-all-blog', [HandleBlog::class, "displayAllBlogs"]);
 
 Route::get('school-achievements', function () {
     return view('school/school-achievements');
 })->middleware(["auth"]);
 
-Route::get('school-blog', function () {
-    return view('school/school-blog');
-})->middleware(["auth"]);
+Route::get('school-blog', [HandleBlog::class, "displaySchoolBlogPage"])->middleware(["auth"]);
 
 Route::get('school-help', function () {
     return view('school/school-help');
@@ -89,15 +103,31 @@ Route::get('school-profile', [HandleSchoolProfile::class, "createProfile"])->mid
 Route::post('school-profile', [HandleSchoolProfile::class, "updateProfile"])
 ->middleware(["auth"]);
 
+Route::get('edit-school-event/{id}', [HandleEvents::class, "editEvent"])
+->middleware(["auth"]);
+
+Route::get('delete-school-event/{id}', [HandleEvents::class, "deleteEvent"])
+->middleware(["auth"]);
+
 Route::get('school-events', function () {
     return view('school/school-events');
 })->middleware(["auth"]);
+
+Route::post('school-events', [HandleEvents::class, 'createEvent'])->middleware(["auth"]);
+
+Route::get('school-all-events', [HandleEvents::class, 'displayAllEvents'])->middleware(["auth"]);
 
 Route::get('school-wallet', function () {
     return view('school/school-wallet');
 })->middleware(["auth"]);
 
 Route::get('school-front/{username}', [HandleSchoolProfile::class, "displaySchoolLandingPage"]);
+
+Route::get('edit-school-blog/{id}', [HandleBlog::class, "editBlog"])
+->middleware(["auth"])->name('edit-school-blog');
+
+Route::get('delete-school-blog/{id}', [HandleBlog::class, "deleteBlog"])
+->middleware(["auth"])->name('delete-school-blog');
 
 Route::get('edit-school-scholarship/{id}', [HandleScholarship::class, "editScholarship"])
 ->middleware(["auth"])->name('edit-school-scholarship');
@@ -111,22 +141,8 @@ Route::get('school-all-scholarship', [HandleScholarship::class, "getAllScholarsh
 Route::get('school-scholarship', [HandleScholarship::class, "countAllScholarship"])
 ->middleware(["auth"]);
 
-//school post
 Route::post('school-scholarship', [HandleScholarship::class, "storeScholarship"])
 ->middleware(["auth"]);
-
-
-//affiliate public url
-
-
-//affiliate private url
-
-
-//admin public url 
-
-
-//admin private url 
-
 
 Route::get('school-achievement', function () {
     return view('school-achievement');

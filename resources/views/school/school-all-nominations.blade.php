@@ -19,8 +19,6 @@
                 <div class="my-3">
                       <!--database tablle-->
 
-
-
                     <!--bread crumb-->
                     <nav class="flex bg-white mb-3 py-3 mt-3 px-3 rounded shadow" aria-label="Breadcrumb">
                         <ol class="inline-flex items-center space-x-1 md:space-x-3">
@@ -54,46 +52,38 @@
                            No
                             </th>
                             <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
-                           Title
-                            </th>
-                            <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
-                           Location
+                           ChildName
                             </th>
                             <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
                             Grade
                             </th>
                             <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
-                               Scholarship
+                            Phone No
                             </th>
                             <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
-                               Commission
+                            Whatsapp
                             </th>
                             <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
-                               Created
+                            Created
                             </th>
                             <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
-                               Edit
+                            Details
                              </th>
                              <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
-                                Delete
+                            Delete
                              </th>
                             </tr>
                             </thead>
                             <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
-                            @foreach($all_scholarship_post as $data)
+                            @foreach($nominate_data as $data)
                                 <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
-                                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ $loop->iteration + $all_scholarship_post->perPage() * ($all_scholarship_post->currentPage() - 1) }}</td>
-                                    <td class="py-4 px-6 text-sm font-medium text-gray-900 dark:text-white  text-ellipsis truncate overflow-hidden">{{ $data->title }}</td>
-                                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white  text-ellipsis truncate overflow-hidden">{{ $data->location }}</td>
-                                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ $data->grade }}</td>
-                                    <td class="py-4 px-6 text-sm font-medium text-gray-900  dark:text-white text-ellipsis truncate overflow-hidden">{{ $data->scholarship_details }}</td>
-                                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ $data->commission }}</td>
+                                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ $loop->iteration + $nominate_data->perPage() * ($nominate_data->currentPage() - 1) }}</td>
+                                    <td class="py-4 px-6 text-sm font-medium text-gray-900 dark:text-white  text-ellipsis truncate overflow-hidden">{{ $data->child_full_name }}</td>
+                                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white  text-ellipsis truncate overflow-hidden">{{ $data->class }}</td>
+                                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ $data->phone_no }}</td>
+                                    <td class="py-4 px-6 text-sm font-medium text-gray-900  dark:text-white text-ellipsis truncate overflow-hidden">{{ $data->whatsapp_no }}</td>
                                     <td class="py-4 px-6 text-sm font-medium text-gray-900  dark:text-white  overflow-hidden">{{ Carbon\Carbon::parse($data->created_at)->format('D, d')}}</td>
-                                    <td class="text-center py-4 px-6  font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        <a href="{{route('edit-school-scholarship', ['id' => $data->id])}}" class="text-blue-600 dark:text-blue-500 hover:underline">
-                                            <i class="icon ion-edit text-dark"></i>
-                                        </a>
-                                    </td>
+                                    <td class='text-center'><a href=''><i class="icon ion-android-arrow-forward"></i></a></td>
                                     <td class="text-center py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                         <a onclick="confirmDelete()" href="{{route('delete-school-scholarship', ['id' => $data->id])}}" class="text-blue-600 dark:text-blue-500 hover:underline">
                                             <i class="icon ion-trash-b text-dark"></i>
@@ -110,7 +100,7 @@
                             </div>
                       <!--databse table-->
                       <div class="my-5">
-                      {{$all_scholarship_post->links()}}
+                      {{$nominate_data->links()}}
                       </div>
                 </div>
         </div>

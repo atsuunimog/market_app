@@ -1,41 +1,32 @@
 <x-guest-layout>
 <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-<div class="p-8 rounded shadow-xl sm:p-16">
-    <div class="flex flex-col lg:flex-row">
-    <div class="mb-6 lg:mb-0 lg:w-1/2 lg:pr-5">
-        <h2 class="font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-        {{  isset($profile_data[0]->school_name)? $profile_data[0]->school_name : '...' }}
-        </h2>
-    </div>
-    <div class="lg:w-1/2">
-        <p class="mb-4 text-base text-gray-700">
-        <span class='font-bold text-black'>About Us: </span>
-       {{ isset($profile_data[0]->about_school)? $profile_data[0]->about_school : '...' }}
-        </p>
-        {{-- <a href="/" aria-label="" 
-          class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">
-          Learn more 
-          &nbsp;
-          <i class="icon ion-android-arrow-forward"></i>
-        </a> --}}
-    </div>
-    </div>
-</div>
-
 <div class="relative bg-red-600">
-    <img class="object-cover w-full h-56 sm:h-96" src="{{ isset($profile_data[0]->banner_img)? asset('storage/'.$profile_data[0]->banner_img) : asset('storage/banner.png')  }} " alt="school-banner" />
+    <img class="object-cover w-full h-56 sm:h-96" src="{{ isset($profile_data[0]->banner_img)? asset('storage/'.$profile_data[0]->banner_img) : asset('storage/banner.jpg')  }} " alt="school-banner" />
     <div class="absolute inset-0 bg-gray-900 bg-opacity-50"></div>
       {{-- content --}}
-      <img class="object-cover w-full  shadow absolute overflow-hidden left-24 z-50 -bottom-24 rounded-full w-52 h-52" 
+      <img class="object-cover shadow absolute overflow-hidden left-24 z-50 -bottom-24 rounded-full w-52 h-52" 
       src="{{ isset($profile_data[0]->logo_img)? asset('storage/'.$profile_data[0]->logo_img) : asset('storage/school_logo.png')  }}" 
       alt="school-logo" />
 </div>
 </div>
 
 <!--SECTION-->
-<div class="animate__animated animate__fadeInUp px-4 pt-16 mb-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pt-20">
-  <div class="grid gap-8 row-gap-5 lg:grid-cols-3">
+<div class="animate__animated animate__fadeInUp px-4 pt-16 mb-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+<div class="flex flex-col lg:flex-row gap-3 pt-8 pb-4">
+  <div class="mb-6 lg:mb-0 lg:w-1/2 lg:pr-5">
+      <h2 class="font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+      {{  isset($profile_data[0]->school_name)? $profile_data[0]->school_name : '...' }}
+      </h2>
+  </div>
+  <div class="lg:w-1/2">
+      <p class="mb-4 text-base text-gray-700">
+      <span class='font-bold text-black block'>About Us: </span>
+    {{ isset($profile_data[0]->about_school)? $profile_data[0]->about_school : '...' }}
+      </p>
+  </div>
+</div>
 
+  <div class="grid gap-8 row-gap-5 lg:grid-cols-3">
     <div class="relative p-px overflow-hidden transition duration-300 transform border rounded shadow-sm hover:scale-105 group hover:shadow-xl">
       <div class="absolute bottom-0 left-0 w-full h-1 duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
       <div class="absolute bottom-0 left-0 w-1 h-full duration-300 origin-bottom transform scale-y-0 bg-deep-purple-accent-400 group-hover:scale-y-100"></div>
@@ -197,14 +188,14 @@
 
 
 <!--SECTION-->
-<div class="text-center pb-10">
+{{-- <div class="text-center pb-10">
   <a href="/" aria-label="" class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">
     See Gallery
     <svg class="inline-block w-3 ml-2" fill="currentColor" viewBox="0 0 12 12">
       <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z"></path>
     </svg>
   </a>
-</div>
+</div> --}}
 <!--SECTION -->
 </x-guest-layout>
 
