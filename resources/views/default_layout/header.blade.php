@@ -24,7 +24,10 @@
         </li>
       </ul>
       <a href="/" aria-label="Company" title="Company" class="inline-flex items-center lg:mx-auto">
-        <span class="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">GMAS APP</span>
+        <span class="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
+          <!--add trenova logo-->
+          <!--add trenova logo-->
+        </span>
       </a>
 
     
@@ -66,11 +69,11 @@
           </div>
 
             @else
-                <li><a href="{{ route('login') }}"    class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Log in</a></li>
+                <li><a href="{{ route('login') }}"    class="bg-indigo-500 inline-flex items-center justify-center h-10 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none  hover:text-teal-accent-400">Log in</a></li>
                 @if (Route::has('register'))
                   <li>
                     <a href="{{ url('register') }}" 
-                    class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Sign In
+                    class=" bg-indigo-500 inline-flex items-center justify-center h-10 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none  hover:text-teal-accent-400">Sign In
                     </a>
                   </li>
                 @endif
@@ -93,7 +96,7 @@
             <div class="flex items-center justify-between mb-4">
               <div>
                 <a href="/" aria-label="Company" title="Company" class="inline-flex items-center">
-                  <span class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">SMP App</span>
+                  <span class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">GMAS APP</span>
                 </a>
               </div>
               <div>

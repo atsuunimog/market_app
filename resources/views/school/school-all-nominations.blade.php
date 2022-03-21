@@ -83,7 +83,7 @@
                                     <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ $data->phone_no }}</td>
                                     <td class="py-4 px-6 text-sm font-medium text-gray-900  dark:text-white text-ellipsis truncate overflow-hidden">{{ $data->whatsapp_no }}</td>
                                     <td class="py-4 px-6 text-sm font-medium text-gray-900  dark:text-white  overflow-hidden">{{ Carbon\Carbon::parse($data->created_at)->format('D, d')}}</td>
-                                    <td class='text-center'><a href=''><i class="icon ion-android-arrow-forward"></i></a></td>
+                                    <td class='text-center'><a href=''><i class="icon ion-document"></i></a></td>
                                     <td class="text-center py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                         <a onclick="confirmDelete()" href="{{route('delete-school-scholarship', ['id' => $data->id])}}" class="text-blue-600 dark:text-blue-500 hover:underline">
                                             <i class="icon ion-trash-b text-dark"></i>

@@ -16,7 +16,7 @@
                 </span>
               </h2>
               <p class="text-base text-gray-700 md:text-lg m-0 p-0">
-                All accomplishments
+              All accomplishments
               </p>
             </div>
           </div>

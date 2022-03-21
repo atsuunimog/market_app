@@ -15,7 +15,7 @@
 <div id="alert-border-4" class="flex p-4  mx-auto bg-yellow-100 md:w-1/2 w-full border-t-4 border-yellow-500 dark:bg-yellow-200" role="alert">
   <svg class="flex-shrink-0 w-5 h-5 text-yellow-700" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
   <div class="ml-3 text-sm font-medium text-yellow-700">
-    Become an affiliate and earn cash rewards <a href="{{ url('help')}}" class="font-semibold underline hover:text-yellow-800">How it works</a>. 
+    Become an affiliate and earn cash rewards <a href="{{ url('affiliate-register')}}" class="font-semibold underline hover:text-yellow-800">How it works</a>. 
   </div>
   <button type="button" class="ml-auto -mx-1.5 -my-1.5 bg-yellow-100 dark:bg-yellow-200 text-yellow-500 rounded-lg focus:ring-2 focus:ring-yellow-400 p-1.5 hover:bg-yellow-200 dark:hover:bg-yellow-300 inline-flex h-8 w-8" data-collapse-toggle="alert-border-4" aria-label="Close">
     <span class="sr-only">Dismiss</span>
@@ -35,12 +35,14 @@
 
 <div class="container mx-auto">
     <div class=" py-5 px-3 md:w-1/2 mx-auto mb-3">
-    <p class='font-bold text-red-800 text-sm mb-3 uppercase'>{{$single_scholar_data[0]->school_name}}</p>
+    <p class='font-bold text-red-800 text-sm mb-3 uppercase'>
+      <i class='icon ion-university'></i>
+      {{$single_scholar_data[0]->school_name}}</p>
     <h1 class='text-lg font-bold'>{{$single_scholar_data[0]->title}}</h2>
     <!--mini menu-->
     <div class='flex py-3'>
         <p class='mr-3'><strong>Location: </strong>  {{$single_scholar_data[0]->location}}</p>
-        <p class='mr-3'><strong>Date: </strong> {{$single_scholar_data[0]->location}}</p>
+        <p class='mr-3'><strong>Date: </strong> {{ Carbon\Carbon::parse($single_scholar_data[0]->created_at)->format('d/m/y')}}</p>
         <p><strong>Class: </strong> {{$single_scholar_data[0]->grade}}</p>
     </div>
     <!--mini menu-->
@@ -76,14 +78,14 @@
     </button>
 </div>
 
-<div class="px-5 pt-3 pb-5 border rounded">
+<div class=" pt-3 pb-5 rounded">
 
 <form method="POST" action="{{ url('single-scholarship', ['id' => $single_scholar_data[0]->id ])}}">
     @csrf
     <!-- Amount -->
   <div class="md:flex  md:w-full md:gap-5">
     <div class="mt-4 md:w-full sm:w-full">
-        <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Child Full Name</label>
+        <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300 ">Child Full Name</label>
         <input type="text" value="{{old('child_full_name')}}"   name="child_full_name" id="password" placeholder="Enter Child Name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block md:w-full w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
     </div>
     <div class="mt-4 md:w-full sm:w-full">
@@ -101,10 +103,11 @@
     <div class="mt-4 md:w-full">
       <label for="grade" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email</label>
       <input type="text"  value="{{old('email')}}"  name="email" id="email" placeholder="Email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
-  </div>
+      <span class='text-sm text-gray-600'> You email will be publicly available for reference purposes</span>
+    </div>
   </div>
 
-    <div class="mt-4">
+    <div class="">
       <label for="location" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Address</label>
       <input type="text" value="{{old('address')}}"  autocomplete="" name="address" id="" placeholder="E.g. Ikeja, Lagos" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
     </div>

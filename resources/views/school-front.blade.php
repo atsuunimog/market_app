@@ -12,7 +12,7 @@
 
 <!--SECTION-->
 <div class="animate__animated animate__fadeInUp px-4 pt-16 mb-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-<div class="flex flex-col lg:flex-row gap-3 pt-8 pb-4">
+<div class="flex flex-col lg:flex-row gap-3 pt-10 pb-4">
   <div class="mb-6 lg:mb-0 lg:w-1/2 lg:pr-5">
       <h2 class="font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
       {{  isset($profile_data[0]->school_name)? $profile_data[0]->school_name : '...' }}

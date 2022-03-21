@@ -50,15 +50,17 @@
                     </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
-                        @foreach($affiliate_data as $data)
-                        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
-                            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ $loop->iteration + $affiliate_data->perPage() * ($affiliate_data->currentPage() - 1) }}</td>
-                            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ Carbon\Carbon::parse($data->created_at)->format('D, d')}}</td>
-                            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$data->class}}</td>
-                            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$data->email}}</td>
-                            <td class='py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white'><a href='' class='text-blue-700'>Details</a></td>
-                        </tr>
-                        @endforeach
+                        @if(count($affiliate_data) > 0)
+                            @foreach($affiliate_data as $data)
+                            <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ $loop->iteration + $affiliate_data->perPage() * ($affiliate_data->currentPage() - 1) }}</td>
+                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ Carbon\Carbon::parse($data->created_at)->format('D, d')}}</td>
+                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$data->class}}</td>
+                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$data->email}}</td>
+                                <td class='py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white'><a href='' class='text-blue-700'>Details</a></td>
+                            </tr>
+                            @endforeach
+                        @endif
                     </tbody>
                 </table>
                 <!--affiliate table-->

@@ -2,7 +2,7 @@
   <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl">
     <div class="max-w-xl md:mx-auto sm:text-center pt-5 pb-3">
         <img class="object-cover shadow overflow-hidden rounded-full mx-auto  w-20 h-20" 
-        src="{{asset('storage/'.$user_data[0]->logo_img) }}" 
+        src="{{isset($user_data[0]->logo_img)?asset('storage/'.$user_data[0]->logo_img) : asset('storage/school_logo.png')  }}" 
         alt="school-logo" />
     </div>
   </div>
@@ -31,29 +31,31 @@
   </button>
 </div>
 
-<div class="container mx-auto">
-  <div class=" py-5 px-3 md:w-1/2 mx-auto mb-3">
-    <a href="{{ url()->previous() }}" type="button" class=" text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-      <i class="ion-android-arrow-back"></i>
-      Go Back
-    </a>
-  </div>
-</div>
-
 @foreach ($scholarship_data as $data)
   
   <!--Image Carousel-->
     <div class="container mx-auto">
-        <div class="rounded border p-3  md:w-1/2 mx-auto mb-3">
-              <a href='' class="text-lg font-bold text-blue-700">{{ $data->title }}</a>
-              <div class='flex my-3 align-middle m-0 p-0'>
-                <p class="text-gray-800 p-0 mr-3"><span class='font-bold'>Location:</span> {{ $data->location }}</p>
-                <p class="text-gray-800 p-0 m-0"><span class='font-bold'>Class:</span> {{ $data->grade }}</p>
-              </div>
-              <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 truncate w-100">
-                {{ $data->scholarship_details }}
-              </p>
-        </div>
+      <div class="md:w-1/2 mx-auto mb-3 overflow-hidden py-4 px-3">
+        <p class='font-bold text-red-800 text-sm mb-1 uppercase'>
+          <i class='icon ion-university'></i>
+          {{ $data->school_name }}
+        </p>
+            <p class=" font-bold text-xl pb-1 truncate ">{{ $data->title }}</p>
+            <div class='flex my-1 align-middle m-0 p-0'>
+              <p class="text-gray-800 p-0 mr-3"><span class='font-bold'>Location:</span> {{ $data->location }}</p>
+              <p class="text-gray-800 p-0 mr-3"><span class='font-bold'>Class:</span> {{ $data->grade }}</p>
+              <p class="text-gray-800 p-0 m-0"><span class='font-bold'>Date:</span> {{ Carbon\Carbon::parse($data->created_at)->format('d-m-y')}}</p>
+            </div>
+
+            <p class="mb-3 font-normal truncate w-100">
+              {{ $data->scholarship_details }}
+            </p>
+
+            <a href='{{ url('single-scholarship', ['id' => $data->id])}}' type="button"
+              class="mx-auto text-xs uppercase float-right rounded inline-block text-white bg-gray-800 hover:bg-gray-900 focus:ring-4 focus:ring-gray-300 font-medium  py-3 px-5 text-center mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-800 dark:border-gray-700">
+             Apply
+            </a>
+             </div>
   </div>
     <!--Image Carousel-->
 

@@ -1,4 +1,5 @@
 <?php
+Artisan::call('storage:link');
 
 use Illuminate\Support\Facades\Route;
 // use App\Models\Scholarship;
@@ -21,6 +22,10 @@ use App\Http\Controllers\HandleBlog;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Route::get('/any-route', function () {
+//     Artisan::call('storage:link');
+//   });
+Route::get('school-account-upgrade', [HandleSchoolProfile::class, "UpgradeSchoolAccount"])->middleware(["auth"]);
 
 Route::get('/', [HandleHomepage::class, "displayHomePage"]);
 
@@ -78,7 +83,7 @@ Route::get('school-admission', function () {
 Route::post('submit-blog-post', [HandleBlog::class, 'storeBlog'])
 ->middleware(["auth"]);
 
-Route::get('private-scholarships/{username}',[HandleScholarship::class, "displaySchoolPrivateScholarship"])->middleware(["auth"]);
+Route::get('private-scholarship/{username}', [HandleScholarship::class, "displaySchoolPrivateScholarship"]);
 
 Route::get('single-scholarship/{id}',[HandleScholarship::class, "displaySingleScholarship"]);
 

@@ -1,4 +1,23 @@
 <x-app-layout>
+
+    <style>
+        .click-alert-trans {
+        display: block;
+        -webkit-animation: fadeinout 4s linear forwards;
+        animation: fadeinout 4s linear forwards;
+        }
+
+        @-webkit-keyframes fadeinout {
+        0%,100% { opacity: 0; }
+        50% { opacity: 1; }
+        }
+
+        @keyframes fadeinout {
+        0%,100% { opacity: 0; }
+        50% { opacity: 1; }
+        }
+    </style>
+
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-300 leading-tight">
             {{ __('Affiliate Dashboard') }}
@@ -94,9 +113,9 @@
                         <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white truncate">{{$data->title}}</td>
                         <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$data->location}}</td>
                         <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$data->grade}}</td>
-                        <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$data->commission}}</td>
-                        <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white"><a href='{{ url('nominate-candidate', ['post_id' => $data->id, 'affiliate_id' => $code]) }}' class='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'><i class='icon ion-ios-copy-outline text-white'></i></a></td>
-                        <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white"><a href='{{ url('nominate-candidate', ['post_id' => $data->id, 'affiliate_id' => $code]) }}' class='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'><i class='icon ion-android-arrow-forward text-white'></i></a></td>
+                        <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">₦{{$data->commission}}</td>
+                        <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white"><a onclick="copyToClickBoard(this)" href='{{ url('nominate-candidate', ['post_id' => $data->id, 'affiliate_id' => $code]) }}' class='text-black focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 bg-yellow-200 rl'><i class='icon ion-ios-copy-outline text-black'></i></a></td>
+                        <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white"><a href='{{ url('nominate-candidate', ['post_id' => $data->id, 'affiliate_id' => $code]) }}' class='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'><i class='icon ion-android-arrow-forward text-white'></i></a></td>
                     </tr>
                     @endforeach
 
@@ -108,12 +127,23 @@
             </div>
         </div>
 
-
+    
 
       </div>
     </div>
     </div>
-   
+
+    <div id='click-alert' class="fixed bottom-10 right-10 bg-red-600 px-5 py-3 hidden">
+        <span class='text-white'>Copied to Clipboard</span>
+    </div>
+
+   <script>
+       function copyToClickBoard(obj){
+            event.preventDefault();
+            navigator.clipboard.writeText(obj.href);
+            document.getElementById("click-alert").classList.toggle('click-alert-trans');
+       }
+   </script>
     @include("default_layout/footer")
     </x-app-layout>
     

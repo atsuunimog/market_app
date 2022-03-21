@@ -9,11 +9,16 @@ use App\Models\SchoolProfile;
 
 class HandleSchoolProfile extends Controller
 {
+    //upgrade school account 
+    public function UpgradeSchoolAccount(Request $request){
+        return view("school.school-account-upgrade");
+    }
+
+
     //display school landing page
     public function displaySchoolLandingPage(Request $request, $username){
         //get user id 
         $user_id  = DB::table("users")->where("username", "=", $username)->get('id')[0]->id;
-
         //pull all data from school profile 
         $profile_data = DB::table('school_profile')->where("user_id", "=", $user_id)->get();
         //return school data to school front
@@ -22,6 +27,7 @@ class HandleSchoolProfile extends Controller
 
     //return profile information 
     public function displayDashboardData(Request $request){
+
         $user_id = Auth::user()->id;
         //total number of profile visitors other than account owner
 
@@ -116,19 +122,17 @@ class HandleSchoolProfile extends Controller
         if($user_count > 0){
         //update user profile 
             DB::table('school_profile')->where('user_id', '=', $user_id )->update(
-                [
-                    "logo_img" => $logo_hash_name, 
-                    "banner_img" => $banner_hash_name, 
-                    "school_name" => $request->school_name, 
-                    "school_email" => $request->school_email,
-                    "school_address" => $request->school_address,
-                    'phone_no' => $request->phone_no,
-                    'about_school' => $request->about_school
-                ]);
-
+            [
+                "logo_img" => $logo_hash_name, 
+                "banner_img" => $banner_hash_name, 
+                "school_name" => $request->school_name, 
+                "school_email" => $request->school_email,
+                "school_address" => $request->school_address,
+                'phone_no' => $request->phone_no,
+                'about_school' => $request->about_school
+            ]);
             return redirect()->back()->with('message', 'profile updated!');
-       }
-
+        }
 
         //user first time profile creation
         $school_profile = SchoolProfile::create([
@@ -141,8 +145,7 @@ class HandleSchoolProfile extends Controller
             'phone_no' => $request->phone_no,
             'about_school' => $request->about_school
         ]);
-
-         return redirect()->back()->with('message', 'profile created!');
+        return redirect()->back()->with('message', 'profile created!');
 
     }
 }

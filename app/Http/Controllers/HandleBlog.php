@@ -175,15 +175,20 @@ class HandleBlog extends Controller
         }
 
         if($request->edit_blog_id !== null):
-        $logo_hash_name = $request->edit_blog_image;
 
-        $request->validate([
-            'edit_blog_id' => ['required'],
-            'edit_blog_image' => ['required'],
-        ]);
+            $request->validate([
+                'edit_blog_id' => ['required'],
+                'edit_blog_image' => ['required'],
+            ]);
+            
+            //check if user is updating an image or using the old image
+            if($request->edit_blog_id == null):
+                $logo_hash_name = $request->edit_blog_image;
+            else:
+                $logo_hash_name = $request->file('blog_image')->hashName();
+            endif;
 
-        $edit_id = $request->edit_blog_id;
-        $edit_blog_img = 
+            $edit_id = $request->edit_blog_id;
 
         DB::table("blogs")->where('user_id', $user_id)->where('id', $edit_id)
         ->update([

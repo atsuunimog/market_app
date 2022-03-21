@@ -15,8 +15,12 @@ class HandleScholarship extends Controller
     //display all affiliate link candidates
     public function displayAffiliateNominations(){
         $user_id = Auth::user()->id;
-        $affiliate_code = DB::table('affiliate_profile')->where('user_id', '=', $user_id)->get("affiliate_code")[0]->affiliate_code;
-        $all_aff_nomination = DB::table('nominations')->where('affiliate_code', '=', $affiliate_code)->paginate(5);
+        if(DB::table('affiliate_profile')->where('user_id', '=', $user_id)->count() > 0):
+            $affiliate_code = DB::table('affiliate_profile')->where('user_id', '=', $user_id)->get("affiliate_code")[0]->affiliate_code;
+            $all_aff_nomination = DB::table('nominations')->where('affiliate_code', '=', $affiliate_code)->paginate(5);
+        else:
+            $all_aff_nomination = [];
+        endif;
         return view("affiliate.affiliate-nominations", ["affiliate_data" => $all_aff_nomination]);
     }
 

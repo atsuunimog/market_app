@@ -26,7 +26,7 @@
 }
 </style>
     <!--titlebar-->
-    <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 pt-10">
+    {{-- <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 pt-10">
       <div class="mx-auto sm:max-w-2xl">
         <div class="text-center">
           <div class="max-w-xl md:mx-auto sm:text-center lg:max-w-2xl">
@@ -41,11 +41,37 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> --}}
     <!--title-->
+<div class=" h-96" style='background-image:url({{ asset('storage/GMAP-Banner1.jpg') }}); background-size:cover;'>
+    <div class="container mx-auto px-4 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+        <div class='grid grid-cols-2'>
+            <div class=''>
+              <!--no content-->
+            </div>
+            <div class='flex sm:items-center h-96'>
+              <!--info get me a school-->
+              <div class='py-4'>
+                <h1 class='font-bold text-5xl text-white mb-1'>
+                   Get<span style='color:yellow'>.</span>me<span style='color:yellow'>.</span>a<span style='color:yellow'>.</span>school
+                </h1>
+                <p class="text-2xl text-white">A social and interactive platfom connecting schools to the wider world
+                </p>
+              </div>
+              <!--info get me a school-->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class='py-10 text-center w-full'>
+  <h1 class=' font-bold text-3xl'>Find Scholarship Opportunities</h1>
+  <p class='mt-2 text-lg'> Nominate your ward or a Candidate to benefit from available scholarship programmes from over <strong class='font-bold text-3xl'>1000+</strong> schools</p>
+</div>
     
     <!--Image Carousel-->
-    <div class="relative px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:pt-5">
+    <div class="relative px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl">
       <div class="slick-slider">
         @foreach($all_scholar as $scholar_data)
         <div class="px-3 w-full">
@@ -65,16 +91,22 @@
         </div>
         @endforeach
       </div>
+
+      <div class='py-10 mx-auto flex'>
+        <a href='{{ url('scholarships') }}' type="button"
+        class="inline-block mx-auto text-xs uppercase py-3 px-6 tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-indigo-500 focus:shadow-outline focus:outline-none">
+        All Scholarships
+        </a>
+      </div>
   </div>
   <!--Image Carousel-->
 
-<div class='py-10 text-center w-full'>
-    <a href='{{ url('scholarships') }}' type="button"
-      class="font-bold  text-sm uppercase inline-flex mx-auto items-center py-3 justify-center px-6 tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-indigo-500 focus:shadow-outline focus:outline-none">
-      All Scholarships
-      <i class="icons ion-android-arrow-forward ml-3"></i>
-    </a>
+  <!--school listing info-->
+<div class=' px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8'>
+  <h1 class=' font-bold text-3xl'>Find Schools</h1>
+  <p class='mb-3 text-lg'>Search for schools within your region</p>
 </div>
+<!--school listing info-->
     
     <!--Image Carousel-->
      <!--filters-->
@@ -94,14 +126,14 @@
                </div>
           </div>
       </div>
-      <div class="md:col-span-3 border sm:col-span-1 rounded">
+      <div class="md:col-span-3 sm:col-span-1 rounded">
           <div class=" py-3 px-3">
             <!--search form-->
             <form class="flex flex-col items-center w-full md:mt-0 md:flex-row">
               <x-input id="email" placeholder='Enter School Name' class="block  w-full" type="email" name="email" :value="old('email')" required autofocus />
               <button
                 type="submit"
-                class="animate__animated animate__rubberBand inline-flex  font-bold items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-indigo-500 focus:shadow-outline focus:outline-none"
+                class="animate__animated animate__rubberBand inline-flex  font-bold items-center justify-center w-full h-12 px-6  tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-indigo-500 focus:shadow-outline focus:outline-none"
               >
                 Search
               </button>
@@ -112,23 +144,22 @@
      <!--filters-->
     </div>
   </div>
-    <!--Image Carousel-->
+  <!--Image Carousel-->
     
-      <!--page tiles-->
-      <div class="relative px-4 pb-16 pt-10 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pb-20">
+<!--page tiles-->
+<div class="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         
-        <div class="absolute inset-x-0 top-0 items-center justify-center hidden overflow-hidden md:flex md:inset-y-0">
-          <svg viewBox="0 0 88 88" class="w-full max-w-screen-xl text-indigo-100">
-            <circle fill="currentColor" cx="44" cy="44" r="15.5"></circle>
-            <circle fill-opacity="0.2" fill="currentColor" cx="44" cy="44" r="44"></circle>
-            <circle fill-opacity="0.2" fill="currentColor" cx="44" cy="44" r="37.5"></circle>
-            <circle fill-opacity="0.3" fill="currentColor" cx="44" cy="44" r="29.5"></circle>
-            <circle fill-opacity="0.3" fill="currentColor" cx="44" cy="44" r="22.5"></circle>
-          </svg>
-        </div>
+<div class="absolute inset-x-0 top-0 items-center justify-center hidden overflow-hidden md:flex md:inset-y-0">
+  <svg viewBox="0 0 88 88" class="w-full max-w-screen-xl text-indigo-100">
+    <circle fill="currentColor" cx="44" cy="44" r="15.5"></circle>
+    <circle fill-opacity="0.2" fill="currentColor" cx="44" cy="44" r="44"></circle>
+    <circle fill-opacity="0.2" fill="currentColor" cx="44" cy="44" r="37.5"></circle>
+    <circle fill-opacity="0.3" fill="currentColor" cx="44" cy="44" r="29.5"></circle>
+    <circle fill-opacity="0.3" fill="currentColor" cx="44" cy="44" r="22.5"></circle>
+  </svg>
+</div>
 
-        <div class="relative grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-
+<div class="relative grid gap-5 sm:grid-cols-2 lg:grid-cols-4 py-10">
 
 @foreach ($all_school as  $school_data)
 
@@ -147,7 +178,7 @@
    @endif
 
   </h3>
-  <div class='absolute left-5 right-5 bottom-7'>
+  <div class='absolute left-5 right-5 bottom-5'>
     <a href='{{ url('school-front/'.$school_data->username)}}' type="button"
      class="mx-auto rounded text-white bg-gray-800 hover:bg-gray-900 focus:ring-4 uppercase focus:ring-gray-300 font-medium  py-3 text-xs px-5 text-center mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-800 dark:border-gray-700">
     Learn more
@@ -164,6 +195,37 @@
 </div>
 
 </div>
+
+<!--afiliate banner-->
+<div class=" h-96" style='background-image:url({{ asset('storage/GMAP-Banner4.jpg') }}); background-size:cover;'>
+  <div class="container mx-auto px-4 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+      <div class='grid grid-cols-2'>
+          <div class='flex sm:items-center h-96'>
+            <!--info get me a school-->
+            <div class='py-4'>
+              <h1 class='font-bold text-5xl text-white mb-1'>
+                Earn Cash Rewards
+              </h1>
+              <p class="text-2xl text-white">Become an affiliate to earn cash rewards above 
+                <span style='color:yellow' class='font-bold text-4xl'>₦50,000</span> per nomination just from the comfort of your home
+              </p>
+              <a href="{{ url('affiliate-register') }}" 
+              class=" mt-4 bg-indigo-500 inline-flex items-center justify-center h-12  px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none  hover:text-teal-accent-400">
+              Become an Affiliate
+              </a>
+            </div>
+            <!--info get me a school-->
+
+            <div class=''>
+              <!--no content-->
+            </div>
+
+          </div>
+      </div>
+  </div>
+</div>
+<!--affiliate banner-->
+
   <!--page tiles-->
 </x-guest-layout>
 

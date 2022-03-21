@@ -54,8 +54,11 @@
   @foreach ($scholarship_data as $data)
     <!--Image Carousel-->
       <div class="container mx-auto">
-          <div class="md:w-1/2 mx-auto mb-3 overflow-hidden border rounded py-4 px-3">
-            <p class='font-bold text-red-800 text-sm mb-1 uppercase'>{{ $data->school_name }}</p>
+          <div class="md:w-1/2 mx-auto mb-3 overflow-hidden py-4 px-3">
+            <p class='font-bold text-red-800 text-sm mb-1 uppercase'>
+              <i class='icon ion-university'></i>
+              {{ $data->school_name }}
+            </p>
                 <p class=" font-bold text-xl pb-1 truncate ">{{ $data->title }}</p>
                 <div class='flex my-1 align-middle m-0 p-0'>
                   <p class="text-gray-800 p-0 mr-3"><span class='font-bold'>Location:</span> {{ $data->location }}</p>
