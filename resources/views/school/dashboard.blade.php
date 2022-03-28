@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-300 leading-tight">
+        <h2 class="font-semibold text-lg text-black leading-tight">
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
@@ -31,24 +31,6 @@
         <!--authentication alert-->
         @endif
 
-       
-        <nav class="flex bg-white py-3 px-3 mt-3 rounded shadow" aria-label="Breadcrumb">
-            <ol class="inline-flex items-center space-x-1 md:space-x-3">
-                <li class="inline-flex items-center">
-                    <a href="{{url('dashboard')}}" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
-                        <svg class="mr-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
-                        Dashboard
-                    </a>
-                </li>
-                <li class="inline-flex items-center">
-                    <a href="{{url('school-front', ['username' => Auth::user()->username])}}" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
-                        <svg class="mr-2 w-4 h-4 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Public Profile
-                    </a>
-                </li>
-            </ol>
-        </nav>
-
       <!--Image banner-->
       <div class="grid md:grid-cols-1 sm:grid-cols-1">
         <div class="md:col-span-1 sm:col-span-1 rounded">
@@ -60,7 +42,7 @@
               <!--banner-image-->
               <!--absolute content-->
               <div class='absolute bottom-1 bg-black text-white  px-5 py-4 opacity-80' style='left:0%'>
-                 <h1 class='m-0 p-0'>{{ Auth::user()->school_name }}</h1>
+                 <h1 class='m-0 p-0'>{{ Auth::user()->school_name }}  | <a href='{{url('school-front', ['username' => Auth::user()->username])}}' class='font-bold text-yellow-300'>Profile</a></h1>
               </div>
               <!--absolute content-->
               </div>

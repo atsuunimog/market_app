@@ -63,6 +63,9 @@ Route::get('create-admission', function () {
     return view('create-admission');
 });
 
+
+Route::get("upcoming-events/{username}", [HandleEvents::class, "displayAllEventsPublic"]);
+
 Route::get("school-all-nominations", [HandleScholarship::class, "showAllSchoolNominations"]);
 
 Route::get('nominate-candidate/{post_id}/{affiliate_id}', [HandleScholarship::class, "AffiliateNomination"]);

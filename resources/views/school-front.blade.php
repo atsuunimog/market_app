@@ -125,7 +125,7 @@
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam.
         </p>
         <div class='text-center'>
-          <a href="{{ url('upcoming-events') }}"
+          <a href="{{ url('upcoming-events', ['username' => $username]) }}"
             type="submit"
             class="inline-flex mx-auto  mt-3 items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-indigo-500 focus:shadow-outline focus:outline-none"
           >

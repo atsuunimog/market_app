@@ -70,6 +70,16 @@ class HandleEvents extends Controller
         return redirect()->back()->with('message', '1 record deleted!');
     }
 
+    //displayAllevents public
+    public function displayAllEventsPublic(Request $request, $username){
+        //get user id with username
+        $user_id = DB::table("users")->where('username', '=', $username)->get()[0]->id; 
+        //get all information from user profile 
+        $profile_info  = DB::table("school_profile")->where('user_id', '=', $user_id)->get();
+        //select all event from this user id
+        $all_events = DB::table("events")->where('user_id', '=', $user_id)->paginate(10);
+        return view("school-events", ["all_events" => $all_events, "profile_info"=>$profile_info]);
+    }
 
     public function displayAllEvents(){  //count all scholarships created by this user
           //get all scholarship where id is user id

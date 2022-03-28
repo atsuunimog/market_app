@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-300 leading-tight">
+        <h2 class="font-semibold text-xl text-black leading-tight">
             {{ __('Achivements') }}
         </h2>
     </x-slot>
@@ -68,7 +68,7 @@
                         </div>
                         <div>
                             <!--edit--holder--->
-                            <div class="rounded shadow px-3 py-3 bg-white">
+                            <div class="rounded shadow px-3 py-3 bg-white hidden">
                                 <!--scholarship data-->
                                 <div class="px-3">
                                     <div class="px-3 pb-3 mb-3">

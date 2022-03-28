@@ -23,25 +23,28 @@
               <img src="{{asset('storage/'.$data->blog_image)}}" class="object-cover w-full h-48" alt="blog-image" />
               <div class="flex-grow border border-t-0 rounded-b">
                 <div class="p-5">
-                  <p class="mb-2 font-normal  text-gray-600 uppercase">
-                    {{Carbon\Carbon::parse($data->created_at)->format('D, d')}}
-                  </p>
+
+                  <div class='flex'>
+                    <div class='w-full'>
+                      <p class="font-normal m-0 p-0 text-gray-600 uppercase">
+                        {{Carbon\Carbon::parse($data->created_at)->format('D, d')}}
+                      </p>
+                    </div>
+                    <div class="text-center w-full">
+                      <!--like icon-->
+                     <i class="icon ion-eye text-gray-500"></i>
+                      <!--like icon-->
+                      {{$data->views}}
+                   </div>
+                </div>
+
                   <h3 class="text-xl font-bold pb-1 truncate">{{$data->blog_title}}</h3>
                   <p class="font-normal truncate text-gray-500">
                    {{$data->blog_content}}
                   </p>
                   <p><span class='text-xs font-bold block py-1 text-blue-500'>AUTHOR</span>
                   <span class='mb-2 leading-5 text-black'>{{$data->school_name}}</span></p>
-                  <!--like and comment-->
-                  <div class="flex">
-                      <div class="w-full py-3 text-center">
-                         <!--like icon-->
-                        <i class="icon ion-eye text-gray-500" style='font-size:1.5em'></i>
-                         <!--like icon-->
-                         {{$data->views}}
-                      </div>
-                  </div>
-                  <!--like and comment-->
+                
                 </div>
               </div>
             </div>

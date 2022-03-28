@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-300 leading-tight">
+        <h2 class="font-semibold text-xl text-black leading-tight">
             {{ __('Referral Nominations') }}
         </h2>
     </x-slot>
@@ -20,8 +20,8 @@
         <!--notificaiton-->
         <div class='w-full px-3 py-3 bg-white rounded shadow mt-3 mx-3 mb-3'>
             <p class='text-sm text-gray-700'>
-            Find all nominations submitted using your affiliate link.
-            You can use the contact information as reference to confirm status of nominated candidates
+            <span class='font-bold text-red-600'>Note</span>
+           : Use contact information as reference to confirm status of nominated candidates
             </p>
         </div>
         <!--notification-->

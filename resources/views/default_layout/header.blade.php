@@ -26,6 +26,7 @@
       <a href="/" aria-label="Company" title="Company" class="inline-flex items-center lg:mx-auto">
         <span class="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
           <!--add trenova logo-->
+          <img src="{{asset('storage/trenova_trans_icon.png')}}" class="rounded" alt="trenova_logo" width="45px" height="45px">
           <!--add trenova logo-->
         </span>
       </a>

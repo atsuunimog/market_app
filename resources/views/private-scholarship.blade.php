@@ -35,21 +35,29 @@
   
   <!--Image Carousel-->
     <div class="container mx-auto">
-      <div class="md:w-1/2 mx-auto mb-3 overflow-hidden py-4 px-3">
-        <p class='font-bold text-red-800 text-sm mb-1 uppercase'>
-          <i class='icon ion-university'></i>
-          {{ $data->school_name }}
-        </p>
+      <div class="md:w-1/2 mx-auto mb-3 py-4">
+
+
+          <div class="">
+            <div class="">
+            <img src="data:image/png;base64,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"/>
+            </div>
+
+            <div class=''>
+            <p class='font-bold text-blue-800 text-sm mb-1'>
+              {{ $data->school_name }}
+            </p>
             <p class=" font-bold text-xl pb-1 truncate ">{{ $data->title }}</p>
-            <div class='flex my-1 align-middle m-0 p-0'>
+            <div class='flex my-1 align-middle m-0 p-0 text-sm'>
               <p class="text-gray-800 p-0 mr-3"><span class='font-bold'>Location:</span> {{ $data->location }}</p>
               <p class="text-gray-800 p-0 mr-3"><span class='font-bold'>Class:</span> {{ $data->grade }}</p>
               <p class="text-gray-800 p-0 m-0"><span class='font-bold'>Date:</span> {{ Carbon\Carbon::parse($data->created_at)->format('d-m-y')}}</p>
             </div>
-
-            <p class="mb-3 font-normal truncate w-100">
-              {{ $data->scholarship_details }}
-            </p>
+              <p class="mb-3 font-normal truncate w-100">
+                {{ $data->scholarship_details }}
+              </p>
+            </div>
+          </div>
 
             <a href='{{ url('single-scholarship', ['id' => $data->id])}}' type="button"
               class="mx-auto text-xs uppercase float-right rounded inline-block text-white bg-gray-800 hover:bg-gray-900 focus:ring-4 focus:ring-gray-300 font-medium  py-3 px-5 text-center mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-800 dark:border-gray-700">
